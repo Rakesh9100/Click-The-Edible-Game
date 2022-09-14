@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Bell+MT&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #fff;
+}
+
+body {
+  background-color: #f61c82;
+  color: var(--primary);
+  font-family: 'STLiti', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+a {
+  color: var(--primary);
+}
+
+h1 {
+  line-height: 1.4;
+  transform: scale(1.4);
+}
+
+h2 {
+  transform: scale(2.3);
+}
+
+.btn {
+  border: 0;
+  background-color: var(--primary);
+  color: #516dff;
+  font-size: 2.3rem;
+  font-family: 'Stencil', sans-serif;
+  font-weight: 600;
+  margin-top: 1.6rem;
+  padding: 14px 21px;
+  border: 0.4rem solid #eff638;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  transition: margin 0.5s ease-out;
+}
+
+.screen.up {
+  margin-top: -100vh;
+}
+
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.lists li {
+  margin: 10px;
+}
+
+.choose-btn {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+  font-family: inherit;
+  width: 150px;
+  height: 150px;
+}
+
+.choose-btn:hover {
+  background-color: #516dff;
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.choose-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.choose-btn p {
+  font-family: 'Stencil', sans-serif;
+  transform: scale(1.4);
+}
+
+.choose-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.game-container {
+  position: relative;
+}
+
+.time,
+.score {
+  position: absolute;
+  top: 20px;
+  transform: scale(1.4);
+}
+
+.time {
+  left: 50px;
+}
+
+.score {
+  right: 50px;
+}
+
+.edible {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.edible.caught {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.edible img {
+  width: 100px;
+  height: 100px;
+}
+
