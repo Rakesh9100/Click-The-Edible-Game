@@ -82,6 +82,7 @@ h2 {
 .choose-btn {
   background-color: transparent;
   border: 2px solid var(--primary);
+  border-radius: 5px;
   color: var(--primary);
   cursor: pointer;
   font-family: inherit;
@@ -90,7 +91,7 @@ h2 {
 }
 
 .choose-btn:hover {
-  background-color: #516dff;
+  background-color: rgb(249, 139, 157);
   color: var(--primary);
   transition: all 0.2s ease;
 }
@@ -150,3 +151,9 @@ h2 {
   height: 100px;
 }
 
+p{
+  color:#F3FFBD;
+}
+h1{
+  color:#EAF9D9;
+}
