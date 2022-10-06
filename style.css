@@ -39,7 +39,7 @@ h2 {
 .btn {
   --c: goldenrod;
     color: var(--c);
-    font-size: 16px;
+    font-size: 19px;
     border: 0.3em solid var(--c);
     border-radius: 0.5em;
     width: 12em;
