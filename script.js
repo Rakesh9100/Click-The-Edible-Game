@@ -36,6 +36,7 @@ function increaseTime() {
 }
 
 function createEdible() {
+    
     const edible = document.createElement('div')
     edible.classList.add('edible')
     const { x, y } = getRandomLocation()
@@ -71,4 +72,12 @@ function addEdibles() {
 function increaseScore() {
     score++
     scoreEl.innerHTML = `Score: ${score}`
+}
+
+// Page reload
+function reset() 
+{
+    // startGame();
+    window.close();
+    window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
 }
