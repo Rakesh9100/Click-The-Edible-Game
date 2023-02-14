@@ -4,6 +4,8 @@
 
 
 * {
+  padding:0;
+  margin:0;
   box-sizing: border-box;
 }
 
@@ -12,15 +14,29 @@
 }
 
 body {
-  background-color: #f61c82;
+  /*background-color: #f61c82;
   color: var(--primary);
   font-family: 'STLiti', sans-serif;
   height: 100vh;
   overflow: hidden;
   margin: 0;
-  text-align: center;
+  text-align: center;*/
+  background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
+  background-size:300% 300%;
+  animation:color 12s ease-in-out infinite;
 }
+@keyframes color{
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
 
+}
 a {
   color: var(--primary);
 }
@@ -37,7 +53,7 @@ h2 {
 /* Play game hover effect starts */
 
 .btn {
-  --c: goldenrod;
+  --c: rgb(46, 10, 87);
     color: var(--c);
     font-size: 19px;
     border: 0.3em solid var(--c);
