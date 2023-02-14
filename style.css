@@ -14,13 +14,12 @@
 }
 
 body {
-  /*background-color: #f61c82;
   color: var(--primary);
   font-family: 'STLiti', sans-serif;
   height: 100vh;
   overflow: hidden;
   margin: 0;
-  text-align: center;*/
+  text-align: center;
   background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
   background-size:300% 300%;
   animation:color 12s ease-in-out infinite;
