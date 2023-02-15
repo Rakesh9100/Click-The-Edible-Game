@@ -92,10 +92,19 @@ function pauseGame() {
     if (isRunning == 1) {
         clearInterval(gameInterval);
         isRunning = 0;
-    }
+        //show pause-menu when game paused
+        document.getElementById("pause-menu").style.display = "flex";
+        document.getElementById("pause-button").style.display = "none";
+        document.getElementById("home-icon").style.display = "none";
+        }
     // else start the timer
     else {
         gameInterval = setInterval(increaseTime, 1000);
         isRunning = 1;
+        //hide pause-menu when game starts again
+        document.getElementById("pause-menu").style.display = "none"
+        document.getElementById("pause-button").style.display = "block";
+        document.getElementById("home-icon").style.display = "block";
     }
 }
+

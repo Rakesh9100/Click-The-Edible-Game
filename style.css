@@ -222,14 +222,41 @@ h1{
   left: 1%;
 }
 
-/* #pause-menu{
-  background-color: white;
-  margin:auto;
-  margin-top:40vh;
+#pause-menu{
+  border: 0.3em solid goldenrod;
+  background-color: #EAF9D9;
+  border-radius: 0.5em;
+  position: absolute;
+  z-index: 9;
+  margin-top: 35vh;
+  margin-left: 30vw;
+  width: 40vw;
+  height: 30vh;
   display:flex;
-  width: 20vw;
-  height: 20vh;
-  justify-content: center;
-  align-items: center;
-  display:none;
-} */
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#pause-menu .options{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#pause-menu p{
+  font-size: xx-large;
+  margin: 0 20px;
+  padding: 30px 30px 30px 60px;
+  color: goldenrod;
+  border: 0.1em dashed #daa520;
+  border-radius: 2%;
+  letter-spacing: 30px;
+}
+
+#pause-menu .home{
+  color: goldenrod;
+}
+
+.play-button, .restart-button, .home{
+  width: 40px;
+  height: 40px;
+}
