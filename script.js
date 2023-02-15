@@ -25,6 +25,7 @@ choose_btns.forEach(btn => {
 })
 
 function startGame() {
+    document.getElementById("pause-menu").style.display = "none";
     isRunning = 1;
     gameInterval = setInterval(increaseTime, 1000)
 }
@@ -102,7 +103,7 @@ function pauseGame() {
         gameInterval = setInterval(increaseTime, 1000);
         isRunning = 1;
         //hide pause-menu when game starts again
-        document.getElementById("pause-menu").style.display = "none"
+        document.getElementById("pause-menu").style.display = "none";
         document.getElementById("pause-button").style.display = "block";
         document.getElementById("home-icon").style.display = "block";
     }
