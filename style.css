@@ -4,37 +4,107 @@
 
 
 * {
-  padding:0;
   margin:0;
+  padding:0;
+  font-family:'Poppins',sans-serif;
   box-sizing: border-box;
 }
 
 :root {
-  --primary: #fff;
+  --primary: #252839;
+  --secondary:rgb(179, 107, 14);
 }
-
 body {
-  color: var(--primary);
+  background: var(--primary);
   font-family: 'STLiti', sans-serif;
   height: 100vh;
   overflow: hidden;
   margin: 0;
   text-align: center;
-  background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
-  background-size:300% 300%;
-  animation:color 12s ease-in-out infinite;
 }
-@keyframes color{
+.bubbles{
+  position:relative;
+  display:flex;
+}
+.bubbles span{
+  position:relative;
+  width:30px;
+  height:30px;
+  background:#4fc3dc;
+  margin:0 4px;
+  border-radius:50%;
+  box-shadow:0 0 0 10px #4fc3dc44,
+   0 0 50px #4fc3dc,
+   0 0 100px #4fc3dc;
+  animation:animate 6s linear infinite;
+  animation-duration: calc(100s/var(--i));
+}
+.bubbles span:nth-child(even){
+  background:#ff2d75;
+  box-shadow:0 0 0 10px #ff2d7544,
+   0 0 50px #ff3d75,
+   0 0 100px #ff2d75;
+}
+
+@keyframes animate{
   0%{
-    background-position: 0 50%;
-  }
-  50%{
-    background-position: 100% 50%;
+    transform: translateY(200vh) scale(0);
   }
   100%{
-    background-position: 0 50%;
+    transform: translateY(-10vh) scale(1);
   }
+}
+.wrapper{
+  display:inline-flex;
+}
 
+.wrapper .static-text{
+  color:aqua;
+  display: inline-flex;
+  text-align:left;
+  font-weight:400;
+  font-size:60px;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  text-align: left;
+  height:90px;
+  line-height:90px;
+  overflow:hidden;
+}
+.dynamic-txts li{
+  list-style:none;
+  font-size:60px;
+  font-weight:500;
+  position:relative;
+  color:rgb(179, 107, 14);
+  top:0;
+  animation: slide 3s steps(2) infinite;
+}
+@keyframes slide{
+  100%{
+    top:-170px;
+  }
+}
+.dynamic-txts li span{
+  position:relative;
+
+}
+.dynamic-txts li span::after{
+  content:"";
+  left:0;
+  position:absolute;
+  background: #252839;
+  height:100%;
+  width: 100%;
+  border-left:2px solid  rgb(179, 107, 14);
+  animation: typing 1.5s steps(9) infinite;
+}
+@keyframes typing{
+  100%{
+    left:100%;
+    margin:0 -35px 0 35px;
+  }
 }
 a {
   color: var(--primary);
@@ -45,14 +115,12 @@ h1 {
   transform: scale(1.4);
 }
 
-h2 {
-  transform: scale(2.3);
-}
-
 /* Play game hover effect starts */
-
+.butt{
+  display:flex;
+}
 .btn {
-  --c: rgb(46, 10, 87);
+  --c: goldenrod;
     color: var(--c);
     font-size: 19px;
     border: 0.3em solid var(--c);
@@ -69,7 +137,8 @@ h2 {
     overflow: hidden;
     z-index: 1;
     transition: 0.5s;
-    margin: 2em;
+    margin-top:2em;
+    margin-left: 550px;
     cursor: pointer;
 }
 
@@ -137,7 +206,7 @@ span {
 
 .choose-btn {
   background-color: transparent;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   border-radius: 5px;
   color: var(--primary);
   cursor: pointer;
@@ -147,7 +216,7 @@ span {
 }
 
 .choose-btn:hover {
-  background-color: rgb(249, 139, 157);
+  background-color: #252839;
   color: var(--primary);
   transition: all 0.2s ease;
 }
@@ -158,6 +227,7 @@ span {
 
 .choose-btn p {
   font-family: 'Stencil', sans-serif;
+  color: var(--secondary);
   transform: scale(1.4);
 }
 
@@ -176,6 +246,7 @@ span {
   position: absolute;
   top: 20px;
   transform: scale(1.4);
+  color:#f88010
 }
 
 .time {
@@ -208,10 +279,10 @@ span {
 }
 
 p{
-  color:#F3FFBD;
+  color:#eedb49;
 }
 h1{
-  color:#EAF9D9;
+  color:#f88010;
 }
 
 #home-icon{
@@ -223,7 +294,7 @@ h1{
   cursor: pointer;
 }
 #home-icon:hover {
-  background-color: rgb(249, 139, 157);
-  color: var(--primary);
+  /**background-color: rgb(249, 139, 157);**/
+  color: var(--secondary);
   transition: all 0.2s ease;
 }
