@@ -16,7 +16,7 @@ body {
   color: var(--primary);
   font-family: 'STLiti', sans-serif;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   margin: 0;
   text-align: center;
 }
