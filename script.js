@@ -26,6 +26,7 @@ choose_btns.forEach(btn => {
 
 function startGame() {
     document.getElementById("pause-menu").style.display = "none";
+    document.getElementById("pause-button").style.display = "block";
     isRunning = 1;
     gameInterval = setInterval(increaseTime, 1000)
 }
