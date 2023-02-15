@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- FontAwesome -->
-    <link rel="icon" type="image/x-png" href="images/favicon.png">
-    <script src="https://kit.fontawesome.com/5587893eae.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Let's Play the Game !!!</title>
-  </head>
-  <body>
-    <div class="screen">
-      <i id="home-icon" onclick="reset()" class="fa fa-home" aria-hidden="true"></i>
-      <h2>Play with your Favorite Edible🎮</h2>
-      <button class="btn" id="start-btn">
-        Play Game!
-        <span></span><span></span><span></span><span></span>
-      </button>
-    </div>
 
-    <div class="screen">
-      <h1>Choose your favorite Fruit</h1>
-      <ul class="lists">
-        <li>
-          <button class="choose-btn">
-            <p>Apple</p>
-            <img src="images/apple.png" alt="Apple">
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Banana</p>
-            <img src="images/banana.png" alt="Banana"/>
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Gauva</p>
-            <img src="images/guava.png" alt="Gauva"/>
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Mango</p>
-            <img src="images/mango.png" alt="Mango"/>
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Watermelon</p>
-            <img src="images/watermelon.png" alt="Watermelon"/>
-          </button>
-        </li>
-      </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome -->
+  <link rel="icon" type="image/x-png" href="images/favicon.png">
+  <script src="https://kit.fontawesome.com/5587893eae.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Let's Play the Game !!!</title>
+</head>
 
-      <h1>OR</h1>
-      <h1>Choose your favorite Vegetable to continue..</h1>
-      <ul class="lists">
-        <li>
-          <button class="choose-btn">
-            <p>Broccoli</p>
-            <img src="images/broccoli.png" alt="Broccoli">
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Cabbage</p>
-            <img src="images/cabbage.png" alt="Cabbage"/>
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Carrot</p>
-            <img src="images/carrot.png" alt="Carrot"/>
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Cauliflower</p>
-            <img src="images/cauliflower.png" alt="Cauliflower"/>
-          </button>
-        </li>
-        <li>
-          <button class="choose-btn">
-            <p>Tomato</p>
-            <img src="images/tomato.png" alt="Tomato"/>
-          </button>
-        </li>
-      </ul>
-    </div>
+<body>
+  <div class="screen">
+    <i id="home-icon" onclick="reset()" class="fa fa-home" aria-hidden="true"></i>
+    <img src="images/pause-button.svg" alt="Pause Button" id="pause-button" aria-hidden="true">
+    <h2>Play with your Favorite Edible🎮</h2>
+    <button class="btn" id="start-btn">
+      Play Game!
+      <span></span><span></span><span></span><span></span>
+    </button>
+  </div>
 
-    <div class="screen game-container" id="game-container">
-      <h3 id="time" class="time">Time: 00:00</h3>
-      <h3 id="score" class="score">Score: 0</h3>
-    </div>
+  <div class="screen">
+    <h1>Choose your favorite Fruit</h1>
+    <ul class="lists">
+      <li>
+        <button class="choose-btn">
+          <p>Apple</p>
+          <img src="images/apple.png" alt="Apple">
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Banana</p>
+          <img src="images/banana.png" alt="Banana" />
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Gauva</p>
+          <img src="images/guava.png" alt="Gauva" />
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Mango</p>
+          <img src="images/mango.png" alt="Mango" />
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Watermelon</p>
+          <img src="images/watermelon.png" alt="Watermelon" />
+        </button>
+      </li>
+    </ul>
 
-    <script src="script.js"></script>
-  </body>
+    <h1>OR</h1>
+    <h1>Choose your favorite Vegetable to continue..</h1>
+    <ul class="lists">
+      <li>
+        <button class="choose-btn">
+          <p>Broccoli</p>
+          <img src="images/broccoli.png" alt="Broccoli">
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Cabbage</p>
+          <img src="images/cabbage.png" alt="Cabbage" />
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Carrot</p>
+          <img src="images/carrot.png" alt="Carrot" />
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Cauliflower</p>
+          <img src="images/cauliflower.png" alt="Cauliflower" />
+        </button>
+      </li>
+      <li>
+        <button class="choose-btn">
+          <p>Tomato</p>
+          <img src="images/tomato.png" alt="Tomato" />
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- <div id="pause-menu">
+    <p>Your Score:</p>
+    <button>Restart</button>
+    <button>Home</button>
+  </div> -->
+
+  <div class="screen game-container" id="game-container">
+    <h3 id="time" class="time">Time: 00:00</h3>
+    <h3 id="score" class="score">Score: 0</h3>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

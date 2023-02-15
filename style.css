@@ -207,8 +207,29 @@ h1{
   right: 1%;
   cursor: pointer;
 }
-#home-icon:hover {
+#home-icon:hover, #pause-button:hover {
   background-color: rgb(249, 139, 157);
   color: var(--primary);
   transition: all 0.2s ease;
 }
+
+#pause-button{
+  width:40px;
+  height: 40px;
+  position: fixed;
+  z-index: 9;
+  bottom:2%;
+  left: 1%;
+}
+
+/* #pause-menu{
+  background-color: white;
+  margin:auto;
+  margin-top:40vh;
+  display:flex;
+  width: 20vw;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+  display:none;
+} */
