@@ -199,16 +199,3 @@ h1{
   color:#EAF9D9;
 }
 
-#home-icon{
-  position: fixed;
-  font-size: xx-large;
-  
-  bottom:2%;
-  right: 1%;
-  cursor: pointer;
-}
-#home-icon:hover {
-  background-color: rgb(249, 139, 157);
-  color: var(--primary);
-  transition: all 0.2s ease;
-}
