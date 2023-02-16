@@ -95,7 +95,8 @@ span {
 /* Play Game hover effect ends. */
 
 .screen {
-  display: flex;
+  display: grid;
+  position: static;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -159,16 +160,17 @@ span {
 .time,
 .score {
   position: absolute;
-  top: 20px;
+  top:20 px;
   transform: scale(1.4);
 }
 
 .time {
-  left: 50px;
+  left: 50px; 
 }
 
 .score {
   right: 50px;
+  
 }
 
 .edible {
