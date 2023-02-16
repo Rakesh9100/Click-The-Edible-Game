@@ -130,3 +130,14 @@ This project and everyone participating in it is governed by the [Code of Conduc
 <h3>Contributions of any kind from anyone are always welcome🌟!!</h3>
 <h3>Give it a 🌟 if you ❤ this project. Happy Coding👨‍💻</h3>
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+<br>
+<h2 align="center"><b>Contributors 🫂</b></h2>
+
+<p align="center">
+<a href="https://github.com/Rakesh9100/Click-The-Edible-Game/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Rakesh9100/Click-The-Edible-Game" />
+</a>
+
+<br>
+## 💙 Happy Contributions !! 💙
