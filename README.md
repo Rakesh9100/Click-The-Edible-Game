@@ -126,7 +126,8 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 <h2>Project Contributors🫂</h2>
 
-<a href="https://github.com/Rakesh9100/Click-The-Edible-Game/graphs/contributors"> <img src="https://contrib.rocks/image?repo=Rakesh9100/Click-The-Edible-Game" />
+<a href="https://github.com/rakesh9100/click-the-edible-game/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rakesh9100/click-the-edible-game" />
 </a>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
