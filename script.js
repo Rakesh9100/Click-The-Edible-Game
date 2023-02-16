@@ -7,6 +7,8 @@ const scoreEl = document.getElementById('score')
 let seconds = 0
 let score = 0
 let selected_edible = {}
+var gameInterval;
+var isRunning;   //this defines the state of game running or not
 
 start_btn.addEventListener('click', () => screens[0].classList.add('up'))
 
@@ -23,7 +25,10 @@ choose_btns.forEach(btn => {
 })
 
 function startGame() {
-    setInterval(increaseTime, 1000)
+    document.getElementById("pause-menu").style.display = "none";
+    document.getElementById("pause-button").style.display = "block";
+    isRunning = 1;
+    gameInterval = setInterval(increaseTime, 1000)
 }
 
 function increaseTime() {
@@ -36,17 +41,18 @@ function increaseTime() {
 }
 
 function createEdible() {
-    
-    const edible = document.createElement('div')
-    edible.classList.add('edible')
-    const { x, y } = getRandomLocation()
-    edible.style.top = `${y}px`
-    edible.style.left = `${x}px`
-    edible.innerHTML = `<img src="${selected_edible.src}" alt="${selected_edible.alt}" style="transform: rotate(${Math.random() * 360}deg)" />`
+    if (isRunning == 1) {
+        const edible = document.createElement('div')
+        edible.classList.add('edible')
+        const { x, y } = getRandomLocation()
+        edible.style.top = `${y}px`
+        edible.style.left = `${x}px`
+        edible.innerHTML = `<img src="${selected_edible.src}" alt="${selected_edible.alt}" style="transform: rotate(${Math.random() * 360}deg)" />`
 
-    edible.addEventListener('click', catchEdible)
+        edible.addEventListener('click', catchEdible)
 
-    game_container.appendChild(edible)
+        game_container.appendChild(edible)
+    }
 }
 
 function getRandomLocation() {
@@ -58,10 +64,12 @@ function getRandomLocation() {
 }
 
 function catchEdible() {
+    if(isRunning == 1){
     increaseScore()
     this.classList.add('caught')
     setTimeout(() => this.remove(), 2000)
     addEdibles()
+    }
 }
 
 function addEdibles() {
@@ -75,9 +83,30 @@ function increaseScore() {
 }
 
 // Page reload
-function reset() 
-{
+function reset() {
     // startGame();
     window.close();
     window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
 }
+
+function pauseGame() {
+    //if running then pause the timer
+    if (isRunning == 1) {
+        clearInterval(gameInterval);
+        isRunning = 0;
+        //show pause-menu when game paused
+        document.getElementById("pause-menu").style.display = "flex";
+        document.getElementById("pause-button").style.display = "none";
+        document.getElementById("home-icon").style.display = "none";
+        }
+    // else start the timer
+    else {
+        gameInterval = setInterval(increaseTime, 1000);
+        isRunning = 1;
+        //hide pause-menu when game starts again
+        document.getElementById("pause-menu").style.display = "none";
+        document.getElementById("pause-button").style.display = "block";
+        document.getElementById("home-icon").style.display = "block";
+    }
+}
+

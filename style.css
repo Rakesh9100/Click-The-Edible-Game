@@ -207,8 +207,76 @@ h1{
   right: 1%;
   cursor: pointer;
 }
-#home-icon:hover {
+#home-icon:hover, #pause-button:hover {
   background-color: rgb(249, 139, 157);
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+#pause-button{
+  display:none;
+  width:40px;
+  height: 40px;
+  position: fixed;
+  z-index: 9;
+  bottom:2%;
+  left: 1%;
+}
+
+#pause-menu{
+  border: 0.3em solid goldenrod;
+  background-color: #EAF9D9;
+  border-radius: 0.5em;
+  position: absolute;
+  z-index: 9;
+  margin-top: 35vh;
+  margin-left: 30vw;
+  width: 40vw;
+  height: 30vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#pause-menu .options{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#pause-menu p{
+  font-size: xx-large;
+  margin: 0 20px;
+  padding: 30px 30px 30px 60px;
+  color: goldenrod;
+  border: 0.1em dashed #daa520;
+  border-radius: 2%;
+  letter-spacing: 30px;
+}
+
+.play-button, .restart-button, .home-button{
+  width: 40px;
+  height: 40px;
+}
+
+#pause-menu {
+  animation-name: scaleMenu;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform: scale(1);
+}
+
+@keyframes scaleMenu{
+  10% {
+      transform: scale(1.2);
+  }
+
+  20% {
+      transform: scale(1);
+  }
+}
+
+.play-button:hover, .play-button:focus, .restart-button:hover, .restart-button:focus, .home-button:focus, .home-button:hover{
+  background-color: #ffdf8f;
   color: var(--primary);
   transition: all 0.2s ease;
 }
