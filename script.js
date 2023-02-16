@@ -110,3 +110,4 @@ function pauseGame() {
     }
 }
 
+function restartGame()
