@@ -64,11 +64,11 @@ function getRandomLocation() {
 }
 
 function catchEdible() {
-    if(isRunning == 1){
-    increaseScore()
-    this.classList.add('caught')
-    setTimeout(() => this.remove(), 2000)
-    addEdibles()
+    if (isRunning == 1) {
+        increaseScore()
+        this.classList.add('caught')
+        setTimeout(() => this.remove(), 2000)
+        addEdibles()
     }
 }
 
@@ -98,7 +98,7 @@ function pauseGame() {
         document.getElementById("pause-menu").style.display = "flex";
         document.getElementById("pause-button").style.display = "none";
         document.getElementById("home-icon").style.display = "none";
-        }
+    }
     // else start the timer
     else {
         gameInterval = setInterval(increaseTime, 1000);
@@ -110,4 +110,26 @@ function pauseGame() {
     }
 }
 
-function restartGame()
+function restartGame() {
+    isRunning = 0; //this will stop new edibles from generating
+    //reset time and score
+    clearInterval(gameInterval);
+    score = 0;
+    seconds = 0;
+    scoreEl.innerHTML = `Score: ${score}`
+    timeEl.innerHTML = `Time: 00:00`
+    //show the home icon
+    document.getElementById("home-icon").style.display = "block";
+    //delete all created edibles
+    removeEdibles();
+    //start game again
+    setTimeout(createEdible, 1000)
+    startGame()
+}
+
+function removeEdibles(){
+    const createdEdibles = document.getElementsByClassName('edible');
+    while(createdEdibles.length > 0){
+        createdEdibles[0].parentNode.removeChild(createdEdibles[0]);
+    }
+}
