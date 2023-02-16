@@ -109,6 +109,14 @@ function pauseGame() {
         document.getElementById("home-icon").style.display = "block";
     }
 }
+// Pause game by space bar
+document.body.addEventListener("keyup",(e)=>{
+    if(e.keyCode==32 || e.keyCode==0){
+        //mozilla have "space" keycode 0 and other browsers 32
+        pauseGame();
+        
+    }
+})
 
 function restartGame() {
     isRunning = 0; //this will stop new edibles from generating
@@ -132,4 +140,4 @@ function removeEdibles(){
     while(createdEdibles.length > 0){
         createdEdibles[0].parentNode.removeChild(createdEdibles[0]);
     }
-}
+ }
