@@ -64,11 +64,11 @@ function getRandomLocation() {
 }
 
 function catchEdible() {
-    if(isRunning == 1){
-    increaseScore()
-    this.classList.add('caught')
-    setTimeout(() => this.remove(), 2000)
-    addEdibles()
+    if (isRunning == 1) {
+        increaseScore()
+        this.classList.add('caught')
+        setTimeout(() => this.remove(), 2000)
+        addEdibles()
     }
 }
 
@@ -85,8 +85,9 @@ function increaseScore() {
 // Page reload
 function reset() {
     // startGame();
-    window.close();
-    window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
+    location.reload();//done by kushaljgec2530
+    // window.close();
+    // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
 }
 
 function pauseGame() {
@@ -98,7 +99,7 @@ function pauseGame() {
         document.getElementById("pause-menu").style.display = "flex";
         document.getElementById("pause-button").style.display = "none";
         document.getElementById("home-icon").style.display = "none";
-        }
+    }
     // else start the timer
     else {
         gameInterval = setInterval(increaseTime, 1000);
@@ -109,4 +110,26 @@ function pauseGame() {
         document.getElementById("home-icon").style.display = "block";
     }
 }
+//Dark theme theme
+// function change() {
+//     var icon = document.getElementById("light-icon");
+//     document.body.classList.toggle("dark - theme");
+
+
+// }
+//done by kushaljgec2530
+var icon = document.getElementById("light-icon");
+icon.onclick = function () {
+    document.body.classList.toggle("dark-theme");
+    if (document.body.classList.contains("dark-theme")) {
+        document.getElementById("light-icon").classList.remove("fa-moon");
+        document.getElementById("light-icon").classList.add("fa-sun");
+
+    }
+    else {
+        document.getElementById("light-icon").classList.remove("fa-sun");
+        document.getElementById("light-icon").classList.add("fa-moon");
+    }
+};
+//done by kushaljgec2530
 
