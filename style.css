@@ -25,14 +25,13 @@ a {
   color: var(--primary);
 }
 
-h1 {
-  line-height: 1.4;
-  transform: scale(1.4);
-}
+/* h1 {
+  font-size: 4vmin;
+} */
 
-h2 {
+/* h2 {
   transform: scale(2.3);
-}
+} */
 
 /* Play game hover effect starts */
 
@@ -95,7 +94,7 @@ span {
 /* Play Game hover effect ends. */
 
 .screen {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -104,6 +103,33 @@ span {
   transition: margin 0.5s ease-out;
 }
 
+.main{
+  display: flex;
+  /* margin-bottom: 200px; */
+  flex-direction: column;
+}
+.main h2{
+  font-size: 7vmin;
+}
+
+.head{
+  display: none;
+  /* overflow: hidden; */
+  width: 100%;
+  /* margin-bottom: 20vh; */
+  flex-direction: column;
+}
+.fruit{
+  flex: 1;
+  justify-content: center;
+}
+.fruit h2{
+  font-size: 7vmin;
+}
+.vegetable{
+  flex: 1;
+  justify-content: center;
+}
 .screen.up {
   margin-top: -100vh;
 }
@@ -117,19 +143,22 @@ span {
 }
 
 .lists li {
-  margin: 10px;
+  margin: 0.625rem;
 }
+
 
 .choose-btn {
   background-color: transparent;
-  border: 2px solid var(--primary);
+  border: 0.125rem solid var(--primary);
   border-radius: 5px;
   color: var(--primary);
   cursor: pointer;
   font-family: inherit;
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
 }
+
+
 
 .choose-btn:hover {
   background-color: rgb(249, 139, 157);
@@ -154,6 +183,7 @@ span {
 
 .game-container {
   position: relative;
+  /* align-items: flex-end; */
 }
 
 .time,
@@ -196,6 +226,7 @@ p{
   color:#F3FFBD;
 }
 h1{
+  font-size: 4vmin;
   color:#EAF9D9;
 }
 
@@ -233,7 +264,7 @@ h1{
   margin-left: 30vw;
   width: 40vw;
   height: 30vh;
-  display:flex;
+  /* display:flex; */
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -245,12 +276,12 @@ h1{
 
 #pause-menu p{
   font-size: xx-large;
-  margin: 0 20px;
-  padding: 30px 30px 30px 60px;
+  margin: 0 1.25rem;
+  /* padding: 30px 30px 30px 60px; */
   color: goldenrod;
   border: 0.1em dashed #daa520;
   border-radius: 2%;
-  letter-spacing: 30px;
+  /* letter-spacing: 30px; */
 }
 
 .play-button, .restart-button, .home-button{
@@ -265,7 +296,7 @@ h1{
   transform: scale(1);
 }
 
-@keyframes scaleMenu{
+/* @keyframes scaleMenu{
   10% {
       transform: scale(1.2);
   }
@@ -273,10 +304,25 @@ h1{
   20% {
       transform: scale(1);
   }
-}
+} */
 
 .play-button:hover, .play-button:focus, .restart-button:hover, .restart-button:focus, .home-button:focus, .home-button:hover{
   background-color: #ffdf8f;
   color: var(--primary);
   transition: all 0.2s ease;
 }
+
+@media screen and (max-width: 1024px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit{
+    margin-top: 25vh;
+  }
+}
+@media screen and (max-width: 425px) {
+  .fruit {
+    margin-top: 40vh;
+  }
+}
+

@@ -1,4 +1,5 @@
 const screens = document.querySelectorAll('.screen');
+var head = document.querySelector('.head');
 const choose_btns = document.querySelectorAll('.choose-btn');
 const start_btn = document.getElementById('start-btn')
 const game_container = document.getElementById('game-container')
@@ -10,7 +11,11 @@ let selected_edible = {}
 var gameInterval;
 var isRunning;   //this defines the state of game running or not
 
-start_btn.addEventListener('click', () => screens[0].classList.add('up'))
+start_btn.addEventListener('click', function(){
+    screens[0].classList.add('up')
+    head.style.display = "flex";
+    // start_btn.style.display = "none";
+});
 
 choose_btns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -86,7 +91,8 @@ function increaseScore() {
 function reset() {
     // startGame();
     window.close();
-    window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
+    // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
+    window.open("./index.html");
 }
 
 function pauseGame() {
