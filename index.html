@@ -14,7 +14,22 @@
 
 <body>
   <div class="screen">
-    <i id="home-icon" onclick="reset()" class="fa fa-home" aria-hidden="true"></i>
+     <div class="container">
+      <i
+        class="fa-solid fa-moon"
+        id="light-icon"
+        aria-hidden="true"
+        onclick="change()"
+      ></i>
+      <!-- //done by kushaljgec2530 -->
+      <i
+        id="home-icon"
+        onclick="reset()"
+        class="fa fa-home"
+        aria-hidden="true"
+      ></i>
+    </div>
+     <div class="screen">
     <img src="images/pause-button.svg" alt="Pause Button" id="pause-button" onclick="pauseGame()" aria-hidden="true">
     <h2>Play with your Favorite Edible🎮</h2>
     <button class="btn" id="start-btn">
@@ -23,6 +38,7 @@
     </button>
   </div>
 
+ </div>
   <div class="screen">
     <h1>Choose your favorite Fruit</h1>
     <ul class="lists">
