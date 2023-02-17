@@ -31,6 +31,10 @@ function startGame() {
     gameInterval = setInterval(increaseTime, 1000)
 }
 
+function starting(){
+    document.getElementById("back-icon").style.display = "block";
+}
+
 function increaseTime() {
     let m = Math.floor(seconds / 60)
     let s = seconds % 60
