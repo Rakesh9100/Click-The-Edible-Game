@@ -363,7 +363,16 @@ h1 {
   transition: all 0.2s ease;
 }
 
-@media screen and (768px<=width<=1024px) {
+@media screen and (1024px<=width<1440px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (768px<=width<1024px) {
   .head{
     overflow: scroll;
   }
