@@ -14,7 +14,6 @@ var isRunning = -1;   //this defines the state of game running or not
 start_btn.addEventListener('click', function(){
     screens[0].classList.add('up')
     head.style.display = "flex";
-    // start_btn.style.display = "none";
 });
 
 choose_btns.forEach(btn => {
@@ -23,7 +22,7 @@ choose_btns.forEach(btn => {
         const src = img.getAttribute('src')
         const alt = img.getAttribute('alt')
         selected_edible = { src, alt }
-        screens[1].classList.add('up')
+        screens[1].classList.add('up1')
         setTimeout(createEdible, 1000)
         startGame()
     })

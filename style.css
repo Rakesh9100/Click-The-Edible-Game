@@ -13,7 +13,7 @@
   --block: #f5adb0b9;
   --textcolblock: #f84046;
 }
-/* //done by kushaljgec2530 */
+
 .dark-theme {
   --second: #888888;
   --primary: #292d3f;
@@ -44,9 +44,9 @@ a {
   color: var(--primary);
 }
 
-/* h1 {
-  font-size: 4vmin;
-} */
+h3 {
+  font-size: 2vmin;
+}
 
 /* h2 {
   transform: scale(2.3);
@@ -135,9 +135,7 @@ span {
 
 .head{
   display: none;
-  /* overflow: hidden; */
   width: 100%;
-  /* margin-bottom: 20vh; */
   flex-direction: column;
 }
 .fruit{
@@ -153,6 +151,9 @@ span {
 }
 .screen.up {
   margin-top: -100vh;
+}
+.screen.up1 {
+  margin-top: -107vh;
 }
 
 .lists {
@@ -214,7 +215,7 @@ span {
 
 .game-container {
   position: relative;
-  /* align-items: flex-end; */
+  margin-top: 2rem;
 }
 
 .time,
@@ -267,14 +268,14 @@ h1 {
 
 #light-icon {
   font-size: x-large;
-
+  position: relative;
   cursor: pointer;
   padding: 0.5em;
   border-radius: 5px;
 }
 #home-icon {
   font-size: x-large;
-
+  /* position: relative; */
   cursor: pointer;
   padding: 0.5em;
   border-radius: 5px;
@@ -307,7 +308,6 @@ h1 {
   margin-left: 30vw;
   width: 40vw;
   height: 30vh;
-  /* display:flex; */
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -318,7 +318,7 @@ h1 {
 }
 
 #pause-menu p {
-  font-size: xx-large;
+  font-size: 4vmin;
   margin: 0 1.25rem;
   /* padding: 30px 30px 30px 60px; */
   color: goldenrod;
@@ -341,7 +341,7 @@ h1 {
   transform: scale(1);
 }
 
-/* @keyframes scaleMenu{
+@keyframes scaleMenu{
   10% {
     transform: scale(1.2);
   }
@@ -349,7 +349,7 @@ h1 {
   20% {
     transform: scale(1);
   }
-} */
+}
 
 .play-button:hover,
 .play-button:focus,
@@ -362,17 +362,31 @@ h1 {
   transition: all 0.2s ease;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (768px<=width< 1024px) {
   .head{
     overflow: scroll;
   }
   .fruit{
-    margin-top: 25vh;
+    margin-top: 40vh;
+    margin-bottom: 5vh;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (425px<=width<768px) {
+  .head{
+    overflow: scroll;
+  }
   .fruit {
-    margin-top: 40vh;
+    margin-top: 65rem;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (320px<=width<425px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 135rem;
+    margin-bottom: 5vh;
   }
 }
 
