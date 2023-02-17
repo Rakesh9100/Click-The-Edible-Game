@@ -273,14 +273,15 @@ h1 {
   padding: 0.5em;
   border-radius: 5px;
 }
-#home-icon {
+#back-icon {
   font-size: x-large;
-  /* position: relative; */
+  display: none;
+
   cursor: pointer;
   padding: 0.5em;
   border-radius: 5px;
 }
-#home-icon:hover,
+#back-icon:hover,
 #light-icon:hover,
 #pause-button:hover {
   background-color: var(--primary);
