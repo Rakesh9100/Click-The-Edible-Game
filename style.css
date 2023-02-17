@@ -1,33 +1,52 @@
-@import url('https://fonts.googleapis.com/css?family=Bell+MT&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css?family=Bell+MT&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
 
 * {
   box-sizing: border-box;
 }
-
+/* //done by kushaljgec2530 */
 :root {
-  --primary: #fff;
+  --primary: rgba(255, 154, 158, 1);
+  --second: rgba(254, 207, 239, 1);
+  --textcol: #ffffff;
+  --c: #f58286;
+  --block: #f5adb0b9;
+  --textcolblock: #f84046;
+}
+/* //done by kushaljgec2530 */
+.dark-theme {
+  --second: #dbf4ff;
+  --primary: #2f86ff;
+  --textcol: white;
+  --c: #8892c6;
+  --block: #99caea65;
+  --textcolblock: #8bbef8;
 }
 
 body {
-  background-color: #f61c82;
-  color: var(--primary);
-  font-family: 'STLiti', sans-serif;
-  height: 100vh;
+  background: var(--primary);
+  background: linear-gradient(149deg, var(--primary) 0%, var(--second) 100%);
+  color: white;
+  font-family: "STLiti", sans-serif;
+  height: 100%;
   overflow: hidden;
   margin: 0;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
+.container {
+  padding-right: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
 a {
   color: var(--primary);
 }
 
 h1 {
   line-height: 1.4;
-  transform: scale(1.4);
+  transform: scale(1);
 }
 
 h2 {
@@ -37,25 +56,24 @@ h2 {
 /* Play game hover effect starts */
 
 .btn {
-  --c: goldenrod;
-    color: var(--c);
-    font-size: 19px;
-    border: 0.3em solid var(--c);
-    border-radius: 0.5em;
-    width: 12em;
-    height: 3.5em;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: sans-serif;
-    letter-spacing: 0.1em;
-    text-align: center;
-    line-height: 3em;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: 0.5s;
-    margin: 2em;
-    cursor: pointer;
+  color: var(--c);
+  font-size: 19px;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 2em;
+  cursor: pointer;
 }
 
 span {
@@ -101,6 +119,7 @@ span {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  color: white;
   transition: margin 0.5s ease-out;
 }
 
@@ -114,27 +133,36 @@ span {
   justify-content: center;
   list-style-type: none;
   padding: 0;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  background-color: white;
 }
-
+.lists img {
+  transform: scale(0.7);
+}
 .lists li {
   margin: 10px;
+  padding: 10px;
 }
 
 .choose-btn {
   background-color: transparent;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--textcol);
   border-radius: 5px;
-  color: var(--primary);
+  color: var(--c);
   cursor: pointer;
   font-family: inherit;
   width: 150px;
   height: 150px;
+  background-color: var(--block);
+  padding-bottom: 1rem;
 }
 
 .choose-btn:hover {
-  background-color: rgb(249, 139, 157);
-  color: var(--primary);
-  transition: all 0.2s ease;
+  background-color: var(--primary);
+  transform: scale(1.1);
+
+  transition: all 0.3s ease;
 }
 
 .choose-btn:active {
@@ -142,8 +170,9 @@ span {
 }
 
 .choose-btn p {
-  font-family: 'Stencil', sans-serif;
-  transform: scale(1.4);
+  font-family: "Stencil", sans-serif;
+  transform: scale(1.1);
+  color: var(--textcolblock);
 }
 
 .choose-btn img {
@@ -161,6 +190,10 @@ span {
   position: absolute;
   top: 20px;
   transform: scale(1.4);
+  border: 2px solid rgb(84, 84, 84);
+  padding: 0.5rem;
+  background-color: rgb(87, 87, 87);
+  border-radius: 5px;
 }
 
 .time {
@@ -181,6 +214,9 @@ span {
   position: absolute;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 0.3s ease-in-out;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-color: #f58286;
 }
 
 .edible.caught {
@@ -188,44 +224,53 @@ span {
 }
 
 .edible img {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
 }
 
-p{
-  color:#F3FFBD;
+p {
+  color: #f3ffbd;
 }
-h1{
-  color:#EAF9D9;
+h1 {
+  color: #ffffff;
 }
+#light-icon {
+  font-size: x-large;
 
-#home-icon{
-  position: fixed;
-  font-size: xx-large;
-  
-  bottom:2%;
-  right: 1%;
   cursor: pointer;
+  padding: 0.5em;
+  border-radius: 5px;
 }
-#home-icon:hover, #pause-button:hover {
-  background-color: rgb(249, 139, 157);
-  color: var(--primary);
+#home-icon {
+  font-size: x-large;
+
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+#home-icon:hover,
+#light-icon:hover,
+#pause-button:hover {
+  background-color: var(--primary);
+
   transition: all 0.2s ease;
 }
 
-#pause-button{
-  display:none;
-  width:40px;
-  height: 40px;
+#pause-button {
+  display: none;
+  width: 80px;
+  height: 80px;
   position: fixed;
   z-index: 9;
-  bottom:2%;
+  bottom: 2%;
   left: 1%;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
-#pause-menu{
+#pause-menu {
   border: 0.3em solid goldenrod;
-  background-color: #EAF9D9;
+  background-color: #eaf9d9;
   border-radius: 0.5em;
   position: absolute;
   z-index: 9;
@@ -233,17 +278,17 @@ h1{
   margin-left: 30vw;
   width: 40vw;
   height: 30vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-#pause-menu .options{
+#pause-menu .options {
   display: flex;
   justify-content: space-evenly;
 }
 
-#pause-menu p{
+#pause-menu p {
   font-size: xx-large;
   margin: 0 20px;
   padding: 30px 30px 30px 60px;
@@ -253,7 +298,9 @@ h1{
   letter-spacing: 30px;
 }
 
-.play-button, .restart-button, .home-button{
+.play-button,
+.restart-button,
+.home-button {
   width: 40px;
   height: 40px;
 }
@@ -265,17 +312,22 @@ h1{
   transform: scale(1);
 }
 
-@keyframes scaleMenu{
+@keyframes scaleMenu {
   10% {
-      transform: scale(1.2);
+    transform: scale(1.2);
   }
 
   20% {
-      transform: scale(1);
+    transform: scale(1);
   }
 }
 
-.play-button:hover, .play-button:focus, .restart-button:hover, .restart-button:focus, .home-button:focus, .home-button:hover{
+.play-button:hover,
+.play-button:focus,
+.restart-button:hover,
+.restart-button:focus,
+.home-button:focus,
+.home-button:hover {
   background-color: #ffdf8f;
   color: var(--primary);
   transition: all 0.2s ease;
