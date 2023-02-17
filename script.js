@@ -8,7 +8,7 @@ let seconds = 0
 let score = 0
 let selected_edible = {}
 var gameInterval;
-var isRunning;   //this defines the state of game running or not
+var isRunning=-1;   //this defines the state of game running or not
 
 start_btn.addEventListener('click', () => screens[0].classList.add('up'))
 
@@ -113,8 +113,9 @@ function pauseGame() {
 document.body.addEventListener("keyup",(e)=>{
     if(e.keyCode==32 || e.keyCode==0){
         //mozilla have "space" keycode 0 and other browsers 32
-        pauseGame();
-        
+        if(isRunning!=-1){
+            pauseGame()
+        }
     }
 })
 
