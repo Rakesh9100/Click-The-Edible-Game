@@ -31,6 +31,10 @@ function startGame() {
     gameInterval = setInterval(increaseTime, 1000)
 }
 
+function starting(){
+    document.getElementById("back-icon").style.display = "block";
+}
+
 function increaseTime() {
     let m = Math.floor(seconds / 60)
     let s = seconds % 60
@@ -128,7 +132,7 @@ function restartGame() {
     scoreEl.innerHTML = `Score: ${score}`
     timeEl.innerHTML = `Time: 00:00`
     //show the home icon
-    document.getElementById("home-icon").style.display = "block";
+    document.getElementById("back-icon").style.display = "block";
     //delete all created edibles
     removeEdibles();
     //start game again
