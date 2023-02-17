@@ -85,8 +85,9 @@ function increaseScore() {
 // Page reload
 function reset() {
     // startGame();
-    window.close();
-    window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
+    location.reload();
+    // window.close();
+    // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
 }
 
 function pauseGame() {
@@ -109,27 +110,25 @@ function pauseGame() {
         document.getElementById("home-icon").style.display = "block";
     }
 }
+//Dark theme theme
+// function change() {
+//     var icon = document.getElementById("light-icon");
+//     document.body.classList.toggle("dark - theme");
 
-function restartGame() {
-    isRunning = 0; //this will stop new edibles from generating
-    //reset time and score
-    clearInterval(gameInterval);
-    score = 0;
-    seconds = 0;
-    scoreEl.innerHTML = `Score: ${score}`
-    timeEl.innerHTML = `Time: 00:00`
-    //show the home icon
-    document.getElementById("home-icon").style.display = "block";
-    //delete all created edibles
-    removeEdibles();
-    //start game again
-    setTimeout(createEdible, 1000)
-    startGame()
-}
 
-function removeEdibles(){
-    const createdEdibles = document.getElementsByClassName('edible');
-    while(createdEdibles.length > 0){
-        createdEdibles[0].parentNode.removeChild(createdEdibles[0]);
+// }
+var icon = document.getElementById("light-icon");
+icon.onclick = function () {
+    document.body.classList.toggle("dark-theme");
+    if (document.body.classList.contains("dark-theme")) {
+        document.getElementById("light-icon").classList.remove("fa-moon");
+        document.getElementById("light-icon").classList.add("fa-sun");
+
     }
-}
+    else {
+        document.getElementById("light-icon").classList.remove("fa-sun");
+        document.getElementById("light-icon").classList.add("fa-moon");
+    }
+};
+
+
