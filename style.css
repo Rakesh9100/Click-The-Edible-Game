@@ -15,12 +15,12 @@
 }
 /* //done by kushaljgec2530 */
 .dark-theme {
-  --second: #dbf4ff;
-  --primary: #2f86ff;
-  --textcol: white;
+  --second: #888888;
+  --primary: #292d3f;
+  --textcol: rgb(255, 255, 255);
   --c: #8892c6;
-  --block: #99caea65;
-  --textcolblock: #8bbef8;
+  --block: #92b4df65;
+  --textcolblock: #547ba8;
 }
 
 body {
