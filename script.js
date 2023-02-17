@@ -132,7 +132,7 @@ function restartGame() {
     scoreEl.innerHTML = `Score: ${score}`
     timeEl.innerHTML = `Time: 00:00`
     //show the home icon
-    document.getElementById("home-icon").style.display = "block";
+    document.getElementById("back-icon").style.display = "block";
     //delete all created edibles
     removeEdibles();
     //start game again
