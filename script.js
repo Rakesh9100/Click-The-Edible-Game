@@ -8,7 +8,7 @@ let seconds = 0
 let score = 0
 let selected_edible = {}
 var gameInterval;
-var isRunning;   //this defines the state of game running or not
+var isRunning=-1;   //this defines the state of game running or not
 
 start_btn.addEventListener('click', () => screens[0].classList.add('up'))
 
@@ -109,6 +109,15 @@ function pauseGame() {
         document.getElementById("home-icon").style.display = "block";
     }
 }
+// Pause game by space bar
+document.body.addEventListener("keyup",(e)=>{
+    if(e.keyCode==32 || e.keyCode==0){
+        //mozilla have "space" keycode 0 and other browsers 32
+        if(isRunning!=-1){
+            pauseGame()
+        }
+    }
+})
 
 function restartGame() {
     isRunning = 0; //this will stop new edibles from generating
@@ -132,4 +141,4 @@ function removeEdibles(){
     while(createdEdibles.length > 0){
         createdEdibles[0].parentNode.removeChild(createdEdibles[0]);
     }
-}
+ }
