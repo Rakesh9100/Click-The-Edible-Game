@@ -9,7 +9,7 @@ let seconds = 0
 let score = 0
 let selected_edible = {}
 var gameInterval;
-var isRunning;   //this defines the state of game running or not
+var isRunning = -1;   //this defines the state of game running or not
 
 start_btn.addEventListener('click', function(){
     screens[0].classList.add('up')
@@ -90,11 +90,10 @@ function increaseScore() {
 // Page reload
 function reset() {
     // startGame();
-    window.close();
+    location.reload();
+    // window.close();
     // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
-    window.open("./index.html");
 }
-
 function pauseGame() {
     //if running then pause the timer
     if (isRunning == 1) {
@@ -115,6 +114,15 @@ function pauseGame() {
         document.getElementById("home-icon").style.display = "block";
     }
 }
+// Pause game by space bar
+document.body.addEventListener("keyup", (e) => {
+    if (e.keyCode == 32 || e.keyCode == 0) {
+        //mozilla have "space" keycode 0 and other browsers 32
+        if (isRunning != -1) {
+            pauseGame()
+        }
+    }
+})
 
 function restartGame() {
     isRunning = 0; //this will stop new edibles from generating
@@ -133,9 +141,22 @@ function restartGame() {
     startGame()
 }
 
-function removeEdibles(){
+function removeEdibles() {
     const createdEdibles = document.getElementsByClassName('edible');
-    while(createdEdibles.length > 0){
+    while (createdEdibles.length > 0) {
         createdEdibles[0].parentNode.removeChild(createdEdibles[0]);
     }
 }
+var icon = document.getElementById("light-icon");
+icon.onclick = function () {
+    document.body.classList.toggle("dark-theme");
+    if (document.body.classList.contains("dark-theme")) {
+        document.getElementById("light-icon").classList.remove("fa-moon");
+        document.getElementById("light-icon").classList.add("fa-sun");
+
+    }
+    else {
+        document.getElementById("light-icon").classList.remove("fa-sun");
+        document.getElementById("light-icon").classList.add("fa-moon");
+    }
+};
