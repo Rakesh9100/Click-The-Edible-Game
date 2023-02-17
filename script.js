@@ -27,8 +27,13 @@ choose_btns.forEach(btn => {
 function startGame() {
     document.getElementById("pause-menu").style.display = "none";
     document.getElementById("pause-button").style.display = "block";
+    document.getElementById("back-icon").style.display = "none";
     isRunning = 1;
     gameInterval = setInterval(increaseTime, 1000)
+}
+
+function starting(){
+    document.getElementById("back-icon").style.display = "block";
 }
 
 function increaseTime() {
@@ -97,7 +102,7 @@ function pauseGame() {
         //show pause-menu when game paused
         document.getElementById("pause-menu").style.display = "flex";
         document.getElementById("pause-button").style.display = "none";
-        document.getElementById("home-icon").style.display = "none";
+        document.getElementById("back-icon").style.display = "none";
     }
     // else start the timer
     else {
@@ -106,7 +111,7 @@ function pauseGame() {
         //hide pause-menu when game starts again
         document.getElementById("pause-menu").style.display = "none";
         document.getElementById("pause-button").style.display = "block";
-        document.getElementById("home-icon").style.display = "block";
+        document.getElementById("back-icon").style.display = "block";
     }
 }
 // Pause game by space bar
@@ -127,8 +132,8 @@ function restartGame() {
     seconds = 0;
     scoreEl.innerHTML = `Score: ${score}`
     timeEl.innerHTML = `Time: 00:00`
-    //show the home icon
-    document.getElementById("home-icon").style.display = "block";
+    //show the back icon
+    document.getElementById("back-icon").style.display = "block";
     //delete all created edibles
     removeEdibles();
     //start game again

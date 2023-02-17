@@ -199,15 +199,16 @@ h1{
   color:#EAF9D9;
 }
 
-#home-icon{
+#back-icon{
   position: fixed;
   font-size: xx-large;
+  display: none;
   
   bottom:2%;
   right: 1%;
   cursor: pointer;
 }
-#home-icon:hover, #pause-button:hover {
+#back-icon:hover, #pause-button:hover {
   background-color: rgb(249, 139, 157);
   color: var(--primary);
   transition: all 0.2s ease;
