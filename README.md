@@ -10,6 +10,7 @@
 - [Technology Used🚀](#technology-used)
 - [Overview⭐](#overview)
 - [Getting Started💥](#getting-started)
+- [Open Source programs this repo has been part of💥](#Open-Source-programs-this-repo-has-been-part-of)
 - [Contributing Guidelines📑](#contributing-guidelines)
 - [Code Of Conduct📑](#code-of-conduct)
 - [Project Admin⚡](#project-admin)
@@ -43,11 +44,11 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 
 <h2>Live Project -- (https://rakesh9100.github.io/Click-The-Edible-Game/)</h2>
 
-![1](https://user-images.githubusercontent.com/73993775/190235088-d9fecdec-6269-4e32-a093-0d7276af4c47.png)<br><br>
-![2](https://user-images.githubusercontent.com/73993775/190235099-a9aa9fb2-371f-434e-9668-b9691ae0e37e.png)
+![1](https://user-images.githubusercontent.com/116907909/219880518-550a3c6f-644a-4d7e-a331-e22fcc336f89.png)<br><br>
+![2](https://user-images.githubusercontent.com/116907909/219880557-9720c306-81c7-498f-ba6a-cf793ac3f08c.png)
 <h2>Let we select Watermelon Fruit :-</h2>
 
-![3](https://user-images.githubusercontent.com/73993775/190235113-4b8fa91a-746b-4414-ac92-199f91857fb8.png)
+![3](https://user-images.githubusercontent.com/116907909/219880586-a7152139-df93-46a6-9e54-6add1d48edb3.png)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -104,6 +105,23 @@ git push origin <your_branch_name>
 Read our [Contributing Guidelines](https://github.com/Rakesh9100/Click-The-Edible-Game/blob/main/.github/CONTRIBUTING_GUIDELINES.md) to learn about our development process, how to propose bugfixes and improvements, and how to build to Click-The-Edible-Game.
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<h2 align="center">Open Source programmes this repo has been part of</h2>
+<a href="https://github.com/Rakesh9100/Click-The-Edible-Game"><img src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103"></a>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/80174214/161392790-7895ef9b-bc4d-41ee-a17a-395e3773ac19.png" width="250px">
+</div>
+<div align="center">
+    <a href="https://jwoc.tech/">JGEC Winter of Code</a>
+
+</div>
+<br>
+<br>
+<div align="center">
+    <a href="https://hacktoberfest.com/">Hacktoberfest 2022</a>
+
+</div>
+
+
 
 <h2>Code Of Conduct📑</h2>
 
@@ -123,6 +141,10 @@ This project and everyone participating in it is governed by the [Code of Conduc
 </table>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<h2 align="center">Feedback</h2>
+
+If you have any feedback or suggestions please reach out to Project - Maintainer  [Rakesh Roshan](#https://github.com/Rakesh9100) 
+
 
 <h2>Project Contributors🫂</h2>
 
@@ -131,6 +153,11 @@ This project and everyone participating in it is governed by the [Code of Conduc
 </a>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<h3 align="center"> 
+
+ ‼️ For [JWOC'23](https://jwoc.tech/) program Admin and Mentor rights of Chrome-Extension are given to [Rakesh Roshan](#https://github.com/Rakesh9100) ‼️
+
+</h3>
 
 <h2>Contributing is fun🧡</h2>
 
