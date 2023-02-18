@@ -372,7 +372,7 @@ h1 {
     margin-bottom: 5vh;
   }
 }
-@media screen and (768px<=width<1024px) {
+@media screen and (763px<=width<1024px) {
   .head{
     overflow: scroll;
   }
@@ -381,7 +381,16 @@ h1 {
     margin-bottom: 5vh;
   }
 }
-@media screen and (425px<=width<768px) {
+@media screen and (573px<=width<763px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 43rem;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (383px<=width<573px) {
   .head{
     overflow: scroll;
   }
@@ -390,7 +399,7 @@ h1 {
     margin-bottom: 5vh;
   }
 }
-@media screen and (320px<=width<425px) {
+@media screen and (100px<=width<383px) {
   .head{
     overflow: scroll;
   }
