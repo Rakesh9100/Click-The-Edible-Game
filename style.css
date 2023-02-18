@@ -63,6 +63,9 @@
     stroke-dashoffset: 550px;
     animation: animate 2s ease forwards 0.3s;
 }
+.screen.up1 {
+  margin-top: -107vh;
+}
 
 #logo path:nth-child(13){
     stroke-dasharray: 370px;
@@ -70,11 +73,14 @@
     animation: animate 2s ease forwards 0.4s;
 }
 
+
 #logo path:nth-child(14){
     stroke-dasharray: 450px;
     stroke-dashoffset: 450px;
     animation: animate 2s ease forwards 0.5s;
 }
+
+
 
 #logo path:nth-child(15){
     stroke-dasharray: 972px;
