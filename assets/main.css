@@ -72,6 +72,7 @@ h3 {
   z-index: 1;
   transition: 0.5s;
   margin: 2em;
+  margin-top: -25px;
   cursor: pointer;
 }
 
@@ -131,6 +132,7 @@ span {
 }
 .main h2{
   font-size: 7vmin;
+  margin-top: -140px;
 }
 
 .head{
@@ -174,7 +176,6 @@ span {
   padding: 10px;
 }
 
-
 .choose-btn {
   background-color: transparent;
   border: 0.125rem solid var(--textcol);
@@ -187,8 +188,6 @@ span {
   background-color: var(--block);
   padding-bottom: 1rem;
 }
-
-
 
 .choose-btn:hover {
   background-color: var(--primary);
@@ -402,6 +401,9 @@ h1 {
 @media screen and (100px<=width<383px) {
   .head{
     overflow: scroll;
+  }
+  .btn {
+    margin-top: 0px;
   }
   .fruit {
     margin-top: 135rem;
