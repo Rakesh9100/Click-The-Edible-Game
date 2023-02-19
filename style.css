@@ -27,7 +27,7 @@ body {
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: white 20px solid;
+    border: white 21px solid;
 }
 
 #logo path:nth-child(2){
