@@ -32,7 +32,13 @@ function startGame() {
     document.getElementById("pause-menu").style.display = "none";
     document.getElementById("pause-button").style.display = "block";
     isRunning = 1;
-    gameInterval = setInterval(increaseTime, 1000)
+    gameInterval = setInterval(increaseTime, 1000);
+    window.addEventListener("beforeunload", function (e) {
+        var confirmationMessage = "\o/";
+
+        e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
+        return confirmationMessage;              // Gecko, WebKit, Chrome <34
+    });
 }
 
 function starting(){
