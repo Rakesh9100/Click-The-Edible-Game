@@ -1,4 +1,5 @@
 const screens = document.querySelectorAll('.screen');
+var head = document.querySelector('.head');
 const choose_btns = document.querySelectorAll('.choose-btn');
 const start_btn = document.getElementById('start-btn')
 const game_container = document.getElementById('game-container')
@@ -10,7 +11,10 @@ let selected_edible = {}
 var gameInterval;
 var isRunning = -1;   //this defines the state of game running or not
 
-start_btn.addEventListener('click', () => screens[0].classList.add('up'))
+start_btn.addEventListener('click', function(){
+    screens[0].classList.add('up')
+    head.style.display = "flex";
+});
 
 choose_btns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -18,7 +22,7 @@ choose_btns.forEach(btn => {
         const src = img.getAttribute('src')
         const alt = img.getAttribute('alt')
         selected_edible = { src, alt }
-        screens[1].classList.add('up')
+        screens[1].classList.add('up1')
         setTimeout(createEdible, 1000)
         startGame()
     })
