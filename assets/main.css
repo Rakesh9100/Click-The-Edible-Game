@@ -44,14 +44,13 @@ a {
   color: var(--primary);
 }
 
-h1 {
-  line-height: 1.4;
-  transform: scale(1);
+h3 {
+  font-size: 2vmin;
 }
 
-h2 {
+/* h2 {
   transform: scale(2.3);
-}
+} */
 
 /* Play game hover effect starts */
 
@@ -113,7 +112,7 @@ span {
 /* Play Game hover effect ends. */
 
 .screen {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -125,8 +124,36 @@ span {
 .screen-page {
   margin-bottom: 2em;
 }
+.main{
+  display: flex;
+  /* margin-bottom: 200px; */
+  flex-direction: column;
+}
+.main h2{
+  font-size: 7vmin;
+}
+
+.head{
+  display: none;
+  width: 100%;
+  flex-direction: column;
+}
+.fruit{
+  flex: 1;
+  justify-content: center;
+}
+.fruit h2{
+  font-size: 7vmin;
+}
+.vegetable{
+  flex: 1;
+  justify-content: center;
+}
 .screen.up {
   margin-top: -100vh;
+}
+.screen.up1 {
+  margin-top: -107vh;
 }
 
 .lists {
@@ -143,22 +170,25 @@ span {
   transform: scale(0.7);
 }
 .lists li {
-  margin: 10px;
+  margin: 0.625rem;
   padding: 10px;
 }
 
+
 .choose-btn {
   background-color: transparent;
-  border: 2px solid var(--textcol);
+  border: 0.125rem solid var(--textcol);
   border-radius: 5px;
   color: var(--c);
   cursor: pointer;
   font-family: inherit;
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   background-color: var(--block);
   padding-bottom: 1rem;
 }
+
+
 
 .choose-btn:hover {
   background-color: var(--primary);
@@ -185,6 +215,7 @@ span {
 
 .game-container {
   position: relative;
+  margin-top: 2rem;
 }
 
 .time,
@@ -231,12 +262,13 @@ p {
   color: #f3ffbd;
 }
 h1 {
+  font-size: 4vmin;
   color: #eaf9d9;
 }
 
 #light-icon {
   font-size: x-large;
-
+  position: relative;
   cursor: pointer;
   padding: 0.5em;
   border-radius: 5px;
@@ -277,7 +309,6 @@ h1 {
   margin-left: 30vw;
   width: 40vw;
   height: 30vh;
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -288,13 +319,13 @@ h1 {
 }
 
 #pause-menu p {
-  font-size: xx-large;
-  margin: 0 20px;
-  padding: 30px 30px 30px 60px;
+  font-size: 4vmin;
+  margin: 0 1.25rem;
+  /* padding: 30px 30px 30px 60px; */
   color: goldenrod;
   border: 0.1em dashed #daa520;
   border-radius: 2%;
-  letter-spacing: 30px;
+  /* letter-spacing: 30px; */
 }
 
 .play-button,
@@ -311,7 +342,7 @@ h1 {
   transform: scale(1);
 }
 
-@keyframes scaleMenu {
+@keyframes scaleMenu{
   10% {
     transform: scale(1.2);
   }
@@ -331,3 +362,50 @@ h1 {
   color: var(--primary);
   transition: all 0.2s ease;
 }
+
+@media screen and (1024px<=width<1440px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (763px<=width<1024px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit{
+    margin-top: 40vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (573px<=width<763px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 43rem;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (383px<=width<573px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 65rem;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (100px<=width<383px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 135rem;
+    margin-bottom: 5vh;
+  }
+}
+
