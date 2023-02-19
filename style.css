@@ -1,3 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Bell+MT&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --second: rgb(83,53,102);
+  --primary: #292d3f; 
+  --third: rgba(255, 154, 158, 1);
+  --fourth: rgba(254, 207, 239, 1);
+  --textcol: rgb(255, 255, 255);
+  --c: #8892c6;
+  --block: #92b4df65;
+  --textcolblock: #547ba8;
+}
+
+body {
+    background: var(--primary);
+    background: linear-gradient(150deg, var(--primary) 30%, var(--second) 100%);
+    color: white;
+    font-family: "STLiti", sans-serif;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: white 16px solid;
+}
 
 #logo path:nth-child(2){
     stroke-dasharray: 37.5rem;
