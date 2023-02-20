@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css?family=Bell+MT&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: rgba(255, 154, 158, 1);
+  --second: rgba(254, 207, 239, 1);
+  --textcol: #ffffff;
+  --c: #f58286;
+  --block: #f5adb0b9;
+  --textcolblock: #f84046;
+}
+
+.dark-theme {
+  --second: #888888;
+  --primary: #292d3f;
+  --textcol: rgb(255, 255, 255);
+  --c: #8892c6;
+  --block: #92b4df65;
+  --textcolblock: #547ba8;
+}
+
+.loader{
+ 
+  position: fixed;
+  z-index: 999999999 !important;
+  background:#f6f6f6;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.disappear{
+  animation: vanish 3s forwards;
+}
+@keyframes vanish{
+  100%{
+     opacity: 0;
+   visibility: hidden;
+  }
+}
+
+body {
+  background: var(--primary);
+  background: linear-gradient(149deg, var(--primary) 0%, var(--second) 100%);
+  color: white;
+  font-family: "STLiti", sans-serif;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  padding-right: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+a {
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 2vmin;
+}
+
+/* h2 {
+  transform: scale(2.3);
+} */
+
+/* Play game hover effect starts */
+
+.btn {
+  color: var(--c);
+  font-size: 19px;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 2em;
+  margin-top: -25px;
+  cursor: pointer;
+}
+
+span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(100%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn:hover span {
+  transform: translateY(0) scale(2);
+}
+
+.btn span:nth-child(1) {
+  --n: 1;
+}
+.btn span:nth-child(2) {
+  --n: 2;
+}
+.btn span:nth-child(3) {
+  --n: 3;
+}
+.btn span:nth-child(4) {
+  --n: 4;
+}
+
+/* Play Game hover effect ends. */
+
+.screen {
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  transition: margin 0.5s ease-out;
+}
+.screen-page {
+  margin-bottom: 2em;
+}
+.main{
+  display: flex;
+  /* margin-bottom: 200px; */
+  flex-direction: column;
+}
+.main h2{
+  font-size: 7vmin;
+  margin-top: -140px;
+}
+
+.head{
+  display: none;
+  width: 100%;
+  flex-direction: column;
+}
+.fruit{
+  flex: 1;
+  justify-content: center;
+}
+.fruit h2{
+  font-size: 7vmin;
+}
+.vegetable{
+  flex: 1;
+  justify-content: center;
+}
+.screen.up {
+  margin-top: -100vh;
+}
+.screen.up1 {
+  margin-top: -107vh;
+}
+
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  background-color: white;
+}
+.lists img {
+  transform: scale(0.7);
+}
+.lists li {
+  margin: 0.625rem;
+  padding: 10px;
+}
+
+.choose-btn {
+  background-color: transparent;
+  border: 0.125rem solid var(--textcol);
+  border-radius: 5px;
+  color: var(--c);
+  cursor: pointer;
+  font-family: inherit;
+  width: 9.375rem;
+  height: 9.375rem;
+  background-color: var(--block);
+  padding-bottom: 1rem;
+}
+
+.choose-btn:hover {
+  background-color: var(--primary);
+  transform: scale(1.1);
+
+  transition: all 0.3s ease;
+}
+
+.choose-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.choose-btn p {
+  font-family: "Stencil", sans-serif;
+  transform: scale(1.1);
+  color: var(--textcolblock);
+}
+
+.choose-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.game-container {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.time,
+.score {
+  position: absolute;
+  top: 20px;
+  transform: scale(1.4);
+  border: 2px solid rgb(84, 84, 84);
+  padding: 0.5rem;
+  background-color: rgb(87, 87, 87);
+  border-radius: 5px;
+}
+
+.time {
+  left: 50px;
+}
+
+.score {
+  right: 50px;
+}
+
+.edible {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.edible.caught {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.edible img {
+  width: 100px;
+  height: 100px;
+}
+
+p {
+  color: #f3ffbd;
+}
+h1 {
+  font-size: 4vmin;
+  color: #eaf9d9;
+}
+
+#light-icon {
+  font-size: x-large;
+  position: relative;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+#back-icon {
+  font-size: x-large;
+  display: none;
+
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+#back-icon:hover,
+#light-icon:hover,
+#pause-button:hover {
+  background-color: var(--primary);
+
+  transition: all 0.2s ease;
+}
+
+#pause-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 9;
+  bottom: 2%;
+  left: 1%;
+}
+
+#pause-menu {
+  border: 0.3em solid goldenrod;
+  background-color: #eaf9d9;
+  border-radius: 0.5em;
+  position: absolute;
+  z-index: 9;
+  margin-top: 35vh;
+  margin-left: 30vw;
+  width: 40vw;
+  height: 30vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#pause-menu .options {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#pause-menu p {
+  font-size: 4vmin;
+  margin: 0 1.25rem;
+  /* padding: 30px 30px 30px 60px; */
+  color: goldenrod;
+  border: 0.1em dashed #daa520;
+  border-radius: 2%;
+  /* letter-spacing: 30px; */
+}
+
+.play-button,
+.restart-button,
+.home-button {
+  width: 40px;
+  height: 40px;
+}
+
+#pause-menu {
+  animation-name: scaleMenu;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform: scale(1);
+}
+
+@keyframes scaleMenu{
+  10% {
+    transform: scale(1.2);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+}
+
+.play-button:hover,
+.play-button:focus,
+.restart-button:hover,
+.restart-button:focus,
+.home-button:focus,
+.home-button:hover {
+  background-color: #ffdf8f;
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+@media screen and (1024px<=width<1440px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (763px<=width<1024px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit{
+    margin-top: 40vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (573px<=width<763px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 43rem;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (383px<=width<573px) {
+  .head{
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 65rem;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (100px<=width<383px) {
+  .head{
+    overflow: scroll;
+  }
+  .btn {
+    margin-top: 0px;
+  }
+  .fruit {
+    margin-top: 135rem;
+    margin-bottom: 5vh;
+  }
+}
+
