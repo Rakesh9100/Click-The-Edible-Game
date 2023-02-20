@@ -4,6 +4,8 @@ const start_btn = document.getElementById('start-btn')
 const game_container = document.getElementById('game-container')
 const timeEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
+const audio = new Audio("sounds/sound.mp3");
+
 let seconds = 0
 let score = 0
 let selected_edible = {}
@@ -21,8 +23,10 @@ choose_btns.forEach(btn => {
         screens[1].classList.add('up')
         setTimeout(createEdible, 1000)
         startGame()
+        audio.play();
     })
 })
+
 
 function startGame() {
     document.getElementById("pause-menu").style.display = "none";
@@ -109,4 +113,3 @@ function pauseGame() {
         document.getElementById("home-icon").style.display = "block";
     }
 }
-
