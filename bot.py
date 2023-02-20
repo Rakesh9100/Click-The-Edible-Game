@@ -2,7 +2,7 @@ import os
 from github import Github
 
 # First, authenticate with GitHub using a personal access token
-ACCESS_TOKEN = os.environ.get('GITHUB_ACCESS_TOKEN')
+ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
 g = Github(ACCESS_TOKEN)
 
 # Get the repository and the pull request
