@@ -20,6 +20,6 @@ jobs:
           pip install PyGithub
       - name: Run bot
         env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           python bot.py
