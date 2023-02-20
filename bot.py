@@ -19,5 +19,5 @@ if pr.merged:
     pr_user = pr.user.login
 
     # Add a comment to the pull request with a custom message
-    message = f'Thank you @{pr_user} for your valuable contribution. Your PR has been merged successfully!! 🎉'
+    message = f'Thank you @{pr_user} for your valuable contribution. Your PR has been merged successfully!! 🎉🎉'
     pr.create_issue_comment(message)
