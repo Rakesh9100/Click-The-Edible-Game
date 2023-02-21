@@ -157,6 +157,9 @@ span {
 
 }
 .footer{
+  width: 100vw;
+  height: 50px;
+  background-color: #0a183d;
   position: fixed; 
 bottom: 0;
 }
