@@ -153,6 +153,15 @@ span {
   display: flex;
   /* margin-bottom: 200px; */
   flex-direction: column;
+
+
+}
+.footer{
+  width: 100vw;
+  height: 50px;
+  background-color: #0a183d;
+  position: fixed; 
+bottom: 0;
 }
 .main h2{
   font-size: 7vmin;
