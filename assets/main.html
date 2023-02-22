@@ -18,6 +18,10 @@
   </head>
 
   <body>
+    <div id="preloader" class="loader">
+      <img src="images/preloader.gif" alt="">
+    </div>
+
     <div class="container">
       <i
         class="fa-solid fa-moon"
@@ -27,6 +31,8 @@
       ></i>
       <i id="back-icon" onclick="reset()" class="fa fa-chevron-left" aria-hidden="true"></i>
     </div>
+   
+
     <div class="screen main">
       <img
         src="images/pause-button.svg"
@@ -40,6 +46,11 @@
         Play Game!
         <span></span><span></span><span></span><span></span>
       </button>
+
+      <footer class="footer">
+        <p>Copyright © 2023 by Rakesh Roshan. All Rights Reserved</p>
+      </footer>
+
     </div>
     <div class="screen head">
     <div class="fruit">
@@ -170,6 +181,18 @@
       <h3 id="time" class="time ">Time: 00:00</h3>
       <h3 id="score" class="score ">Score: 0</h3>
     </div>
+
+
+
+    <!--------------Preloader Script---------------->
+    <script>
+      var loader = document.querySelector(".loader");
+      window.addEventListener("load", vanish);
+     function vanish(){
+       loader.classList.add("disappear");
+     }
+     
+     </script>
   
       <script src="main.js"></script>
   </body>

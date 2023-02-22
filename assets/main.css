@@ -23,6 +23,30 @@
   --textcolblock: #547ba8;
 }
 
+.loader{
+ 
+  position: fixed;
+  z-index: 999999999 !important;
+  background:#f6f6f6;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.disappear{
+  animation: vanish 3s forwards;
+}
+@keyframes vanish{
+  100%{
+     opacity: 0;
+   visibility: hidden;
+  }
+}
+
 body {
   background: var(--primary);
   background: linear-gradient(149deg, var(--primary) 0%, var(--second) 100%);
@@ -129,6 +153,15 @@ span {
   display: flex;
   /* margin-bottom: 200px; */
   flex-direction: column;
+
+
+}
+.footer{
+  width: 100vw;
+  height: 50px;
+  background-color: #0a183d;
+  position: fixed; 
+bottom: 0;
 }
 .main h2{
   font-size: 7vmin;
