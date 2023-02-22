@@ -18,6 +18,12 @@
   </head>
 
   <body>
+
+    <div class="main__bg"></div>
+<div class="main__bg layer1"></div>
+<div class="main__bg layer2"></div>
+
+
     <div id="preloader" class="loader">
       <img src="images/preloader.gif" alt="">
     </div>
@@ -31,7 +37,7 @@
       ></i>
       <i id="back-icon" onclick="reset()" class="fa fa-chevron-left" aria-hidden="true"></i>
     </div>
-   
+
 
     <div class="screen main">
       <img
@@ -152,7 +158,7 @@
         </div>
     </div>
   </div>
-  
+
     <div id="pause-menu">
       <p >PAUSED</p>
       <div class="options">
@@ -178,8 +184,8 @@
     </div>
 
     <div class="screen  game-container" id="game-container">
-      <h3 id="time" class="time ">Time: 00:00</h3>
-      <h3 id="score" class="score ">Score: 0</h3>
+      <h3 id="time" class="time " style="color:rgb(84, 84, 84)">Time: 00:00</h3>
+      <h3 id="score" class="score" style="color:rgb(84, 84, 84)">Score: 0</h3>
     </div>
 
 
@@ -191,9 +197,9 @@
      function vanish(){
        loader.classList.add("disappear");
      }
-     
+
      </script>
-  
+
       <script src="main.js"></script>
   </body>
 </html>
