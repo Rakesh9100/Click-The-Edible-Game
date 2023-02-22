@@ -34,7 +34,37 @@ function startGame() {
     document.getElementById("pause-menu").style.display = "none";
     document.getElementById("pause-button").style.display = "block";
     isRunning = 1;
-    gameInterval = setInterval(increaseTime, 1000)
+    gameInterval = setInterval(increaseTime, 1000);
+    
+    document.onkeydown = capturekey;
+
+    function capturekey(e) {
+        e = e || window.event;
+        
+        if (e.code == 'F5') {    
+            if (confirm('Do You Want to Refresh ?')) {
+                //allow to refresh
+            } 
+            else {
+                //avoid from refresh
+                e.preventDefault()
+                e.stopPropagation()
+            }
+        }
+        if (e.ctrlKey) {
+            var c = e.which || e.keyCode;
+            if (c == 82) {
+                if (confirm('Do You Want to Refresh ?')) {
+                    //allow to refresh
+                } 
+                else {
+                    //avoid from refresh
+                    e.preventDefault()
+                    e.stopPropagation()
+                }
+            }
+        }
+    }
 }
 
 function starting(){
