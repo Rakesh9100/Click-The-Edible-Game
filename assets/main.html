@@ -17,9 +17,9 @@
     <title>Let's Play the Game !!!</title>
   </head>
 
-  <body>
+  <body oncontextmenu="return false;">
     <div id="preloader" class="loader">
-      <img src="images/preloader.gif" alt="">
+      <img src="images/preloader.gif" alt="" />
     </div>
 
     <div class="container">
@@ -29,9 +29,13 @@
         aria-hidden="true"
         onclick="change()"
       ></i>
-      <i id="back-icon" onclick="reset()" class="fa fa-chevron-left" aria-hidden="true"></i>
+      <i
+        id="back-icon"
+        onclick="reset()"
+        class="fa fa-chevron-left"
+        aria-hidden="true"
+      ></i>
     </div>
-   
 
     <div class="screen main">
       <img
@@ -50,12 +54,11 @@
       <footer class="footer">
         <p>Copyright © 2023 by Rakesh Roshan. All Rights Reserved</p>
       </footer>
-
     </div>
     <div class="screen head">
-    <div class="fruit">
-      <div class="screen-page">
-        <div></div>
+      <div class="fruit">
+        <div class="screen-page">
+          <div></div>
           <h1>Choose your favorite Fruit</h1>
           <ul class="lists">
             <li>
@@ -103,8 +106,8 @@
           </ul>
           <h1>OR</h1>
         </div>
-    <div class="vegetable">
-      <h1>Choose your favorite Vegetable to continue..</h1>
+        <div class="vegetable">
+          <h1>Choose your favorite Vegetable to continue..</h1>
           <ul class="lists">
             <li>
               <button class="choose-btn">
@@ -150,11 +153,11 @@
             </li>
           </ul>
         </div>
+      </div>
     </div>
-  </div>
-  
+
     <div id="pause-menu">
-      <p >PAUSED</p>
+      <p>PAUSED</p>
       <div class="options">
         <img
           src="images/play-button.svg"
@@ -177,23 +180,20 @@
       </div>
     </div>
 
-    <div class="screen  game-container" id="game-container">
-      <h3 id="time" class="time ">Time: 00:00</h3>
-      <h3 id="score" class="score ">Score: 0</h3>
+    <div class="screen game-container" id="game-container">
+      <h3 id="time" class="time">Time: 00:00</h3>
+      <h3 id="score" class="score">Score: 0</h3>
     </div>
-
-
 
     <!--------------Preloader Script---------------->
     <script>
       var loader = document.querySelector(".loader");
       window.addEventListener("load", vanish);
-     function vanish(){
-       loader.classList.add("disappear");
-     }
-     
-     </script>
-  
-      <script src="main.js"></script>
+      function vanish() {
+        loader.classList.add("disappear");
+      }
+    </script>
+
+    <script src="main.js"></script>
   </body>
 </html>
