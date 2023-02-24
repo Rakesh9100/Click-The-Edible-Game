@@ -149,7 +149,7 @@ span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   color: white;
   transition: margin 0.5s ease-out;
@@ -167,12 +167,59 @@ span {
 
 }
 
-.footer {
+.footer{
+  height: 100px;
   width: 100vw;
-  height: 50px;
   background-color: #0a183d;
-  position: fixed;
   bottom: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 1rem;
+  text-transform: uppercase;
+}
+
+.footer a{
+  text-decoration: none;
+  color: #757575;
+}
+
+.footer a:hover {
+  color: var(--primary);
+  transition: all 0.3s linear;
+}
+
+.icons {
+  padding: 1rem;
+}
+
+.icons i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  border-radius: 100%;
+  background-color: #0d1e4e;
+  color: #818a91;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+
+.github :hover {
+  background-color: #040404;
+  color: #fff;
+}
+
+.linkedin :hover {
+  background-color: #007bb6;
+  color: #fff;
+}
+
+.instagram :hover {
+  background-color: #ea2c59;
+  color: #fff;
 }
 
 .main h2 {
@@ -266,7 +313,7 @@ span {
 
 .game-container {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 .time,
