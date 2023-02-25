@@ -1,4 +1,5 @@
 const screens = document.querySelectorAll('.screen');
+var foot= document.querySelector('.footer');
 var head = document.querySelector('.head');
 const choose_btns = document.querySelectorAll('.choose-btn');
 const start_btn = document.getElementById('start-btn')
@@ -25,7 +26,9 @@ choose_btns.forEach(btn => {
         selected_edible = { src, alt }
         screens[1].classList.add('up1')
         setTimeout(createEdible, 1000)
+        game_container.style.height= "100vh"
         startGame()
+        displayChange()
         audio.play();
     })
 })
@@ -197,3 +200,9 @@ icon.onclick = function () {
         document.getElementById("light-icon").classList.add("fa-moon");
     }
 };
+
+
+
+function displayChange(){
+    foot.classList.toggle("toggle-footer");
+}

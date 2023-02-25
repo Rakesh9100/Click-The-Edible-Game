@@ -69,6 +69,11 @@ body {
   justify-content: flex-end;
 }
 
+.container i{
+  color: #0a183d;
+  z-index: 1;
+}
+
 a {
   color: var(--primary);
 }
@@ -178,6 +183,7 @@ span {
   flex-direction: column;
   padding-top: 1rem;
   text-transform: uppercase;
+  z-index: 2;
 }
 
 .footer a{
@@ -261,7 +267,7 @@ span {
   justify-content: center;
   list-style-type: none;
   padding: 0;
-  border: 2px solid var(--primary);
+  border: 3px solid var(--primary);
   border-radius: 10px;
   background-color: white;
 }
@@ -325,6 +331,7 @@ span {
   padding: 0.5rem;
   background-color: rgb(87, 87, 87);
   border-radius: 5px;
+  z-index: 10;
 }
 
 .time {
@@ -521,4 +528,68 @@ h1 {
     margin-top: 135rem;
     margin-bottom: 5vh;
   }
+}
+
+.toggle-footer{
+  display: none;
+}
+
+@media only screen and (max-width: 825px){
+  .main h2{
+    font-size: 5vmin;
+    padding: 1rem;
+  }
+
+  .btn{
+    font-size: 1rem;
+    width: 10em;
+  }
+
+  .choose-btn{
+    width: 8.375rem;
+    height: 9.375rem;
+  }
+
+  .game-container{
+    margin-top: 10rem;
+  }
+
+  .time, .score{
+    top: 30px
+  }
+
+  #pause-menu {
+    margin-top: 35vh;
+    margin-left: 30vw;
+    width: 45vw;
+    height: 20vh;
+  }
+}
+
+@media only screen and (max-width: 415px){
+
+  .btn{
+    font-size: 0.8rem;
+    width: 10em;
+  }
+
+  .footer{
+    font-size: 0.7rem;
+  }
+
+  .game-container{
+    margin-top: 7rem;
+  }
+
+  .time, .score{
+    top: 50px
+  }
+
+  #pause-menu {
+    margin-top: 35vh;
+    margin-left: 25vw;
+    width: 55vw;
+    height: 15vh;
+  }
+
 }
