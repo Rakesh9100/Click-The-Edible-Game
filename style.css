@@ -7,7 +7,7 @@
 
 :root {
   --second: rgb(83,53,102);
-  --primary: #292d3f; 
+  --primary: #292d3f;
   --third: rgba(255, 154, 158, 1);
   --fourth: rgba(254, 207, 239, 1);
   --textcol: rgb(255, 255, 255);
@@ -28,13 +28,17 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border: white 16px solid;
+  background: #466368;
+  background: -webkit-linear-gradient(#648880, #293f50);
+  background:    -moz-linear-gradient(#648880, #293f50);
+  background:         linear-gradient(#648880, #293f50);
 }
 
 #logo path:nth-child(2){
     stroke-dasharray: 37.5rem;
     stroke-dashoffset: 37.5rem;
     animation: animate 2s ease forwards;
-}   
+}
 
 #logo path:nth-child(3){
     stroke-dasharray: 23.125rem;

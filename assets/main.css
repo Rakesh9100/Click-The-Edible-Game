@@ -61,6 +61,8 @@ body {
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background: #FF597B;
+  background: radial-gradient(#F9D371, #FF597B);
 }
 
 .container {
@@ -175,7 +177,7 @@ span {
 .footer{
   height: 100px;
   width: 100vw;
-  background-color: #0a183d;
+  background-color: #AC7D88;
   bottom: 0;
   position: fixed;
   display: flex;
@@ -206,7 +208,7 @@ span {
   line-height: 40px;
   margin-left: 6px;
   border-radius: 100%;
-  background-color: #0d1e4e;
+  background-color: #FFCACA;
   color: #818a91;
   display: inline-block;
   text-align: center;
@@ -327,9 +329,9 @@ span {
   position: absolute;
   top: 20px;
   transform: scale(1.4);
-  border: 2px solid rgb(84, 84, 84);
+  border: 2px solid #E90064;
   padding: 0.5rem;
-  background-color: rgb(87, 87, 87);
+  background-color: #FF8787;
   border-radius: 5px;
   z-index: 10;
 }
