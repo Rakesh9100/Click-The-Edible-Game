@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="main.css" />
     <!-- FontAwesome -->
-    <link rel="icon" type="image/x-png" href="./images/favicon.png" />
+    <link rel="icon" type="image/x-png" href="images/favicon.png" />
     <script
       src="https://kit.fontawesome.com/5587893eae.js"
       crossorigin="anonymous"
@@ -17,7 +17,11 @@
     <title>Let's Play the Game !!!</title>
   </head>
 
-  <body>
+  <body oncontextmenu="return false;">
+    <div id="preloader" class="loader">
+      <img src="images/preloader.gif" alt="" />
+    </div>
+
     <div class="container">
       <i
         class="fa-solid fa-moon"
@@ -25,119 +29,148 @@
         aria-hidden="true"
         onclick="change()"
       ></i>
-      <!-- //done by kushaljgec2530 -->
-      <i id="back-icon" onclick="reset()" class="fa fa-chevron-left" aria-hidden="true"></i>
+      <i
+        id="back-icon"
+        onclick="reset()"
+        class="fa fa-chevron-left"
+        aria-hidden="true"
+      ></i>
     </div>
-    <div class="screen">
+
+    <div class="screen main">
       <img
-        src="./images/pause-button.svg"
+        src="images/pause-button.svg"
         alt="Pause Button"
         id="pause-button"
         onclick="pauseGame()"
         aria-hidden="true"
       />
-      <h2>Play with your Favorite Edible🎮</h2>
+      <h2>Play with your Favourite Edible🎮</h2>
       <button class="btn" id="start-btn" onclick="starting()">
         Play Game!
         <span></span><span></span><span></span><span></span>
       </button>
+
+      <footer class="footer" id="footer">
+        <div>
+          Copyright © 2023 by <a href="https://rakeshroshan.netlify.app/">Rakesh Roshan. </a>All Rights Reserved
+        </div>
+        <div class="icons">
+          <a class="github" href="https://github.com/Rakesh9100" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+          <a class="linkedin" href="https://www.linkedin.com/in/rakesh-roshan-9100" target="_blank">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a class="instagram" href="https://www.instagram.com/rakesh250602" target="_blank">
+            <i class="fa fa-instagram"></i>
+          </a>
+    
+        </div>
+      </footer>
+
+      <!-- <footer class="footer">
+        <p>Copyright © 2023 by Rakesh Roshan. All Rights Reserved</p>
+      </footer> -->
     </div>
-
-    <div class="screen">
-      <div class="screen-page">
-        <div></div>
-        <h1>Choose your favorite Fruit</h1>
-        <ul class="lists">
-          <li>
-            <button class="choose-btn">
-              <p>Apple</p>
-              <img src="./images/apple.png" alt="Apple" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Banana</p>
-              <img src="./images/banana.png" alt="Banana" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Guava</p>
-              <img src="./images/guava.png" alt="Guava" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Mango</p>
-              <img src="./images/mango.png" alt="Mango" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Watermelon</p>
-              <img src="./images/watermelon.png" alt="Watermelon" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Orange</p>
-              <img src="./images/orange.png" alt="Orange" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Grapes</p>
-              <img src="./images/grapes.png" alt="Grapes" />
-            </button>
-          </li>
-        </ul>
-
-        <h1>OR</h1>
-        <h1>Choose your favorite Vegetable to continue..</h1>
-        <ul class="lists">
-          <li>
-            <button class="choose-btn">
-              <p>Broccoli</p>
-              <img src="./images/broccoli.png" alt="Broccoli" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Cabbage</p>
-              <img src="./images/cabbage.png" alt="Cabbage" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Carrot</p>
-              <img src="./images/carrot.png" alt="Carrot" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Cauliflower</p>
-              <img src="./images/cauliflower.png" alt="Cauliflower" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Tomato</p>
-              <img src="./images/tomato.png" alt="Tomato" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Pumpkin</p>
-              <img src="./images/pumpkin.png" alt="Pumpkin" />
-            </button>
-          </li>
-          <li>
-            <button class="choose-btn">
-              <p>Potato</p>
-              <img src="./images/potato.png" alt="Potato" />
-            </button>
-          </li>
-        </ul>
+    <div class="screen head">
+      <div class="fruit">
+        <div class="screen-page">
+          <div></div>
+          <h1>Choose your favorite Fruit</h1>
+          <ul class="lists">
+            <li>
+              <button class="choose-btn">
+                <p>Apple</p>
+                <img src="images/apple.png" alt="Apple" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Banana</p>
+                <img src="images/banana.png" alt="Banana" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Grapes</p>
+                <img src="images/grapes.png" alt="Grapes" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Guava</p>
+                <img src="images/guava.png" alt="Guava" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Mango</p>
+                <img src="images/mango.png" alt="Mango" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Orange</p>
+                <img src="images/orange.png" alt="Orange" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Watermelon</p>
+                <img src="images/watermelon.png" alt="Watermelon" />
+              </button>
+            </li>
+          </ul>
+          <h1>OR</h1>
+        </div>
+        <div class="vegetable">
+          <h1>Choose your favorite Vegetable to continue..</h1>
+          <ul class="lists">
+            <li>
+              <button class="choose-btn">
+                <p>Broccoli</p>
+                <img src="images/broccoli.png" alt="Broccoli" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Cabbage</p>
+                <img src="images/cabbage.png" alt="Cabbage" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Carrot</p>
+                <img src="images/carrot.png" alt="Carrot" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Cauliflower</p>
+                <img src="images/cauliflower.png" alt="Cauliflower" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Potato</p>
+                <img src="images/potato.png" alt="Potato" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Pumpkin</p>
+                <img src="images/pumpkin.png" alt="Pumpkin" />
+              </button>
+            </li>
+            <li>
+              <button class="choose-btn">
+                <p>Tomato</p>
+                <img src="images/tomato.png" alt="Tomato" />
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -145,19 +178,19 @@
       <p>PAUSED</p>
       <div class="options">
         <img
-          src="./images/play-button.svg"
+          src="images/play-button.svg"
           alt="Resume Playing"
           class="play-button"
           onclick="pauseGame()"
         />
         <img
-          src="./images/restart-button.svg"
+          src="images/restart-button.svg"
           alt="Restart Game"
           class="restart-button"
           onclick="restartGame()"
         />
         <img
-          src="./images/home-button.svg"
+          src="images/home-button.svg"
           alt="Home"
           class="home-button"
           onclick="reset()"
@@ -170,6 +203,15 @@
       <h3 id="score" class="score">Score: 0</h3>
     </div>
 
-    <script src="./main.js"></script>
+    <!--------------Preloader Script---------------->
+    <script>
+      var loader = document.querySelector(".loader");
+      window.addEventListener("load", vanish);
+      function vanish() {
+        loader.classList.add("disappear");
+      }
+    </script>
+
+    <script src="main.js"></script>
   </body>
 </html>

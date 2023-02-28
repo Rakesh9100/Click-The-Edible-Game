@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 
 :root {
@@ -23,6 +24,32 @@
   --textcolblock: #52bf17;
 }
 
+.loader {
+
+  position: fixed;
+  z-index: 999999999 !important;
+  background: #f6f6f6;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.disappear {
+  animation: vanish 3s forwards;
+}
+
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 body {
    background: var(--primary);
   background: linear-gradient(149deg, var(--primary) 0%, var(--second) 100%);
@@ -36,23 +63,29 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .container {
   padding-right: 0.5rem;
   display: flex;
   justify-content: flex-end;
 }
+
+.container i{
+  color: #0a183d;
+  z-index: 1;
+}
+
 a {
   color: var(--primary);
 }
 
-h1 {
-  line-height: 1.4;
-  transform: scale(1);
+h3 {
+  font-size: 2vmin;
 }
 
-h2 {
+/* h2 {
   transform: scale(2.3);
-}
+} */
 
 /* Play game hover effect starts */
 
@@ -74,6 +107,7 @@ h2 {
   z-index: 1;
   transition: 0.5s;
   margin: 2em;
+  margin-top: -25px;
   cursor: pointer;
 }
 
@@ -101,12 +135,15 @@ span {
 .btn span:nth-child(1) {
   --n: 1;
 }
+
 .btn span:nth-child(2) {
   --n: 2;
 }
+
 .btn span:nth-child(3) {
   --n: 3;
 }
+
 .btn span:nth-child(4) {
   --n: 4;
 }
@@ -114,20 +151,115 @@ span {
 /* Play Game hover effect ends. */
 
 .screen {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   color: white;
   transition: margin 0.5s ease-out;
 }
+
 .screen-page {
   margin-bottom: 2em;
 }
+
+.main {
+  display: flex;
+  /* margin-bottom: 200px; */
+  flex-direction: column;
+
+
+}
+
+.footer{
+  height: 100px;
+  width: 100vw;
+  background-color: #0a183d;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 1rem;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.footer a{
+  text-decoration: none;
+  color: #757575;
+}
+
+.footer a:hover {
+  color: var(--primary);
+  transition: all 0.3s linear;
+}
+
+.icons {
+  padding: 1rem;
+}
+
+.icons i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  border-radius: 100%;
+  background-color: #0d1e4e;
+  color: #818a91;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+
+.github :hover {
+  background-color: #040404;
+  color: #fff;
+}
+
+.linkedin :hover {
+  background-color: #007bb6;
+  color: #fff;
+}
+
+.instagram :hover {
+  background-color: #ea2c59;
+  color: #fff;
+}
+
+.main h2 {
+  font-size: 7vmin;
+  margin-top: -140px;
+}
+
+.head {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+}
+
+.fruit {
+  flex: 1;
+  justify-content: center;
+}
+
+.fruit h2 {
+  font-size: 7vmin;
+}
+
+.vegetable {
+  flex: 1;
+  justify-content: center;
+}
+
 .screen.up {
   margin-top: -100vh;
+}
+
+.screen.up1 {
+  margin-top: -107vh;
 }
 
 .lists {
@@ -136,27 +268,29 @@ span {
   justify-content: center;
   list-style-type: none;
   padding: 0;
-  border: 2px solid var(--primary);
+  border: 3px solid var(--primary);
   border-radius: 10px;
   background-color: white;
 }
+
 .lists img {
   transform: scale(0.7);
 }
+
 .lists li {
-  margin: 10px;
+  margin: 0.625rem;
   padding: 10px;
 }
 
 .choose-btn {
   background-color: transparent;
-  border: 2px solid var(--textcol);
+  border: 0.125rem solid var(--textcol);
   border-radius: 5px;
   color: var(--c);
   cursor: pointer;
   font-family: inherit;
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   background-color: var(--block);
   padding-bottom: 1rem;
 }
@@ -186,6 +320,7 @@ span {
 
 .game-container {
   position: relative;
+  margin-top: 6rem;
 }
 
 .time,
@@ -197,6 +332,7 @@ span {
   padding: 0.5rem;
   background-color: rgb(87, 87, 87);
   border-radius: 5px;
+  z-index: 10;
 }
 
 .time {
@@ -231,17 +367,20 @@ span {
 p {
   color: #f3ffbd;
 }
+
 h1 {
+  font-size: 4vmin;
   color: #eaf9d9;
 }
 
 #light-icon {
   font-size: x-large;
-
+  position: relative;
   cursor: pointer;
   padding: 0.5em;
   border-radius: 5px;
 }
+
 #back-icon {
   font-size: x-large;
   display: none;
@@ -250,6 +389,7 @@ h1 {
   padding: 0.5em;
   border-radius: 5px;
 }
+
 #back-icon:hover,
 #light-icon:hover,
 #pause-button:hover {
@@ -278,7 +418,6 @@ h1 {
   margin-left: 30vw;
   width: 40vw;
   height: 30vh;
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -289,13 +428,13 @@ h1 {
 }
 
 #pause-menu p {
-  font-size: xx-large;
-  margin: 0 20px;
-  padding: 30px 30px 30px 60px;
+  font-size: 4vmin;
+  margin: 0 1.25rem;
+  /* padding: 30px 30px 30px 60px; */
   color: goldenrod;
   border: 0.1em dashed #daa520;
   border-radius: 2%;
-  letter-spacing: 30px;
+  /* letter-spacing: 30px; */
 }
 
 .play-button,
@@ -331,4 +470,127 @@ h1 {
   background-color: #ffdf8f;
   color: var(--primary);
   transition: all 0.2s ease;
+}
+
+@media screen and (1024px<=width<1440px) {
+  .head {
+    overflow: scroll;
+  }
+
+  .fruit {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (763px<=width<1024px) {
+  .head {
+    overflow: scroll;
+  }
+
+  .fruit {
+    margin-top: 40vh;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (573px<=width<763px) {
+  .head {
+    overflow: scroll;
+  }
+
+  .fruit {
+    margin-top: 43rem;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (383px<=width<573px) {
+  .head {
+    overflow: scroll;
+  }
+
+  .fruit {
+    margin-top: 65rem;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (100px<=width<383px) {
+  .head {
+    overflow: scroll;
+  }
+
+  .btn {
+    margin-top: 0px;
+  }
+
+  .fruit {
+    margin-top: 135rem;
+    margin-bottom: 5vh;
+  }
+}
+
+.toggle-footer{
+  display: none;
+}
+
+@media only screen and (max-width: 825px){
+  .main h2{
+    font-size: 5vmin;
+    padding: 1rem;
+  }
+
+  .btn{
+    font-size: 1rem;
+    width: 10em;
+  }
+
+  .choose-btn{
+    width: 8.375rem;
+    height: 9.375rem;
+  }
+
+  .game-container{
+    margin-top: 10rem;
+  }
+
+  .time, .score{
+    top: 30px
+  }
+
+  #pause-menu {
+    margin-top: 35vh;
+    margin-left: 30vw;
+    width: 45vw;
+    height: 20vh;
+  }
+}
+
+@media only screen and (max-width: 415px){
+
+  .btn{
+    font-size: 0.8rem;
+    width: 10em;
+  }
+
+  .footer{
+    font-size: 0.7rem;
+  }
+
+  .game-container{
+    margin-top: 7rem;
+  }
+
+  .time, .score{
+    top: 50px
+  }
+
+  #pause-menu {
+    margin-top: 35vh;
+    margin-left: 25vw;
+    width: 55vw;
+    height: 15vh;
+  }
+
 }

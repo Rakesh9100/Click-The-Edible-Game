@@ -1,16 +1,22 @@
 const screens = document.querySelectorAll('.screen');
+var foot= document.querySelector('.footer');
+var head = document.querySelector('.head');
 const choose_btns = document.querySelectorAll('.choose-btn');
 const start_btn = document.getElementById('start-btn')
 const game_container = document.getElementById('game-container')
 const timeEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
+const audio = new Audio("sounds/sound1.mp3");
 let seconds = 0
 let score = 0
 let selected_edible = {}
 var gameInterval;
 var isRunning = -1;   //this defines the state of game running or not
 
-start_btn.addEventListener('click', () => screens[0].classList.add('up'))
+start_btn.addEventListener('click', function(){
+    screens[0].classList.add('up')
+    head.style.display = "flex";
+});
 
 choose_btns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -18,9 +24,12 @@ choose_btns.forEach(btn => {
         const src = img.getAttribute('src')
         const alt = img.getAttribute('alt')
         selected_edible = { src, alt }
-        screens[1].classList.add('up')
+        screens[1].classList.add('up1')
         setTimeout(createEdible, 1000)
+        game_container.style.height= "100vh"
         startGame()
+        displayChange()
+        audio.play();
     })
 })
 
@@ -28,7 +37,37 @@ function startGame() {
     document.getElementById("pause-menu").style.display = "none";
     document.getElementById("pause-button").style.display = "block";
     isRunning = 1;
-    gameInterval = setInterval(increaseTime, 1000)
+    gameInterval = setInterval(increaseTime, 1000);
+    
+    document.onkeydown = capturekey;
+
+    function capturekey(e) {
+        e = e || window.event;
+        
+        if (e.code == 'F5') {    
+            if (confirm('Do You Want to Refresh ?')) {
+                //allow to refresh
+            } 
+            else {
+                //avoid from refresh
+                e.preventDefault()
+                e.stopPropagation()
+            }
+        }
+        if (e.ctrlKey) {
+            var c = e.which || e.keyCode;
+            if (c == 82) {
+                if (confirm('Do You Want to Refresh ?')) {
+                    //allow to refresh
+                } 
+                else {
+                    //avoid from refresh
+                    e.preventDefault()
+                    e.stopPropagation()
+                }
+            }
+        }
+    }
 }
 
 function starting(){
@@ -69,10 +108,12 @@ function getRandomLocation() {
 
 function catchEdible() {
     if (isRunning == 1) {
+        const audio = new Audio("sounds/sound2.mp3");
         increaseScore()
         this.classList.add('caught')
         setTimeout(() => this.remove(), 2000)
         addEdibles()
+        audio.play();
     }
 }
 
@@ -159,3 +200,9 @@ icon.onclick = function () {
         document.getElementById("light-icon").classList.add("fa-moon");
     }
 };
+
+
+
+function displayChange(){
+    foot.classList.toggle("toggle-footer");
+}
