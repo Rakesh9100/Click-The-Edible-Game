@@ -6,45 +6,30 @@
 }
 
 :root {
-  --primary: rgba(255, 154, 158, 1);
-  --second: rgba(254, 207, 239, 1);
+  --primary: rgb(234, 20, 173);
+  --second: rgb(220, 150, 216);
   --textcol: #ffffff;
-  --c: #f58286;
-  --block: #f5adb0b9;
-  --textcolblock: #f84046;
+  --c: #ce29d4;
+  --block: #ce2cc9fc;
+  --textcolblock: #e4a6d8;
 }
 
 .dark-theme {
-  --second: #888888;
-  --primary: #292d3f;
-  --textcol: rgb(255, 255, 255);
-  --c: #8892c6;
-  --block: #92b4df65;
-  --textcolblock: #547ba8;
+  --second: #13f029;
+  --primary: #21be06;
+  --textcol: rgb(209, 222, 217);
+  --c: #10cb0a;
+  --block: #11e809f1;
+  --textcolblock: #52bf17;
 }
 
 body {
-  /* background: var(--primary);
+   background: var(--primary);
   background: linear-gradient(149deg, var(--primary) 0%, var(--second) 100%);
   color: white;
   font-family: "STLiti", sans-serif;
-  height: 100%; */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
+  height: 100%; 
+ 
   overflow: hidden;
   margin: 0;
   text-align: center;
