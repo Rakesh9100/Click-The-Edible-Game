@@ -197,9 +197,27 @@
         />
       </div>
     </div>
+    <div id="gameOver-menu">
+      <p>GAMEOVER</p>
+      <div class="gameover-options">
+        <img
+          src="images/restart-button.svg"
+          alt="Restart Game"
+          class="restart-button"
+          onclick="restartGame()"
+        />
+        <div id="finalScore"></div>
+        <img
+          src="images/home-button.svg"
+          alt="Home"
+          class="home-button"
+          onclick="reset()"
+        />
+      </div>
+    </div>
 
     <div class="screen game-container" id="game-container">
-      <h3 id="time" class="time">Time: 00:00</h3>
+      <h3 id="time" class="time">Time: 00:30</h3>
       <h3 id="score" class="score">Score: 0</h3>
     </div>
 
