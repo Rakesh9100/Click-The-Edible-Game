@@ -471,6 +471,61 @@ h1 {
   transition: all 0.2s ease;
 }
 
+#gameOver-menu {
+  border: 0.3em solid goldenrod;
+  background-color: #eaf9d9;
+  border-radius: 0.5em;
+  position: absolute;
+  z-index: 9;
+  display: none;
+  margin-top: 35vh;
+  margin-left: 30vw;
+  width: 40vw;
+  height: 30vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#gameOver-menu .gameover-options {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#finalScore{
+  color: rgb(218,165,32);
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: large;
+}
+
+#gameOver-menu p {
+  font-size: 4vmin;
+  margin: 0 1.25rem;
+  /* padding: 30px 30px 30px 60px; */
+  color: goldenrod;
+  border: 0.1em dashed #daa520;
+  border-radius: 2%;
+  /* letter-spacing: 30px; */
+}
+
+#gameOver-menu {
+  animation-name: scaleMenu;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform: scale(1);
+}
+
+@keyframes scaleMenu {
+  10% {
+    transform: scale(1.2);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+}
+
 @media screen and (1024px<=width<1440px) {
   .head {
     overflow: scroll;
