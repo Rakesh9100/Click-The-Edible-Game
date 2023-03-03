@@ -211,17 +211,27 @@ span {
 }
 
 .footer{
-  height: 100px;
+  height: auto;
   width: 100vw;
   background-color: #0a183d;
   bottom: 0;
   position: fixed;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 1rem;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items:center;
+  padding: 1rem .5rem;
   text-transform: uppercase;
   z-index: 2;
+}
+.footer .copy{
+  padding:.5rem 2rem;
+}
+.icons{
+  padding:.5rem 2rem;
+  text-align:center;
+  justify-content:center;
 }
 
 .footer a{
@@ -230,13 +240,10 @@ span {
 }
 
 .footer a:hover {
-  color: var(--primary);
+  color: rgba(255, 154, 158, 1);
   transition: all 0.3s linear;
 }
 
-.icons {
-  padding: 1rem;
-}
 
 .icons i {
   width: 40px;
@@ -598,6 +605,12 @@ h1 {
     margin-top: 43rem;
     margin-bottom: 5vh;
   }
+  .footer{
+    font-size: 0.7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (383px<=width<573px) {
@@ -623,6 +636,12 @@ h1 {
   .fruit {
     margin-top: 135rem;
     margin-bottom: 5vh;
+  }
+  .footer{
+    font-size: 0.7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -660,6 +679,12 @@ h1 {
     width: 45vw;
     height: 20vh;
   }
+  .footer{
+    font-size: 0.7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   #instructions, #instructions2, #instructions3{
     font-size: small;
@@ -675,7 +700,11 @@ h1 {
 
   .footer{
     font-size: 0.7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+  
 
   .game-container{
     margin-top: 7rem;
