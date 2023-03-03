@@ -74,6 +74,9 @@ function showInstructions(){
     document.getElementById("instructions").style.display = "flex";
     document.getElementById("instructions2").style.display = "flex";
     document.getElementById("instructions3").style.display = "flex";
+    if (isRunning != -1) {
+        pauseGame()
+    }
 
 }
 
@@ -81,6 +84,7 @@ function closeInstructions(){
     document.getElementById("instructions").style.display = "none";
     document.getElementById("instructions2").style.display = "none";
     document.getElementById("instructions3").style.display = "none";
+    isRunning = 1;
 }
 
 function gameOver(){
