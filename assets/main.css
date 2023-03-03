@@ -110,6 +110,44 @@ h3 {
   cursor: pointer;
 }
 
+#instruction-btn{
+  justify-content: center;
+  display: flex;
+  width: 11rem;
+  height: 2.5rem;
+  margin: 0px;
+  margin-top: 0.3rem;
+  font-size: 15px;
+  align-items: center;
+}
+
+#instructions, #instructions2, #instructions3{
+  border: 0.3em solid goldenrod;
+  background-color: #eaf9d9;
+  border-radius: 0.5em;
+  position: absolute;
+  z-index: 9;
+  padding: 1rem;
+  font-weight: bold;
+  display: none;
+  width: 60vw;
+  margin-bottom: 10rem;
+  height: 80vh;
+  color: #ff5a86;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: all 0.5s ease-in-out;
+  animation-name: scaleMenu;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  transform: scale(1);
+}
+
+#instructions ul li, #instructions2 ul li, #instructions3 ul li{
+  list-style: none;
+  padding: 5px;
+}
+
 span {
   position: absolute;
   width: 25%;
@@ -318,6 +356,9 @@ span {
 }
 
 .game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   margin-top: 6rem;
 }
@@ -619,6 +660,10 @@ h1 {
     width: 45vw;
     height: 20vh;
   }
+
+  #instructions, #instructions2, #instructions3{
+    font-size: small;
+  }
 }
 
 @media only screen and (max-width: 415px){
@@ -645,6 +690,13 @@ h1 {
     margin-left: 25vw;
     width: 55vw;
     height: 15vh;
+  }
+
+  #instructions, #instructions2, #instructions3{
+    font-size: 0.47rem;
+  }
+  #instructions ul, #instructions2 ul, #instructions3 ul{
+    padding: 0px;
   }
 
 }
