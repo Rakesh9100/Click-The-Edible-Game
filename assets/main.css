@@ -148,7 +148,10 @@ span {
 }
 
 /* Play Game hover effect ends. */
-
+.edibles{
+  padding-top: 19rem;
+  height: 100%;
+}
 .screen {
   /* display: flex; */
   flex-direction: column;
@@ -544,24 +547,26 @@ h1 {
   }
 }
 
-@media screen and (763px<=width<1024px) {
+@media screen and (718.5px<=width<1024px) {
   .head {
     overflow: scroll;
   }
-
+  
   .fruit {
-    margin-top: 40vh;
+    margin-top: 10vh;
     margin-bottom: 5vh;
   }
 }
 
-@media screen and (573px<=width<763px) {
+@media screen and (573px<=width<718.5px) {
   .head {
     overflow: scroll;
   }
-
+  .edibles{
+    padding-top: 43rem;
+  }
   .fruit {
-    margin-top: 43rem;
+    margin-top: 5vh;
     margin-bottom: 5vh;
   }
   .footer{
@@ -572,13 +577,20 @@ h1 {
   }
 }
 
-@media screen and (383px<=width<573px) {
-  .head {
+@media screen and (max-width:573px) {
+   .head {
     overflow: scroll;
   }
-
   .fruit {
-    margin-top: 65rem;
+    margin-top: 26rem;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (383px<=width<545px) {
+ 
+  .fruit {
+    padding-top: 25rem;
+    margin-top: 26rem;
     margin-bottom: 5vh;
   }
 }
@@ -625,7 +637,7 @@ h1 {
   }
 
   .game-container{
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 
   .time, .score{
