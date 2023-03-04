@@ -41,13 +41,23 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 
 <h2>Overview⭐</h2>
 
-<h2>Live Project -- (https://rakesh9100.github.io/Click-The-Edible-Game/)</h2>
+<h2>Live Project -- (https://click-the-edible-game.netlify.app/)</h2>
 
-![1](https://user-images.githubusercontent.com/73993775/190235088-d9fecdec-6269-4e32-a093-0d7276af4c47.png)<br><br>
-![2](https://user-images.githubusercontent.com/73993775/190235099-a9aa9fb2-371f-434e-9668-b9691ae0e37e.png)
-<h2>Let we select Watermelon Fruit :-</h2>
+<h3>Landing Page :-</h3>
 
-![3](https://user-images.githubusercontent.com/73993775/190235113-4b8fa91a-746b-4414-ac92-199f91857fb8.png)
+![image](https://user-images.githubusercontent.com/73993775/222927583-ebb9ddf2-df0c-44e2-8c28-003166b0ca4a.png)<br><br>
+<h3>Home/Main Page :-</h3>
+
+![image](https://user-images.githubusercontent.com/73993775/222927601-cabf1aa2-114a-4779-a3b2-52e9c2c95c9c.png)<br>
+<h3>Selection of Edible Page :-</h3>
+
+![image](https://user-images.githubusercontent.com/73993775/222927612-35a30d46-059a-49ac-83fc-84f5e8b1bd5e.png)<br>
+<h3>GamePlay Screen :-</h3>
+
+![image](https://user-images.githubusercontent.com/73993775/222927641-0df09567-7239-4559-94ff-204953d586a6.png)<br>
+<h3>Play/Pause/Restart Screen :-</h3>
+
+![image](https://user-images.githubusercontent.com/73993775/222927660-01a3a289-a20e-4568-be74-c9f594e1104e.png)<br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
