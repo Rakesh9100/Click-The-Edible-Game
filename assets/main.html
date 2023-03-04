@@ -23,6 +23,10 @@
     </div>
 
     <div class="container">
+      <button class="btn" id="instruction-btn" onclick="showInstructions()">
+        Instructions
+        <span></span><span></span><span></span><span></span>
+      </button>
       <i
         class="fa-solid fa-moon"
         id="light-icon"
@@ -50,6 +54,42 @@
         Play Game!
         <span></span><span></span><span></span><span></span>
       </button>
+      <div id="instructions">
+        <b>&#129389 Alrighty, welcome to the Click the Edible Game! &#127817</b>
+       <br><b>Get ready to unleash your inner produce-picking pro and show those fruits and veggies who's boss!
+        </b><br>
+          <b>
+        Here's how to play:
+        </b>
+        <ul>
+          <li>
+            Choose your sidekick – will it be Team Veggie or Team Fruit?
+          </li>
+          <li>
+            Once you've made your choice, the timer will start ticking down from 30 seconds and choosen vegie/fruit will appear on the screen, bouncing around like it's been drinking too much juice.
+          </li>
+          <li>
+            Your job is to click on the fruit/vegie before the timer runs out. For every correct click, you'll score a juicy point!
+          </li>
+          <li>
+            Keep your eyes peeled and your fingers nimble because once the clock strikes zero, the game is over and the veggies and fruits will dance away.
+
+          </li>
+        </ul> 
+        <div id="info-span">
+          Ready to squash the competition?
+
+        </div>
+        <div style="display:flex; align-items: center; justify-content: center;" >
+
+          <button class="btn" id="instruction-btn" style="font-size: 12px;" onclick="closeInstructions()">
+             Let's get pickin'! 
+            <span></span><span></span><span></span><span></span>
+          </button>
+        </div>
+        
+        
+      </div>
 
       <footer class="footer" id="footer">
         <div class="copy">
@@ -74,6 +114,40 @@
       </footer> -->
     </div>
     <div class="screen head">
+      <div id="instructions2" style="margin: 0px">
+        <b>&#129389 Alrighty, welcome to the Click the Edible Game! &#127817</b>
+        <br><b>Get ready to unleash your inner produce-picking pro and show those fruits and veggies who's boss!
+         </b><br>
+           <b>
+         Here's how to play:
+         </b>
+         <ul>
+           <li>
+             Choose your sidekick – will it be Team Veggie or Team Fruit?
+           </li>
+           <li>
+             Once you've made your choice, the timer will start ticking down from 30 seconds and choosen vegie/fruit will appear on the screen, bouncing around like it's been drinking too much juice.
+           </li>
+           <li>
+             Your job is to click on the fruit/vegie before the timer runs out. For every correct click, you'll score a juicy point!
+           </li>
+           <li>
+             Keep your eyes peeled and your fingers nimble because once the clock strikes zero, the game is over and the veggies and fruits will dance away.
+ 
+           </li>
+         </ul> 
+         <div id="info-span">
+           Ready to squash the competition?
+ 
+         </div>
+         <div style="display:flex; align-items: center; justify-content: center;" >
+ 
+           <button class="btn" id="instruction-btn" style="font-size: 12px;" onclick="closeInstructions()">
+              Let's get pickin'! 
+             <span></span><span></span><span></span><span></span>
+           </button>
+         </div>
+      </div>
       <div class="fruit">
         <div class="screen-page">
           <div></div>
@@ -205,20 +279,54 @@
           alt="Restart Game"
           class="restart-button"
           onclick="restartGame()"
-        />
-        <div id="finalScore"></div>
-        <img
+          />
+          <div id="finalScore"></div>
+          <img
           src="images/home-button.svg"
           alt="Home"
           class="home-button"
           onclick="reset()"
-        />
+          />
+        </div>
       </div>
-    </div>
-
-    <div class="screen game-container" id="game-container">
-      <h3 id="time" class="time">Time: 00:30</h3>
-      <h3 id="score" class="score">Score: 0</h3>
+      
+      <div class="screen game-container" id="game-container">
+        <h3 id="time" class="time">Time: 00:30</h3>
+        <h3 id="score" class="score">Score: 0</h3>
+        <div id="instructions3" style="margin: 0px">
+        <b>&#129389 Alrighty, welcome to the Click the Edible Game! &#127817</b>
+        <br><b>Get ready to unleash your inner produce-picking pro and show those fruits and veggies who's boss!
+         </b><br>
+           <b>
+         Here's how to play:
+         </b>
+         <ul>
+           <li>
+             Choose your sidekick – will it be Team Veggie or Team Fruit?
+           </li>
+           <li>
+             Once you've made your choice, the timer will start ticking down from 30 seconds and choosen vegie/fruit will appear on the screen, bouncing around like it's been drinking too much juice.
+           </li>
+           <li>
+             Your job is to click on the fruit/vegie before the timer runs out. For every correct click, you'll score a juicy point!
+           </li>
+           <li>
+             Keep your eyes peeled and your fingers nimble because once the clock strikes zero, the game is over and the veggies and fruits will dance away.
+ 
+           </li>
+         </ul> 
+         <div id="info-span">
+           Ready to squash the competition?
+ 
+         </div>
+         <div style="display:flex; align-items: center; justify-content: center;" >
+ 
+           <button class="btn" id="instruction-btn" style="font-size: 12px;" onclick="closeInstructions()">
+              Let's get pickin'! 
+             <span></span><span></span><span></span><span></span>
+           </button>
+         </div>
+        </div>
     </div>
 
     <!--------------Preloader Script---------------->
