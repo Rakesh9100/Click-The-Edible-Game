@@ -45,7 +45,7 @@ function startGame() {
         e = e || window.event;
         
         if (e.code == 'F5') {    
-            if (confirm('Do You Want to Refresh ?')) {
+            if (confirm('Do you want to Refresh ? Your progress may be lost!!')) {
                 //allow to refresh
             } 
             else {
@@ -57,7 +57,7 @@ function startGame() {
         if (e.ctrlKey) {
             var c = e.which || e.keyCode;
             if (c == 82) {
-                if (confirm('Do You Want to Refresh ?')) {
+                if (confirm('Do you want to Refresh ? Your progress may be lost!!')) {
                     //allow to refresh
                 } 
                 else {
@@ -163,6 +163,7 @@ function reset() {
     // window.close();
     // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
 }
+
 function pauseGame() {
     //if running then pause the timer
     if (isRunning == 1) {
@@ -183,6 +184,7 @@ function pauseGame() {
         document.getElementById("home-icon").style.display = "block";
     }
 }
+
 // Pause game by space bar
 document.body.addEventListener("keyup", (e) => {
     if (e.keyCode == 32 || e.keyCode == 0) {
@@ -229,8 +231,6 @@ icon.onclick = function () {
         document.getElementById("light-icon").classList.add("fa-moon");
     }
 };
-
-
 
 function displayChange(){
     foot.classList.toggle("toggle-footer");
