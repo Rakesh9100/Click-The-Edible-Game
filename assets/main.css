@@ -186,10 +186,7 @@ span {
 }
 
 /* Play Game hover effect ends. */
-.edibles{
-  padding-top: 19rem;
-  height: 100%;
-}
+
 .screen {
   /* display: flex; */
   flex-direction: column;
@@ -577,37 +574,44 @@ h1 {
   }
 }
 
-@media screen and (1024px<=width<1440px) {
+@media screen and (1336px<=width<1440px) {
   .head {
     overflow: scroll;
   }
 
   .fruit {
-    margin-top: 10vh;
+    margin-top: 5rem;
     margin-bottom: 5vh;
   }
 }
 
-@media screen and (718.5px<=width<1024px) {
+@media screen and (1024px<=width<1336px) {
+  .head {
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 25rem;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (701px<width<1024px) {
+  .head {
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 28rem;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (573px<=width<=701px) {
   .head {
     overflow: scroll;
   }
   
   .fruit {
-    margin-top: 10vh;
-    margin-bottom: 5vh;
-  }
-}
-
-@media screen and (573px<=width<718.5px) {
-  .head {
-    overflow: scroll;
-  }
-  .edibles{
-    padding-top: 43rem;
-  }
-  .fruit {
-    margin-top: 5vh;
+    margin-top: 52rem;
     margin-bottom: 5vh;
   }
   .footer{
@@ -618,25 +622,27 @@ h1 {
   }
 }
 
-@media screen and (max-width:573px) {
-   .head {
+@media screen and (527px<width<573px) {
+  .head {
     overflow: scroll;
   }
   .fruit {
-    margin-top: 26rem;
-    margin-bottom: 5vh;
-  }
-}
-@media screen and (383px<=width<545px) {
- 
-  .fruit {
-    padding-top: 25rem;
-    margin-top: 26rem;
+    margin-top: 52rem;
     margin-bottom: 5vh;
   }
 }
 
-@media screen and (100px<=width<383px) {
+@media screen and (383px<=width<=527px) {
+  .head {
+    overflow: scroll;
+  }
+  .fruit {
+    margin-top: 72rem;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (354px<=width<383px) {
   .head {
     overflow: scroll;
   }
@@ -646,7 +652,22 @@ h1 {
   }
 
   .fruit {
-    margin-top: 135rem;
+    margin-top: 73rem;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (100px<=width<354px) {
+  .head {
+    overflow: scroll;
+  }
+
+  .btn {
+    margin-top: 0px;
+  }
+
+  .fruit {
+    margin-top: 143rem;
     margin-bottom: 5vh;
   }
   .footer{
