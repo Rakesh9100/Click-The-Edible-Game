@@ -20,9 +20,6 @@ start_btn.addEventListener('click', function(){
 
 choose_btns.forEach(btn => {
     btn.addEventListener('click', () => {
-        screens[1].classList.add('up_time')
-    })
-    btn.addEventListener('click', () => {
         const img = btn.querySelector('img')
         const src = img.getAttribute('src')
         const alt = img.getAttribute('alt')
@@ -73,6 +70,23 @@ function startGame() {
     }
 }
 
+function showInstructions(){
+    document.getElementById("instructions").style.display = "flex";
+    document.getElementById("instructions2").style.display = "flex";
+    document.getElementById("instructions3").style.display = "flex";
+    if (isRunning != -1) {
+        pauseGame()
+    }
+
+}
+
+function closeInstructions(){
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("instructions2").style.display = "none";
+    document.getElementById("instructions3").style.display = "none";
+    isRunning = 1;
+}
+
 function gameOver(){
         document.getElementById("gameOver-menu").style.display = "flex";
         document.getElementById("pause-button").style.display = "none";
@@ -88,12 +102,10 @@ function starting(){
 function decreaseTime() {
     let m = Math.floor(seconds / 60)
     let s = seconds % 60
-    console.log("value of s", s)
     m = m < 10 ? `0${m}` : m
     s = s < 10 ? `0${s}` : s
     timeEl.innerHTML = `Time: ${m}:${s}`
     if (s == 0) {
-        console.log("GameOVER")
         gameOver()
     }else{
         seconds--
