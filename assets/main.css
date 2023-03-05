@@ -203,7 +203,7 @@ span {
 }
 
 .screen-page {
-  margin-bottom: 2.5em;
+  margin-bottom: 3em;
 }
 
 .main {
@@ -312,7 +312,7 @@ span {
   margin-top: -107vh;
 }
 .container2 {
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
 }
@@ -595,25 +595,35 @@ h1 {
     overflow: scroll;
   }
 
-  .fruit {
-    margin-top: 5rem;
+  .fruit, .vegetable, .snacks, .sweets {
+    /* margin-top: 5rem; */
     margin-bottom: 5vh;
   }
-  .vegetable {
+  .snacks {
     margin-bottom: 5rem;
   }
+  .back-icon{
+    margin-right: 10px;
+  }
+  .container{
+    padding-right: 30px;
+  }
+
 }
 
 @media screen and (1024px<=width<1336px) {
   .head {
     overflow: scroll;
   }
-  .fruit {
-    margin-top: 25rem;
+  .fruit, .vegetable, .snacks, .sweets {
+    /* margin-top: 25rem; */
     margin-bottom: 5vh;
   }
-  .vegetable {
-    margin-bottom: 2.5rem;
+  .snacks {
+    margin-bottom: 5rem;
+  }
+  .container{
+    padding-right: 30px;
   }
 }
 
@@ -621,12 +631,15 @@ h1 {
   .head {
     overflow: scroll;
   }
-  .fruit {
-    margin-top: 28rem;
+  .fruit, .vegetable, .snacks, .sweets {
+    margin-top: 4rem;
     margin-bottom: 5vh;
   }
-  .vegetable {
-    margin-bottom: 2.5rem;
+  .snacks {
+    margin-bottom: 5rem;
+  }
+  .container{
+    padding-right: 30px;
   }
 }
 
@@ -635,18 +648,22 @@ h1 {
     overflow: scroll;
   }
   
-  .fruit {
-    margin-top: 52rem;
+  .fruit,.vegetable, .snacks, .sweets {
+    margin-top: 4rem;
     margin-bottom: 5vh;
   }
-  .vegetable {
-    margin-bottom: 2.5rem;
+  .snacks {
+    margin-bottom: 5rem;
   }
+
   .footer{
     font-size: 0.7rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .container{
+    padding-right: 30px;
   }
 }
 
@@ -654,26 +671,34 @@ h1 {
   .head {
     overflow: scroll;
   }
-  .fruit {
-    margin-top: 52rem;
+  .fruit,.vegetable, .snacks, .sweets {
+    margin-top: 4rem;
     margin-bottom: 5vh;
   }
-  .vegetable {
-    margin-bottom: 2.5rem;
+  .snacks {
+    margin-bottom: 5rem;
   }
+  .container{
+    padding-right: 30px;
+  }
+
 }
 
 @media screen and (383px<=width<=527px) {
   .head {
     overflow: scroll;
   }
-  .fruit {
-    margin-top: 77rem;
+  .fruit,.vegetable, .snacks, .sweets {
+    margin-top: 4rem;
     margin-bottom: 5vh;
   }
-  .vegetable {
-    margin-bottom: 2.5rem;
+  .snacks {
+    margin-bottom: 5rem;
   }
+  .container{
+    padding-right: 30px;
+  }
+
 }
 
 @media screen and (354px<=width<383px) {
@@ -685,12 +710,15 @@ h1 {
     margin-top: 0px;
   }
 
-  .fruit {
-    margin-top: 77rem;
+  .fruit,.vegetable, .snacks, .sweets {
+    margin-top: 4rem;
     margin-bottom: 5vh;
   }
-  .vegetable {
-    margin-bottom: 2.5rem;
+  .snacks {
+    margin-bottom: 5rem;
+  }
+  .container{
+    padding-right: 30px;
   }
 }
 
@@ -703,11 +731,11 @@ h1 {
     margin-top: 0px;
   }
 
-  .fruit {
-    margin-top: 149rem;
+  .fruit,.vegetable, .snacks, .sweets {
+    margin-top: 4rem;
     margin-bottom: 5vh;
   }
-  .vegetable {
+  .snacks {
     margin-bottom: 5rem;
   }
   .footer{
