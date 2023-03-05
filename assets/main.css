@@ -203,7 +203,7 @@ span {
 }
 
 .screen-page {
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
 }
 
 .main {
@@ -299,7 +299,7 @@ span {
   font-size: 7vmin;
 }
 
-.vegetable {
+.vegetable .sweets .snacks{
   flex: 1;
   justify-content: center;
 }
@@ -311,6 +311,11 @@ span {
 .screen.up1 {
   margin-top: -107vh;
 }
+.container2 {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
 
 .lists {
   display: flex;
@@ -321,6 +326,8 @@ span {
   border: 3px solid var(--primary);
   border-radius: 10px;
   background-color: white;
+  width: fit-content;
+  margin: auto;
 }
 
 .lists img {
