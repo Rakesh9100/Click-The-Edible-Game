@@ -26,7 +26,6 @@ choose_btns.forEach(btn => {
         const alt = img.getAttribute('alt')
         selected_edible = { src, alt }
         screens[1].classList.add('up1')
-        setTimeout(createEdible, 1000)
         game_container.style.height= "100vh"
         startGame()
         displayChange()
@@ -58,7 +57,7 @@ function chooseGameplayTime(){
         }
         else if(seconds === "2 min"){
             document.getElementById("time").innerHTML = "Time: 02:00"
-            seconds = 119
+            seconds = 120
             return seconds
         }
     })
@@ -66,6 +65,8 @@ function chooseGameplayTime(){
 }
 
 function closeGameplayDialog(){
+    isRunning = 1;
+    setTimeout(createEdible, 1000)
     document.getElementById("gameplayTime").style.display = "none"
     document.getElementById("time").style.display = "block"
     gameInterval = setInterval(decreaseTime, 1000);
@@ -75,7 +76,6 @@ function startGame() {
     document.getElementById("pause-menu").style.display = "none";
     document.getElementById("pause-button").style.display = "block";
     document.getElementById("gameOver-menu").style.display = "none";
-    isRunning = 1;
     seconds = chooseGameplayTime()
     document.onkeydown = capturekey;
 
@@ -238,6 +238,7 @@ document.body.addEventListener("keyup", (e) => {
 function restartGame() {
     isRunning = 0; //this will stop new edibles from generating
     //reset time and score
+    seconds = 0
     clearInterval(gameInterval);
     score = 0;
     seconds = chooseGameplayTime()
