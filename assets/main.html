@@ -359,7 +359,7 @@
           src="images/play-button.svg"
           alt="Resume Playing"
           class="play-button"
-          onclick="pauseGame()"
+          onclick="resumeGame()"
         />
         <img
           src="images/restart-button.svg"
@@ -395,7 +395,7 @@
       </div>
       
       <div class="screen game-container" id="game-container">
-        <h3 id="time" class="time">Time: 00:30</h3>
+        <h3 id="time" class="time"></h3>
         <h3 id="score" class="score">Score: 0</h3>
         <div id="instructions3" style="margin: 0px">
         <b>&#129389 Alrighty, welcome to the Click the Edible Game! &#127817</b>
@@ -430,6 +430,27 @@
              <span></span><span></span><span></span><span></span>
            </button>
          </div>
+        </div>
+        <div id="gameplayTime">
+          <b>Howdy, partner! How many hours of rootin' tootin' gameplay have you clocked up on this game?</b>
+          <div style="display: flex; padding: 12px;">
+            <button class="btn" id="gameTime1" style="font-size: 12px;" onclick="closeGameplayDialog()">
+              30 secs
+              <span></span><span></span><span></span><span></span>
+            </button>
+            <button class="btn" id="gameTime2" style="font-size: 12px;" onclick="closeGameplayDialog()">
+              1 min
+              <span></span><span></span><span></span><span></span>
+            </button>
+            <button class="btn" id="gameTime3" style="font-size: 12px;" onclick="closeGameplayDialog()">
+              1:30 min
+              <span></span><span></span><span></span><span></span>
+            </button>
+            <button class="btn" id="gameTime4" style="font-size: 12px;" onclick="closeGameplayDialog()">
+              2 min
+              <span></span><span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
     </div>
 

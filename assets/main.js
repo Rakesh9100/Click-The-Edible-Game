@@ -7,10 +7,11 @@ const game_container = document.getElementById('game-container')
 const timeEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
 const audio = new Audio("sounds/sound1.mp3");
-let seconds = 30
+var seconds = 0
 let score = 0
 let selected_edible = {}
 var gameInterval;
+var timer;
 var isRunning = -1;   //this defines the state of game running or not
 
 start_btn.addEventListener('click', function(){
@@ -25,7 +26,6 @@ choose_btns.forEach(btn => {
         const alt = img.getAttribute('alt')
         selected_edible = { src, alt }
         screens[1].classList.add('up1')
-        setTimeout(createEdible, 1000)
         game_container.style.height= "100vh"
         startGame()
         displayChange()
@@ -33,12 +33,50 @@ choose_btns.forEach(btn => {
     })
 })
 
+function chooseGameplayTime(){
+    document.getElementById("time").style.display = "none"
+    document.getElementById("gameplayTime").style.display = "flex"
+    let buttonList = document.querySelectorAll("button");
+    buttonList.forEach(function(i){
+        i.addEventListener("click", function(e){
+            seconds = (e.target.innerText).trim()
+            if (seconds === "30 secs"){
+                seconds = 29
+                document.getElementById("time").innerHTML = "Time: 00:30"
+                return seconds
+            }
+            else if(seconds === "1 min"){
+                document.getElementById("time").innerHTML = "Time: 01:00"
+                seconds = 59
+                return seconds
+            }
+            else if(seconds === "1:30 min"){
+            document.getElementById("time").innerHTML = "Time: 01:30"
+            seconds = 89
+            return seconds
+        }
+        else if(seconds === "2 min"){
+            document.getElementById("time").innerHTML = "Time: 02:00"
+            seconds = 120
+            return seconds
+        }
+    })
+})
+}
+
+function closeGameplayDialog(){
+    isRunning = 1;
+    setTimeout(createEdible, 1000)
+    document.getElementById("gameplayTime").style.display = "none"
+    document.getElementById("time").style.display = "block"
+    gameInterval = setInterval(decreaseTime, 1000);
+}
+
 function startGame() {
     document.getElementById("pause-menu").style.display = "none";
     document.getElementById("pause-button").style.display = "block";
     document.getElementById("gameOver-menu").style.display = "none";
-    isRunning = 1;
-    gameInterval = setInterval(decreaseTime, 1000);
+    seconds = chooseGameplayTime()
     document.onkeydown = capturekey;
 
     function capturekey(e) {
@@ -74,10 +112,7 @@ function showInstructions(){
     document.getElementById("instructions").style.display = "flex";
     document.getElementById("instructions2").style.display = "flex";
     document.getElementById("instructions3").style.display = "flex";
-    if (isRunning != -1) {
-        pauseGame()
-    }
-
+    pauseGame()
 }
 
 function closeInstructions(){
@@ -105,7 +140,7 @@ function decreaseTime() {
     m = m < 10 ? `0${m}` : m
     s = s < 10 ? `0${s}` : s
     timeEl.innerHTML = `Time: ${m}:${s}`
-    if (s == 0) {
+    if (s == 0 && m == 0) {
         gameOver()
     }else{
         seconds--
@@ -167,6 +202,8 @@ function reset() {
 function pauseGame() {
     //if running then pause the timer
     if (isRunning == 1) {
+        // saving the interval while pause
+        timer = seconds
         clearInterval(gameInterval);
         isRunning = 0;
         //show pause-menu when game paused
@@ -174,15 +211,18 @@ function pauseGame() {
         document.getElementById("pause-button").style.display = "none";
         document.getElementById("home-icon").style.display = "none";
     }
-    // else start the timer
-    else {
-        gameInterval = setInterval(decreaseTime, 1000);
-        isRunning = 1;
-        //hide pause-menu when game starts again
-        document.getElementById("pause-menu").style.display = "none";
-        document.getElementById("pause-button").style.display = "block";
-        document.getElementById("home-icon").style.display = "block";
-    }
+}
+
+function resumeGame(){
+    // starting the timer
+    // overwriting the seconds with interval while pause
+    seconds = timer
+    gameInterval = setInterval(decreaseTime, 1000);
+    isRunning = 1;
+    //hide pause-menu when game starts again
+    document.getElementById("pause-menu").style.display = "none";
+    document.getElementById("pause-button").style.display = "block";
+    document.getElementById("home-icon").style.display = "block";
 }
 
 // Pause game by space bar
@@ -198,11 +238,11 @@ document.body.addEventListener("keyup", (e) => {
 function restartGame() {
     isRunning = 0; //this will stop new edibles from generating
     //reset time and score
+    seconds = 0
     clearInterval(gameInterval);
     score = 0;
-    seconds = 30;
+    seconds = chooseGameplayTime()
     scoreEl.innerHTML = `Score: ${score}`
-    timeEl.innerHTML = `Time: 00:30`
     //show the home icon
     document.getElementById("back-icon").style.display = "block";
     //delete all created edibles

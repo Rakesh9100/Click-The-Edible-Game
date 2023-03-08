@@ -112,7 +112,7 @@ h3 {
   cursor: pointer;
 }
 
-#instruction-btn{
+#instruction-btn, #gameTime1, #gameTime2, #gameTime3, #gameTime4{
   justify-content: center;
   display: flex;
   width: 11rem;
@@ -137,6 +137,31 @@ h3 {
   width: 60vw;
   margin-bottom: 10rem;
   height: 80vh;
+  color: #ff1251;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: all 0.5s ease-in-out;
+  animation-name: scaleMenu;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  transform: scale(1);
+}
+
+#gameplayTime{
+  border: 0.3em solid goldenrod;
+  background-color: #eaf9d9;
+  border-radius: 0.5em;
+  position: absolute;
+  z-index: 9;
+  padding: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  margin-bottom: 10rem;
+  height: 40vh;
   color: #ff1251;
   flex-direction: column;
   justify-content: space-evenly;
@@ -396,6 +421,7 @@ span {
 }
 
 .time {
+  display: none;
   left: 50px;
 }
 
@@ -789,6 +815,11 @@ h1 {
   #instructions, #instructions2, #instructions3{
     font-size: small;
   }
+
+  #gameplayTime div{
+      flex-direction: column;
+      height: 8rem;
+  }
 }
 
 @media only screen and (max-width: 415px){
@@ -826,6 +857,14 @@ h1 {
   }
   #instructions ul, #instructions2 ul, #instructions3 ul{
     padding: 0px;
+  }
+
+  #gameplayTime{
+    height: 54vh;
+  }
+
+  #gameplayTime div button{
+    width: 7rem;
   }
 
 }
