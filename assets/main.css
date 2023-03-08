@@ -157,6 +157,8 @@ h3 {
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   display: none;
+  align-items: center;
+  justify-content: center;
   width: 50vw;
   margin-bottom: 10rem;
   height: 40vh;
@@ -813,6 +815,11 @@ h1 {
   #instructions, #instructions2, #instructions3{
     font-size: small;
   }
+
+  #gameplayTime div{
+      flex-direction: column;
+      height: 8rem;
+  }
 }
 
 @media only screen and (max-width: 415px){
@@ -850,6 +857,14 @@ h1 {
   }
   #instructions ul, #instructions2 ul, #instructions3 ul{
     padding: 0px;
+  }
+
+  #gameplayTime{
+    height: 54vh;
+  }
+
+  #gameplayTime div button{
+    width: 7rem;
   }
 
 }
