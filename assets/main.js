@@ -11,6 +11,7 @@ var seconds = 0
 let score = 0
 let selected_edible = {}
 var gameInterval;
+var timer;
 var isRunning = -1;   //this defines the state of game running or not
 
 start_btn.addEventListener('click', function(){
@@ -111,10 +112,7 @@ function showInstructions(){
     document.getElementById("instructions").style.display = "flex";
     document.getElementById("instructions2").style.display = "flex";
     document.getElementById("instructions3").style.display = "flex";
-    if (isRunning != -1) {
-        pauseGame()
-    }
-
+    pauseGame()
 }
 
 function closeInstructions(){
@@ -204,6 +202,8 @@ function reset() {
 function pauseGame() {
     //if running then pause the timer
     if (isRunning == 1) {
+        // saving the interval while pause
+        timer = seconds
         clearInterval(gameInterval);
         isRunning = 0;
         //show pause-menu when game paused
@@ -211,15 +211,18 @@ function pauseGame() {
         document.getElementById("pause-button").style.display = "none";
         document.getElementById("home-icon").style.display = "none";
     }
-    // else start the timer
-    else {
-        gameInterval = setInterval(decreaseTime, 1000);
-        isRunning = 1;
-        //hide pause-menu when game starts again
-        document.getElementById("pause-menu").style.display = "none";
-        document.getElementById("pause-button").style.display = "block";
-        document.getElementById("home-icon").style.display = "block";
-    }
+}
+
+function resumeGame(){
+    // starting the timer
+    // overwriting the seconds with interval while pause
+    seconds = timer
+    gameInterval = setInterval(decreaseTime, 1000);
+    isRunning = 1;
+    //hide pause-menu when game starts again
+    document.getElementById("pause-menu").style.display = "none";
+    document.getElementById("pause-button").style.display = "block";
+    document.getElementById("home-icon").style.display = "block";
 }
 
 // Pause game by space bar
