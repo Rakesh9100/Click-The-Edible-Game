@@ -1,4 +1,23 @@
 # <p align="center">✨Click-The-Edible-Game✨</p>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+ <div align="center">
+ <p>
+
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=Rakesh9100%2FClick-The-Edible-Game%20&countColor=%23263759&style=flat)
+![GitHub forks](https://img.shields.io/github/forks/Rakesh9100/Click-The-Edible-Game)
+![GitHub Repo stars](https://img.shields.io/github/stars/Rakesh9100/Click-The-Edible-Game)
+![GitHub contributors](https://img.shields.io/github/contributors/Rakesh9100/Click-The-Edible-Game)
+![GitHub last commit](https://img.shields.io/github/last-commit/Rakesh9100/Click-The-Edible-Game)
+![GitHub repo size](https://img.shields.io/github/repo-size/Rakesh9100/Click-The-Edible-Game)
+![Github](https://img.shields.io/github/license/Rakesh9100/Click-The-Edible-Game)
+![GitHub issues](https://img.shields.io/github/issues/Rakesh9100/Click-The-Edible-Game)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/Rakesh9100/Click-The-Edible-Game)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Rakesh9100/Click-The-Edible-Game)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Rakesh9100/Click-The-Edible-Game)
+ </p>
+ </div>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
