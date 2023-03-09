@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: linear-gradient(#6617CB, #CB218E, #6617CB);
+  border-radius: 100vh;
+  margin-bottom: 3rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(#C373F2, #F977CE);
+  border-radius: 100vw;
+  border: 2px solid whitesmoke;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#f830b6,#6617CB, #f830b6);
+  border-radius: 100vw;
+  border: 2px solid whitesmoke;
+}
+
 * {
   box-sizing: border-box;
   user-select: none;
