@@ -156,11 +156,11 @@ h3 {
   font-weight: bold;
   display: none;
   width: 60vw;
-  margin-bottom: 10rem;
-  height: 80vh;
+  margin-bottom: 7rem;
+  height: 90vh;
   color: #ff1251;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   transition: all 0.5s ease-in-out;
   animation-name: scaleMenu;
   animation-duration: 3s;
@@ -193,10 +193,15 @@ h3 {
   transform: scale(1);
 }
 
-#instructions ul li, #instructions2 ul li, #instructions3 ul li{
-  list-style: none;
-  padding: 5px;
+#instructions ol li, #instructions2 ol li, #instructions3 ol li{
+ text-align:left;
+ font-weight: 300;
 }
+li{
+  margin-top:10px;
+  
+}
+
 
 span {
   position: absolute;
@@ -688,6 +693,7 @@ h1 {
   .container{
     padding-right: 30px;
   }
+
 }
 
 @media screen and (573px<=width<=701px) {
@@ -712,6 +718,10 @@ h1 {
   .container{
     padding-right: 30px;
   }
+  
+   #instructions, #instructions2, #instructions3{
+    font-size: 1rem!important;
+  }
 }
 
 @media screen and (527px<width<573px) {
@@ -729,6 +739,7 @@ h1 {
     padding-right: 30px;
   }
 
+
 }
 
 @media screen and (383px<=width<=527px) {
@@ -745,6 +756,7 @@ h1 {
   .container{
     padding-right: 30px;
   }
+
 
 }
 
@@ -767,12 +779,14 @@ h1 {
   .container{
     padding-right: 30px;
   }
+
 }
 
 @media screen and (100px<=width<354px) {
   .head {
     overflow: scroll;
   }
+
 
   .btn {
     margin-top: 0px;
@@ -841,6 +855,7 @@ h1 {
       flex-direction: column;
       height: 8rem;
   }
+
 }
 
 @media only screen and (max-width: 415px){
@@ -856,7 +871,6 @@ h1 {
     justify-content: center;
     align-items: center;
   }
-  
 
   .game-container{
     margin-top: 7rem;
@@ -873,9 +887,9 @@ h1 {
     height: 15vh;
   }
 
-  #instructions, #instructions2, #instructions3{
+  /* #instructions, #instructions2, #instructions3{
     font-size: 0.47rem;
-  }
+  } */
   #instructions ul, #instructions2 ul, #instructions3 ul{
     padding: 0px;
   }
