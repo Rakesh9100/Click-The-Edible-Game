@@ -44,6 +44,7 @@
   --c: #8892c6;
   --block: #92b4df65;
   --textcolblock: #547ba8;
+  
 }
 
 .loader {
@@ -903,3 +904,44 @@ h1 {
   }
 
 }
+
+.dark-theme #instructions,.dark-theme #instructions2 ,.dark-theme  #instructions3 , .dark-theme #gameplayTime,.dark-theme #pause-menu,.dark-theme #gameOver-menu{
+  border: 0.3em solid rgb(10, 10, 10) ;
+  background-color: #2c2c2c ;
+  color: #b7b7b7 ;
+}.dark-theme #instruction-btn{
+  /* border: 0.3em solid #005eff; */
+  border: none ;
+  background-color: #044bc7 ;
+  color: #ebe8e8 ;
+}
+.dark-theme .btn, .dark-theme #instruction-btn:hover{
+  /* border: 0.3em solid #005eff; */
+  border: none;
+  --c:rgb(10, 10, 10);
+  --hover:rgb(10, 10, 10);
+  background-color: #005eff;
+  color: #ebe8e8;
+}
+.dark-theme .lists{
+  background-color: #2c2c2c ;
+}
+.dark-theme .lists li{
+  background-color: #2c2c2c ;
+  color: #b7b7b7 ;
+}
+.dark-theme .choose-btn{
+  background-color: #ffffff3b;
+  color: #b7b7b7 ;
+}
+.dark-theme .choose-btn p{
+  color: #f3eeee ;
+}
+.dark-theme #light-icon, .dark-theme #back-icon{
+  color:  #f3eeee;
+}
+/* .dark-theme #pause-menu p {
+  border-color: #ebe8e8 !important;
+  color: #ebe8e8 !important;
+} */
+
