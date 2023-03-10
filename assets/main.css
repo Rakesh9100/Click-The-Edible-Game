@@ -156,8 +156,8 @@ h3 {
   font-weight: bold;
   display: none;
   width: 60vw;
-  margin-bottom: 10rem;
-  height: 80vh;
+  margin-bottom: 7rem;
+  height: 90vh;
   color: #ff1251;
   flex-direction: column;
   justify-content: center;
@@ -201,6 +201,9 @@ li{
   margin-top:10px;
   
 }
+.image {
+  display:block;
+ }
 
 span {
   position: absolute;
@@ -692,6 +695,9 @@ h1 {
   .container{
     padding-right: 30px;
   }
+  .image {
+    display:none;
+   }
 }
 
 @media screen and (573px<=width<=701px) {
@@ -716,6 +722,12 @@ h1 {
   .container{
     padding-right: 30px;
   }
+  .image {
+    display:none;
+   }
+   #instructions, #instructions2, #instructions3{
+    font-size: 1rem!important;
+  }
 }
 
 @media screen and (527px<width<573px) {
@@ -732,6 +744,9 @@ h1 {
   .container{
     padding-right: 30px;
   }
+  .image {
+    display:none;
+   }
 
 }
 
@@ -749,6 +764,9 @@ h1 {
   .container{
     padding-right: 30px;
   }
+  .image {
+    display:none;
+   }
 
 }
 
@@ -771,12 +789,19 @@ h1 {
   .container{
     padding-right: 30px;
   }
+  .image {
+    display:none;
+   }
+
 }
 
 @media screen and (100px<=width<354px) {
   .head {
     overflow: scroll;
   }
+  .image {
+    display:none;
+   }
 
   .btn {
     margin-top: 0px;
@@ -845,6 +870,9 @@ h1 {
       flex-direction: column;
       height: 8rem;
   }
+  .image {
+    display:none;
+   }
 }
 
 @media only screen and (max-width: 415px){
@@ -861,7 +889,9 @@ h1 {
     align-items: center;
   }
   
-
+ .image {
+  display:none;
+ }
   .game-container{
     margin-top: 7rem;
   }
@@ -877,9 +907,9 @@ h1 {
     height: 15vh;
   }
 
-  #instructions, #instructions2, #instructions3{
+  /* #instructions, #instructions2, #instructions3{
     font-size: 0.47rem;
-  }
+  } */
   #instructions ul, #instructions2 ul, #instructions3 ul{
     padding: 0px;
   }
