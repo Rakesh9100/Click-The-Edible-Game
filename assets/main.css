@@ -160,7 +160,7 @@ h3 {
   height: 80vh;
   color: #ff1251;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   transition: all 0.5s ease-in-out;
   animation-name: scaleMenu;
   animation-duration: 3s;
@@ -193,9 +193,13 @@ h3 {
   transform: scale(1);
 }
 
-#instructions ul li, #instructions2 ul li, #instructions3 ul li{
-  list-style: none;
-  padding: 5px;
+#instructions ol li, #instructions2 ol li, #instructions3 ol li{
+ text-align:left;
+ font-weight: 300;
+}
+li{
+  margin-top:10px;
+  
 }
 
 span {
