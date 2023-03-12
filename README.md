@@ -90,7 +90,7 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 git clone https://github.com/<your-github-username>/Click-The-Edible-Game.git
 ```
 - Open `index.html` in your browser.
-- View the [Live Project](https://rakesh9100.github.io/Click-The-Edible-Game/) here.
+- View the [Live Project](https://click-the-edible-game.netlify.app/) here.
 - Raise an issue if you find a bug or add a feature.
 - Wait for the issue to be assigned and proceed only after the issue is assigned to you.
 - Navigate to the project directory.
