@@ -1,0 +1,50 @@
+#google_translate_element select{
+    /* background:#f6edfd;
+    color:black;
+    border: none;
+    border-radius:3px;
+    padding:6px 8px;
+    margin-top: ; */
+    color: var(--c);
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 2em;
+    margin-top: -25px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    width: 13rem;
+    height: 2.5rem;
+    margin: 0px;
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+    font-size: 15px;
+    align-items: center;
+    }
+
+    /*google translate link | logo */
+      .goog-logo-link,.goog-te-gadget span,div#goog-gt-{
+      display:none!important;
+      }
+    .goog-te-gadget{
+      color:transparent!important;
+      font-size:0;
+    }
+
+    /* google translate banner-frame */
+
+    .goog-te-banner-frame{
+    display:none !important;
+    }
+
+    #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+   .goog-text-highlight { background: none !important; box-shadow: none !important;}

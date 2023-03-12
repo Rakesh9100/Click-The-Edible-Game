@@ -14,19 +14,32 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="translate.css">
     <title>Let's Play the Game !!!</title>
   </head>
 
   <body oncontextmenu="return false;">
-    <div id="preloader" class="loader">
+    <!-- <div id="preloader" class="loader">
       <img src="images/preloader.gif" alt="" />
-    </div>
+    </div> -->
 
     <div class="container">
       <button class="btn" id="instruction-btn" onclick="showInstructions()">
         Instructions
         <span></span><span></span><span></span><span></span>
       </button>
+      <div id="google_translate_element"></div>
+      <script src="translate.js"></script>
+      <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                  {pageLanguage: 'en'},
+                    'google_translate_element'
+                  );
+               }
+      </script>
+
+      <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       <i
         class="fa-solid fa-moon"
         id="light-icon"
