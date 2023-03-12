@@ -145,6 +145,9 @@ h3 {
   font-size: 15px;
   align-items: center;
 }
+#instruction-btn a{
+  color: var(--c);
+}
 
 #instructions, #instructions2, #instructions3{
   border: 0.3em solid goldenrod;
