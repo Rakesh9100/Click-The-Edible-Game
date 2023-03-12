@@ -1,10 +1,4 @@
 #google_translate_element select{
-    /* background:#f6edfd;
-    color:black;
-    border: none;
-    border-radius:3px;
-    padding:6px 8px;
-    margin-top: ; */
     color: var(--c);
     border: 0.3em solid var(--c);
     border-radius: 0.5em;
