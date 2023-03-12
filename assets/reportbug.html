@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report a Bug</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="report-bug.css">
+  <link rel="icon" type="image/x-png" href="images/favicon.png" />
+  <script
+    src="https://kit.fontawesome.com/5587893eae.js"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+<body>
+  <div class="container">
+  <button class="btn" id="instruction-btn" ><a href="main.html" style="text-decoration:none">HOME</a>
+ 
+  </span></span><span></span><span></span><span></span>
+  </button>
+</div>
+  <div class="container1">
+    <h1>Report a Bug</h1>
+    <form id="bug-report-form">
+      <label for="bug-description">Bug Description:</label>
+      <textarea id="bug-description" name="bug-description" placeholder="Describe the bug here..." required></textarea>
+      <label for="bug-severity">Severity:</label>
+      <select id="bug-severity" name="bug-severity" required>
+        <option value="" selected disabled>Please select</option>
+        <option value="minor">Minor</option>
+        <option value="moderate">Moderate</option>
+        <option value="major">Major</option>
+      </select>
+      <label for="bug-reporter">Reporter Name:</label>
+      <input type="text" id="bug-reporter" name="bug-reporter" placeholder="Your name..." required>
+      <input type="submit" value="Submit Report">
+    </form>
+
+    <div id="success-message" class="hidden">
+      <p>Thank you for reporting the bug!</p>
+    </div>
+
+    <div id="error-message" class="hidden">
+      <p>There was an error submitting your bug report. Please try again later.</p>
+    </div>
+  </div>
+  <footer class="footer" id="footer">
+    <div class="copy">
+      Copyright &#169; 2023 by <a href="https://rakeshroshan.netlify.app/" target="_blank">Rakesh Roshan </a> : All Rights Reserved
+    </div>
+    <div class="icons">
+      <a class="github" href="https://github.com/Rakesh9100" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+      <a class="linkedin" href="https://www.linkedin.com/in/rakesh-roshan-9100" target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a class="instagram" href="https://www.instagram.com/rakesh250602" target="_blank">
+        <i class="fa fa-instagram"></i>
+      </a>
+
+    </div>
+  </footer>
+  <script>
+    const form = document.querySelector('#bug-report-form');
+const successMessage = document.querySelector('#success-message');
+const errorMessage = document.querySelector('#error-message');
+
+form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const response = await fetch('http://mockbin.com/bin/7eb970ae-1814-4394-88d4-a51cc1568443', {
+        method: 'POST',
+        body: formData
+    });
+    if (response.ok) {
+        form.reset();
+        successMessage.classList.remove('hidden');
+        errorMessage.classList.add('hidden');
+    } else {
+        successMessage.classList.add('hidden');
+        errorMessage.classList.remove('hidden');
+    }
+});
+  </script>
+</body>
+</html>
