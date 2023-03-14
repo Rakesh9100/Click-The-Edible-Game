@@ -204,42 +204,72 @@ li{
 }
 
 
-span {
-  position: absolute;
+.tra {
+  position:absolute ;
   width: 25%;
   height: 100%;
   background-color: var(--c);
   transform: translateY(100%);
   border-radius: 50%;
-  left: calc((var(--n) - 1) * 25%);
   transition: 0.5s;
-  transition-delay: calc((var(--n) - 1) * 0.1s);
   z-index: -1;
+  display: flex;
+  flex-direction: row;
+}
+.tra_play {
+  position:absolute ;
+  width: 35%;
+  height: 280%;
+  background-color: var(--c);
+  transform: translateY(100%);
+  border-radius: 50%;
+  transition: 0.5s;
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+}
+
+.tra0{
+  left: calc((0) * 25%);
+  transition-delay: calc((1 - 1) * 0.1s);
+}
+.tra1{
+  left: calc((1) * 25%);
+  transition-delay: calc((2 - 1) * 0.1s);
+}
+.tra2{
+  left: calc((2) * 25%);
+  transition-delay: calc((3 - 1) * 0.1s);
+}
+.tra3{
+  left: calc((3) * 25%);
+  transition-delay: calc((4 - 1) * 0.1s);
 }
 
 .btn:hover {
   color: white;
 }
 
-.btn:hover span {
+.btn:hover div {
   transform: translateY(0) scale(2);
 }
 
-.btn span:nth-child(1) {
+/* .btn div:nth-child(1) {
   --n: 1;
 }
 
-.btn span:nth-child(2) {
+.btn div:nth-child(2) {
   --n: 2;
 }
 
-.btn span:nth-child(3) {
+.btn div:nth-child(3) {
   --n: 3;
 }
 
-.btn span:nth-child(4) {
+.btn div:nth-child(4) {
   --n: 4;
-}
+} */
+
 
 /* Play Game hover effect ends. */
 
@@ -397,7 +427,7 @@ span {
   border-radius: 9px;
   color: var(--c);
   cursor: pointer;
-  font-family: inherit;
+  /* font-family: inherit; */
   width: 9.375rem;
   height: 9.375rem;
   background-color: var(--block);
