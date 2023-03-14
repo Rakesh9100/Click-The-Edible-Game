@@ -9,6 +9,7 @@ const scoreEl = document.getElementById('score')
 const audio = new Audio("sounds/sound1.mp3");
 var seconds = 0
 let score = 0
+var scoresArray = []
 let selected_edible = {}
 var gameInterval;
 var timer;
@@ -122,11 +123,19 @@ function closeInstructions(){
     isRunning = 1;
 }
 
+//Maximum in the array
+Array.prototype.max = function() {
+    return Math.max.apply(null, this);
+};  
+
 function gameOver(){
         document.getElementById("gameOver-menu").style.display = "flex";
         document.getElementById("pause-button").style.display = "none";
         finalScore.innerHTML = `Final Score : ${score}`
         clearInterval(gameInterval);
+        scoresArray.push(score);
+        var HIGHSCORE= scoresArray.max();
+        highscore.innerHTML = `HIGH SCORE : ${HIGHSCORE}`;
         isRunning = 0;
 }
 
@@ -194,6 +203,7 @@ function increaseScore() {
 // Page reload
 function reset() {
     // startGame();
+    scoresArray = [];
     location.reload();
     // window.close();
     // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
