@@ -10,6 +10,7 @@ const audio = new Audio("sounds/sound1.mp3");
 var seconds = 0
 let score = 0
 var scoresArray = []
+var playerScores = []
 let selected_edible = {}
 var gameInterval;
 var timer;
@@ -135,7 +136,10 @@ function gameOver(){
         clearInterval(gameInterval);
         scoresArray.push(score);
         var HIGHSCORE= scoresArray.max();
+        scoresArray.sort((a, b) => a - b)
+        scoresArray.reverse()
         highscore.innerHTML = `HIGH SCORE : ${HIGHSCORE}`;
+        scores.innerHTML = `Your Scores : ${scoresArray}`
         isRunning = 0;
 }
 
