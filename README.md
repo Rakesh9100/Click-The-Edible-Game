@@ -39,11 +39,13 @@
 
 <h2>Introduction📌</h2>
 
-A well-designed interesting game made using HTML, CSS, and JS where you can play with your favourite edible and click it to get the most scores.
-- It has two categories to select your favourite edible that are 5 Fruits and 5 vegetables.
-- Timer and Score are shown in the screen.
+A well-designed interesting game made using HTML, CSS, and JS where you can play with your favourite edible and click on it to get the highest score.
+- There are five categories - Fruits , Vegetables , Sweets , Snacks and Bakery . Click on your favourite edible to start the game.
+- You can choose how much time you want to spend on one edible.
+- Timer and Score are shown on the screen.
 - Clicking on one picture will increase your score by 1.
-- If irritated by playing with one edible, refresh the screen to select a new one and start playing.
+- When the time is over , final score will be shown.
+- You can either click on the refresh button to play again or return to home to select a new one.
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
