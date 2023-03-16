@@ -270,7 +270,7 @@ span {
   font-family: Arial, Helvetica, sans-serif;
   height: auto;
   width: 100vw;
-  background-color: #0a183d;
+  background-color:hsl(0, 59%, 41%);
   bottom: 0;
   position: fixed;
   display: flex;
@@ -283,6 +283,7 @@ span {
 }
 .footer .copy{
   padding:.5rem 2rem;
+  margin-left: 35%;
 }
 .icons{
   padding:.5rem 2rem;
