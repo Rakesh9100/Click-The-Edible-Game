@@ -39,13 +39,15 @@
 
 <h2>Introduction📌</h2>
 
-A well-designed interesting game made using HTML, CSS, and JS where you can play with your favourite edible and click on it to get the highest score.
-- There are five categories - Fruits , Vegetables , Sweets , Snacks and Bakery . Click on your favourite edible to start the game.
+A well-designed interesting game made using HTML, CSS, and JS where you can play with your favorite edible and click on it to get the highest score.
+- There are five categories - Fruits, Vegetables, Sweets, Snacks, and Bakery Products. Click on your favorite edible to start the game.
 - You can choose how much time you want to spend on one edible.
 - Timer and Score are shown on the screen.
-- Clicking on one picture will increase your score by 1.
-- When the time is over , final score will be shown.
-- You can either click on the refresh button to play again or return to home to select a new one.
+- Clicking on one edible will increase your score by 1.
+- When the time is over, the final score will be shown.
+- All the scores are stored until you remain on the game before refreshing.
+- High Score is displayed and all the scores are shown sorted in descending order.
+- You can either click on the refresh button or return to home to select a new edible.
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
@@ -69,16 +71,27 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://user-images.githubusercontent.com/73993775/222927583-ebb9ddf2-df0c-44e2-8c28-003166b0ca4a.png)<br><br>
 <h3>Home/Main Page :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/222927601-cabf1aa2-114a-4779-a3b2-52e9c2c95c9c.png)<br>
+![image](https://user-images.githubusercontent.com/73993775/225777171-2bbafadb-1c23-4487-b0ef-68c56cbffd74.png)<br><br>
+<h3>Instructions Box :-</h3>
+
+![image](https://user-images.githubusercontent.com/73993775/225777264-05f15388-1f4d-4f89-8fee-7d1405018c15.png)<br><br>
 <h3>Selection of Edible Page :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/222927612-35a30d46-059a-49ac-83fc-84f5e8b1bd5e.png)<br>
-<h3>GamePlay Screen :-</h3>
+![image](https://user-images.githubusercontent.com/73993775/225777515-6147b79e-656e-4572-9639-b6928a176a0f.png)
+![image](https://user-images.githubusercontent.com/73993775/225777564-06a31252-4341-4c9b-844c-10958aef2d71.png)
+![image](https://user-images.githubusercontent.com/73993775/225777594-20eb67b5-f6f8-4075-a1c2-14644d32291b.png)<br><br>
+<h3>Choose GamePlay Time Box :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/222927641-0df09567-7239-4559-94ff-204953d586a6.png)<br>
-<h3>Play/Pause/Restart Screen :-</h3>
+![image](https://user-images.githubusercontent.com/73993775/225777724-4a3c609f-5d81-4508-944c-6ba1f60ae120.png)<br><br>
+<h3>Playing Screen :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/222927660-01a3a289-a20e-4568-be74-c9f594e1104e.png)<br>
+![image](https://user-images.githubusercontent.com/73993775/222927641-0df09567-7239-4559-94ff-204953d586a6.png)<br><br>
+<h3>Play/Pause/Restart Box :-</h3>
+
+![image](https://user-images.githubusercontent.com/73993775/222927660-01a3a289-a20e-4568-be74-c9f594e1104e.png)<br><br>
+<h3>High Score/Your Scores Box :-</h3>
+
+![image](https://user-images.githubusercontent.com/73993775/225778382-ff7a1c1f-a233-4506-9f83-c8577d18768c.png)<br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -139,6 +152,21 @@ Read our [Contributing Guidelines](https://github.com/Rakesh9100/Click-The-Edibl
 <h2>Code Of Conduct📑</h2>
 
 This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/Rakesh9100/Click-The-Edible-Game/blob/main/.github/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<h2>This repo has been part of the following Open Source Programs🥳</h2>
+
+<table>
+<tr>
+<td align="center">
+<a href="https://hacktoberfest.com/"><img src="https://user-images.githubusercontent.com/73993775/225782062-5d40ca6b-619c-452e-9e6a-f1dfb4bf6027.png" height="140px" width="140px" alt="Hacktoberfest2022"></a><br><sub><b>Hacktoberfest 2k22</b></sub>
+</td>
+<td align="center">
+<a href="https://jwoc.tech/"><img src="https://user-images.githubusercontent.com/73993775/225782345-1a0f5204-3eaf-4d4f-be50-5b44dbbc2590.png" height="140px" width="180px" alt="JWOC2023"></a><br><sub><b>JWOC 2k23</b></sub>
+</td>
+</tr>
+</table>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
