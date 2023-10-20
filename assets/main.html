@@ -439,8 +439,10 @@
         
         <div id="gameplayTime">
             <b>Howdy, partner! How many hours of rootin' tootin' gameplay have you clocked up on this game?</b>
-            <div style="display: flex; padding: 12px;">
-                <button class="btn" id="gameTime1" style="font-size: 12px;" onclick="closeGameplayDialog()">
+            <div id="time-range-val" class="changable-text">2 min</div>
+            <input type="range" max="240" min="30" id="time-range" style="width: 25vw;" onchange="set_time_range_val()">               
+            <div style="position: relative;">
+                <!-- <button class="btn" id="gameTime1" style="font-size: 12px;" onclick="closeGameplayDialog()">
                     30 secs<span></span><span></span><span></span><span></span>
                 </button>
                 <button class="btn" id="gameTime2" style="font-size: 12px;" onclick="closeGameplayDialog()">
@@ -451,7 +453,8 @@
                 </button>
                 <button class="btn" id="gameTime4" style="font-size: 12px;" onclick="closeGameplayDialog()">
                     2 min<span></span><span></span><span></span><span></span>
-                </button>
+                </button> -->
+                <button id="start-btn-time" class="btn2" onclick="closeGameplayDialog()">Start !!</button>
             </div>
         </div>
     </div>

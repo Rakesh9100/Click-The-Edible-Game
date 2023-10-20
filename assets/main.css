@@ -126,6 +126,25 @@ h3 {
     cursor: pointer;
 }
 
+.btn2 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0.5em;
+  transform: 0.5s;
+}
+
+.changable-text {
+    color: #005eff;
+    font-size: 3vh;
+}
+
 #instruction-btn, #gameTime1, #gameTime2, #gameTime3, #gameTime4 {
     justify-content: center;
     display: flex;
