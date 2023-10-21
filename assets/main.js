@@ -273,18 +273,34 @@ function set_time_range_val() {
     document.getElementById("time-range-val").innerHTML = time + " secs";
   } else if (time < 120) {
     var time = time - 60;
+    if (time == 0) {
+      document.getElementById("time-range-val").innerHTML = "1 min";
+      return;
+    }
     document.getElementById("time-range-val").innerHTML =
       "1 min " + time + " secs";
   } else if (time < 180) {
     time = time - 120;
+    if (time == 0) {
+      document.getElementById("time-range-val").innerHTML = "2 mins";
+      return;
+    }
     document.getElementById("time-range-val").innerHTML =
       "2 min " + time + " secs";
   } else if (time < 240) {
     time = time - 180;
+    if (time == 0) {
+      document.getElementById("time-range-val").innerHTML = "3 mins";
+      return;
+    }
     document.getElementById("time-range-val").innerHTML =
       "3 min " + time + " secs";
   } else if(time < 300) {
     time = time - 240;
+    if (time == 0) {
+      document.getElementById("time-range-val").innerHTML = "4 mins";
+      return;
+    }
     document.getElementById("time-range-val").innerHTML = "4 min " + time + " secs";
   } else {
     document.getElementById("time-range-val").innerHTML = "5 mins";
