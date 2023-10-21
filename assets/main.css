@@ -130,6 +130,7 @@ h3 {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
+  text-transform: uppercase;
   padding: 0.5em 1.5em;
   text-align: center;
   text-decoration: none;
@@ -149,8 +150,9 @@ h3 {
 .changable-text {
     color: #4CAF50;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
     font-size: 3vh;
     margin-bottom: 0.15rem;
 }
