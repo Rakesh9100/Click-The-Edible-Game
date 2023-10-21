@@ -46,6 +46,7 @@ function chooseGameplayTime() {
 
 function closeGameplayDialog() {
   isRunning = 1;
+  seconds = parseInt(document.getElementById("time-range").value) - 1;
   setTimeout(createEdible, 1000);
   document.getElementById("gameplayTime").style.display = "none";
   document.getElementById("time").style.display = "block";
