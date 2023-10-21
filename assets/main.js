@@ -38,29 +38,6 @@ choose_btns.forEach((btn) => {
 function chooseGameplayTime() {
   document.getElementById("time").style.display = "none";
   document.getElementById("gameplayTime").style.display = "flex";
-//   let buttonList = document.querySelectorAll("button");
-//   buttonList.forEach(function (i) {
-//     i.addEventListener("click", function (e) {
-//       seconds = e.target.innerText.trim();
-//       if (seconds === "30 secs") {
-//         seconds = 29;
-//         document.getElementById("time").innerHTML = "Time: 00:30";
-//         return seconds;
-//       } else if (seconds === "1 min") {
-//         document.getElementById("time").innerHTML = "Time: 01:00";
-//         seconds = 59;
-//         return seconds;
-//       } else if (seconds === "1:30 min") {
-//         document.getElementById("time").innerHTML = "Time: 01:30";
-//         seconds = 89;
-//         return seconds;
-//       } else if (seconds === "2 min") {
-//         document.getElementById("time").innerHTML = "Time: 02:00";
-//         seconds = 120;
-//         return seconds;
-//       }
-//     });
-//   });
     document.getElementById("time-range").addEventListener("change", function (e) {
     seconds = parseInt(document.getElementById("time-range").value) - 1;
     return seconds;
@@ -292,7 +269,6 @@ function displayChange() {
 function set_time_range_val() {
   var time = document.getElementById("time-range").value;
   time = parseInt(time);
-  console.log(time);
   if (time < 60) {
     document.getElementById("time-range-val").innerHTML = time + " secs";
   } else if (time < 120) {
@@ -307,7 +283,10 @@ function set_time_range_val() {
     time = time - 180;
     document.getElementById("time-range-val").innerHTML =
       "3 min " + time + " secs";
+  } else if(time < 300) {
+    time = time - 240;
+    document.getElementById("time-range-val").innerHTML = "4 min " + time + " secs";
   } else {
-    document.getElementById("time-range-val").innerHTML = "4 min";
+    document.getElementById("time-range-val").innerHTML = "5 mins";
   }
 }
