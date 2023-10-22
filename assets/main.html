@@ -440,7 +440,7 @@
         <div id="gameplayTime">
             <b>Howdy, partner! How many hours of rootin' tootin' gameplay have you clocked up on this game?</b>
             <div id="time-range-val" class="changable-text">2 mins 45 sec</div>
-            <input type="range" max="300" min="30" id="time-range" style="width: 30vw; cursor: pointer;" onchange="set_time_range_val()">               
+            <input type="range" max="300" min="30" id="time-range" style="width: 30vw; cursor: pointer;" onchange="set_time_range_val()" onmousemove="set_time_range_val()">               
             <div style="position: relative;">
                 <button id="start-btn-time" class="btn2" onclick="closeGameplayDialog()">Start 🎮</button>
             </div>
