@@ -82,7 +82,7 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://user-images.githubusercontent.com/73993775/225777594-20eb67b5-f6f8-4075-a1c2-14644d32291b.png)<br><br>
 <h3>Choose GamePlay Time Box :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/225777724-4a3c609f-5d81-4508-944c-6ba1f60ae120.png)<br><br>
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/277171024-edb2a772-d317-4ebd-970a-b4a02d85617d.png)<br><br>
 <h3>Playing Screen :-</h3>
 
 ![image](https://user-images.githubusercontent.com/73993775/222927641-0df09567-7239-4559-94ff-204953d586a6.png)<br><br>
