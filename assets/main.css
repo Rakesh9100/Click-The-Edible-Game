@@ -476,7 +476,7 @@ span {
     right: 50px;
 }
 
-.edible {
+.edible, .bomb{
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -488,11 +488,11 @@ span {
     transition: transform 0.3s ease-in-out;
 }
 
-.edible.caught {
+.edible.caught, .bomb.dead {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.edible img {
+.edible img, .bomb img {
     width: 100px;
     height: 100px;
 }
