@@ -19,13 +19,14 @@ var isRunning = -1; //this defines the state of game running or not
 // -------------- bomb management section ----------------
 var totalBombs = 0; // total number of bombs on screen at a time
 var MAX_BOMBS = 5; // maximum number of bombs that can be on screen
-var MAX_BOMB_LIFE = 100; // maximum life of a bomb
+var MAX_BOMB_LIFE = 5; // maximum life of a bomb
 var MAX_LIVES = 3; // maximum number of lives
 var lives = MAX_LIVES; // current number of lives
 // create a new bomb
 function createBomb() {
     const bomb = document.createElement('div');
     bomb.classList.add('bomb');
+    bomb.classList.add('bomb-live');
     const {x, y} = getRandomLocation()
     bomb.style.top = `${y}px`;
     bomb.style.left = `${x}px`;
@@ -38,21 +39,27 @@ function explodeBomb() {
     const audio = new Audio("sounds/explosion.wav");
     audio.play();
     this.innerHTML = `<img src="images/explosion.png" alt="💥" style="transform: rotate(${Math.random() * 360}deg)" />`;
+    this.classList.remove('bomb-live');
     this.classList.add('dead');
-    setTimeout(() => this.remove(), 2000);
-    totalBombs--;
+    setTimeout(() => {
+      this.remove(); 
+      totalBombs--;
+    }, 2000);
     lives--;
 }
 // check if a bomb's life is over
 function checkBombLife() {
-    const bombs = document.getElementsByClassName('bomb');
+    const bombs = document.getElementsByClassName('bomb-live');
     for (let i = 0; i < bombs.length; i++) {
         const bomb = bombs[i];
         const life = bomb.querySelector('p');
         if (life.innerText <= 0) {
-            totalBombs--;
             bomb.classList.add('dead');
-            setTimeout(() => bomb.remove(), 2000);
+            bomb.classList.remove('bomb-live');
+            setTimeout(() => {
+              bomb.remove();
+              totalBombs--;
+            }, 2000);
         } else {
             bomb.querySelector('p').innerText--;
         }
@@ -225,7 +232,7 @@ function createEdible() {
     game_container.appendChild(edible);
 
     // -------------- bomb management section ----------------
-    if (totalBombs <= MAX_BOMBS) { // check if there are already more than enough bombs present on screen
+    if (totalBombs < MAX_BOMBS) { // check if there are already more than enough bombs present on screen
         if (Math.random() < 0.5) { // randomly decide whether to create a bomb or not
             createBomb(); 
             totalBombs++;
