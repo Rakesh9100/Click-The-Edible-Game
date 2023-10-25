@@ -17,22 +17,23 @@ var timer;
 var isRunning = -1; //this defines the state of game running or not
 
 // -------------- bomb management section ----------------
-var totalBombs = 0;
-var MAX_BOMBS = 5;
-var bombExploded = false;
-
+var totalBombs = 0; // total number of bombs on screen at a time
+var MAX_BOMBS = 5; // maximum number of bombs that can be on screen
+var MAX_BOMB_LIFE = 100; // maximum life of a bomb
+var MAX_LIVES = 3; // maximum number of lives
+var lives = MAX_LIVES; // current number of lives
+// create a new bomb
 function createBomb() {
     const bomb = document.createElement('div');
     bomb.classList.add('bomb');
     const {x, y} = getRandomLocation()
     bomb.style.top = `${y}px`;
     bomb.style.left = `${x}px`;
-    bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${1 + (Math.random() * 5)}</p>`;
-    // bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${120}</p>`;
+    bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${1 + (Math.random() * MAX_BOMB_LIFE)}</p>`;
     bomb.addEventListener('click', explodeBomb);
     game_container.appendChild(bomb);
 }
-
+// explode an existing bomb
 function explodeBomb() {
     const audio = new Audio("sounds/explosion.wav");
     audio.play();
@@ -40,18 +41,18 @@ function explodeBomb() {
     this.classList.add('dead');
     setTimeout(() => this.remove(), 2000);
     totalBombs--;
-    bombExploded = true;
+    lives--;
 }
-
+// check if a bomb's life is over
 function checkBombLife() {
     const bombs = document.getElementsByClassName('bomb');
     for (let i = 0; i < bombs.length; i++) {
         const bomb = bombs[i];
         const life = bomb.querySelector('p');
         if (life.innerText <= 0) {
+            totalBombs--;
             bomb.classList.add('dead');
             setTimeout(() => bomb.remove(), 2000);
-            totalBombs--;
         } else {
             bomb.querySelector('p').innerText--;
         }
@@ -170,28 +171,42 @@ function gameOver() {
   isRunning = 0;
 
   // -------------- bomb management section ----------------
-  bombExploded = false;
+  lives = MAX_LIVES;
   totalBombs = 0;
+  // -------------- bomb management section ----------------
 }
 
 function starting() {
   document.getElementById("back-icon").style.display = "block";
 }
 
+// function maintaining the game time
 function decreaseTime() {
   let m = Math.floor(seconds / 60);
   let s = seconds % 60;
   m = m < 10 ? `0${m}` : m;
   s = s < 10 ? `0${s}` : s;
-  timeEl.innerHTML = `Time: ${m}:${s}`;
+
+  // ---------- displaying total lives -------------
+  let _lives = "";
+  for(let i = 1; i <= MAX_LIVES; i++) {
+    if(i <= lives)
+      _lives += '❤️'
+    else
+      _lives += '🖤'
+  }
+  // ---------- displaying total lives -------------
+  timeEl.innerHTML = `Time: ${m}:${s} <hr> ${_lives}`;
 
   // -------------- game over section ----------------
-  if ((s == 0 && m == 0) || bombExploded == true) {
+  if ((s == 0 && m == 0) || lives == 0) {
     gameOver();
+  // -------------- game over section ----------------
   } else {
     seconds--;
     // -------------- bomb management section ----------------
     checkBombLife();
+    // -------------- bomb management section ----------------
   }
 }
 
@@ -210,12 +225,13 @@ function createEdible() {
     game_container.appendChild(edible);
 
     // -------------- bomb management section ----------------
-    if (totalBombs < MAX_BOMBS) {
-        if (Math.random() < 0.5) {
-            createBomb();
+    if (totalBombs <= MAX_BOMBS) { // check if there are already more than enough bombs present on screen
+        if (Math.random() < 0.5) { // randomly decide whether to create a bomb or not
+            createBomb(); 
             totalBombs++;
         }
     }
+    // -------------- bomb management section ----------------
   }
 }
 
@@ -250,11 +266,8 @@ function increaseScore() {
 
 // Page reload
 function reset() {
-  // startGame();
   scoresArray = [];
   location.reload();
-  // window.close();
-  // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
 }
 
 function pauseGame() {
@@ -333,6 +346,7 @@ function displayChange() {
   foot.classList.toggle("toggle-footer");
 }
 
+// displaying the selected time on screen in real time.
 function set_time_range_val() {
   var time = document.getElementById("time-range").value;
   time = parseInt(time);
@@ -349,9 +363,6 @@ function set_time_range_val() {
     }
     let min = Math.floor(time / 60);
     let sec = time % 60;
-    if(min == 1)
-      document.getElementById("time-range-val").innerHTML = "1 min " + sec + " secs";
-    else
-      document.getElementById("time-range-val").innerHTML = min + " mins " + sec + " secs";
+    document.getElementById("time-range-val").innerHTML = min + " min " + sec + " secs";
   }
 }
