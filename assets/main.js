@@ -187,7 +187,7 @@ function starting() {
   document.getElementById("back-icon").style.display = "block";
 }
 
-// function maintaining the game time
+// function maintaining the game time (also acts as main loop for the game)
 function decreaseTime() {
   let m = Math.floor(seconds / 60);
   let s = seconds % 60;
@@ -204,6 +204,15 @@ function decreaseTime() {
   }
   // ---------- displaying total lives -------------
   timeEl.innerHTML = `Time: ${m}:${s} <hr> ${_lives}`;
+
+  // -------------- bomb management section ----------------
+  if (totalBombs < MAX_BOMBS) { // check if there are already more than enough bombs present on screen
+    if (Math.random() < 0.5) { // randomly decide whether to create a bomb or not
+        createBomb(); 
+        totalBombs++;
+    }
+  }
+  // -------------- bomb management section ----------------
 
   // -------------- game over section ----------------
   if ((s == 0 && m == 0) || lives == 0) {
@@ -230,15 +239,6 @@ function createEdible() {
 
     edible.addEventListener("click", catchEdible);
     game_container.appendChild(edible);
-
-    // -------------- bomb management section ----------------
-    if (totalBombs < MAX_BOMBS) { // check if there are already more than enough bombs present on screen
-        if (Math.random() < 0.5) { // randomly decide whether to create a bomb or not
-            createBomb(); 
-            totalBombs++;
-        }
-    }
-    // -------------- bomb management section ----------------
   }
 }
 
