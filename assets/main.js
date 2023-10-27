@@ -16,6 +16,64 @@ var gameInterval;
 var timer;
 var isRunning = -1; //this defines the state of game running or not
 
+// -------------- bomb management section ----------------
+var totalBombs = 0; // total number of bombs on screen at a time
+var MAX_BOMBS = 5; // maximum number of bombs that can be on screen
+var MAX_BOMB_LIFE = 5; // maximum life of a bomb
+var MAX_LIVES = 3; // maximum number of lives
+var lives = MAX_LIVES; // current number of lives
+// create a new bomb
+function createBomb() {
+    const bomb = document.createElement('div');
+    bomb.classList.add('bomb');
+    bomb.classList.add('bomb-live');
+    const {x, y} = getRandomLocation()
+    bomb.style.top = `${y}px`;
+    bomb.style.left = `${x}px`;
+    bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${1 + (Math.random() * MAX_BOMB_LIFE)}</p>`;
+    bomb.addEventListener('click', explodeBomb);
+    game_container.appendChild(bomb);
+}
+// explode an existing bomb
+function explodeBomb() {
+    const audio = new Audio("sounds/explosion.wav");
+    audio.play();
+    this.innerHTML = `<img src="images/explosion.png" alt="💥" style="transform: rotate(${Math.random() * 360}deg)" />`;
+    this.classList.remove('bomb-live');
+    this.classList.add('dead');
+    setTimeout(() => {
+      this.remove(); 
+      totalBombs--;
+    }, 2000);
+    lives--;
+}
+// check if a bomb's life is over
+function checkBombLife() {
+    const bombs = document.getElementsByClassName('bomb-live');
+    for (let i = 0; i < bombs.length; i++) {
+        const bomb = bombs[i];
+        const life = bomb.querySelector('p');
+        if (life.innerText <= 0) {
+            bomb.classList.add('dead');
+            bomb.classList.remove('bomb-live');
+            setTimeout(() => {
+              bomb.remove();
+              totalBombs--;
+            }, 2000);
+        } else {
+            bomb.querySelector('p').innerText--;
+        }
+    }
+}
+
+function removeBombs() {
+    const createdBombs = document.getElementsByClassName('bomb');
+    while (createdBombs.length > 0) {
+        createdBombs[0].parentNode.removeChild(createdBombs[0]);
+    }
+}
+// -------------- bomb management section ----------------
+
 start_btn.addEventListener("click", function () {
   screens[0].classList.add("up");
   head.style.display = "flex";
@@ -41,7 +99,7 @@ function chooseGameplayTime() {
     document.getElementById("time-range").addEventListener("change", function (e) {
     seconds = parseInt(document.getElementById("time-range").value) - 1;
     return seconds;
-    });
+  });
 }
 
 function closeGameplayDialog() {
@@ -118,22 +176,53 @@ function gameOver() {
   highscore.innerHTML = `HIGH SCORE : ${HIGHSCORE}`;
   scores.innerHTML = `Your Scores : ${scoresArray}`;
   isRunning = 0;
+
+  // -------------- bomb management section ----------------
+  lives = MAX_LIVES;
+  totalBombs = 0;
+  // -------------- bomb management section ----------------
 }
 
 function starting() {
   document.getElementById("back-icon").style.display = "block";
 }
 
+// function maintaining the game time (also acts as main loop for the game)
 function decreaseTime() {
   let m = Math.floor(seconds / 60);
   let s = seconds % 60;
   m = m < 10 ? `0${m}` : m;
   s = s < 10 ? `0${s}` : s;
-  timeEl.innerHTML = `Time: ${m}:${s}`;
-  if (s == 0 && m == 0) {
+
+  // ---------- displaying total lives -------------
+  let _lives = "";
+  for(let i = 1; i <= MAX_LIVES; i++) {
+    if(i <= lives)
+      _lives += '❤️'
+    else
+      _lives += '🖤'
+  }
+  // ---------- displaying total lives -------------
+  timeEl.innerHTML = `Time: ${m}:${s} <hr> ${_lives}`;
+
+  // -------------- bomb management section ----------------
+  if (totalBombs < MAX_BOMBS) { // check if there are already more than enough bombs present on screen
+    if (Math.random() < 0.5) { // randomly decide whether to create a bomb or not
+        createBomb(); 
+        totalBombs++;
+    }
+  }
+  // -------------- bomb management section ----------------
+
+  // -------------- game over section ----------------
+  if ((s == 0 && m == 0) || lives == 0) {
     gameOver();
+  // -------------- game over section ----------------
   } else {
     seconds--;
+    // -------------- bomb management section ----------------
+    checkBombLife();
+    // -------------- bomb management section ----------------
   }
 }
 
@@ -149,7 +238,6 @@ function createEdible() {
     }" style="transform: rotate(${Math.random() * 360}deg)" />`;
 
     edible.addEventListener("click", catchEdible);
-
     game_container.appendChild(edible);
   }
 }
@@ -185,11 +273,8 @@ function increaseScore() {
 
 // Page reload
 function reset() {
-  // startGame();
   scoresArray = [];
   location.reload();
-  // window.close();
-  // window.open("https://rakesh9100.github.io/Click-The-Edible-Game/");
 }
 
 function pauseGame() {
@@ -240,6 +325,7 @@ function restartGame() {
   document.getElementById("back-icon").style.display = "block";
   //delete all created edibles
   removeEdibles();
+  removeBombs();
   //start game again
   setTimeout(createEdible, 1000);
   startGame();
@@ -267,43 +353,23 @@ function displayChange() {
   foot.classList.toggle("toggle-footer");
 }
 
+// displaying the selected time on screen in real time.
 function set_time_range_val() {
   var time = document.getElementById("time-range").value;
   time = parseInt(time);
-  if (time < 60) {
-    document.getElementById("time-range-val").innerHTML = time + " secs";
-  } else if (time < 120) {
-    var time = time - 60;
-    if (time == 0) {
+  if (time % 60 == 0) {
+    if(time == 60)
       document.getElementById("time-range-val").innerHTML = "1 min";
+    else
+      document.getElementById("time-range-val").innerHTML = time / 60 + " mins";
+  }
+  else {
+    if(time < 60) {
+      document.getElementById("time-range-val").innerHTML = time + " secs";
       return;
     }
-    document.getElementById("time-range-val").innerHTML =
-      "1 min " + time + " secs";
-  } else if (time < 180) {
-    time = time - 120;
-    if (time == 0) {
-      document.getElementById("time-range-val").innerHTML = "2 mins";
-      return;
-    }
-    document.getElementById("time-range-val").innerHTML =
-      "2 min " + time + " secs";
-  } else if (time < 240) {
-    time = time - 180;
-    if (time == 0) {
-      document.getElementById("time-range-val").innerHTML = "3 mins";
-      return;
-    }
-    document.getElementById("time-range-val").innerHTML =
-      "3 min " + time + " secs";
-  } else if(time < 300) {
-    time = time - 240;
-    if (time == 0) {
-      document.getElementById("time-range-val").innerHTML = "4 mins";
-      return;
-    }
-    document.getElementById("time-range-val").innerHTML = "4 min " + time + " secs";
-  } else {
-    document.getElementById("time-range-val").innerHTML = "5 mins";
+    let min = Math.floor(time / 60);
+    let sec = time % 60;
+    document.getElementById("time-range-val").innerHTML = min + " min " + sec + " secs";
   }
 }
