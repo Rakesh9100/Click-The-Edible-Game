@@ -42,11 +42,12 @@
 A well-designed interesting game made using HTML, CSS, and JS where you can play with your favorite edible and click on it to get the highest score.
 - There are five categories - Fruits, Vegetables, Sweets, Snacks, and Bakery Products. Click on your favorite edible to start the game.
 - You can choose how much time you want to spend on one edible.
-- Timer and Score are shown on the screen.
+- Timer, Score and Lives ❤️ count are shown on the screen.
 - Clicking on one edible will increase your score by 1.
-- When the time is over, the final score will be shown.
-- All the scores are stored until you remain on the game before refreshing.
-- High Score is displayed and all the scores are shown sorted in descending order.
+- Clicking on a bomb 💣 will decrease your lives count by 1.
+- When the time is over or all of your `3` lives are exhausted, it's game over, and the final score will be shown.
+- All the scores are stored until you remain on the game i.e, before you refresh/reload/close the page.
+- High Score, along with all the scores are shown sorted in descending order.
 - You can either click on the refresh button or return to home to select a new edible.
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -85,13 +86,16 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/277171024-edb2a772-d317-4ebd-970a-b4a02d85617d.png)<br><br>
 <h3>Playing Screen :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/222927641-0df09567-7239-4559-94ff-204953d586a6.png)<br><br>
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806320-8432d087-e7f1-41ff-bd1e-c47b0f69b697.png)<br><br>
+<h3>Dark Mode :-</h3>
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806339-7734cd96-fa95-461a-a8c4-e71449b96ae4.png)<br><br>
 <h3>Play/Pause/Restart Box :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/222927660-01a3a289-a20e-4568-be74-c9f594e1104e.png)<br><br>
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806349-666c2212-b220-43ca-b346-56a3f822cf6e.png)<br><br>
 <h3>High Score/Your Scores Box :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/225778382-ff7a1c1f-a233-4506-9f83-c8577d18768c.png)<br>
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806362-e60c94e5-0105-4784-8efb-24929c1d833f.png)<br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
