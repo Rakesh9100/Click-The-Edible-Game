@@ -887,6 +887,15 @@ h1 {
     color: #b7b7b7 ;
 }
 
+.dark-theme *::-webkit-scrollbar-track {
+    background: linear-gradient(#212121, #3a3a3a, #212121);
+}
+
+.dark-theme *::-webkit-scrollbar-thumb {
+    background: linear-gradient(#1f1f1f, #3a3a3a, #161616);
+    border: 2.5px solid rgb(19, 19, 19);
+}
+
 .dark-theme #instruction-btn {
     border: none ;
     background-color: #044bc7 ;
