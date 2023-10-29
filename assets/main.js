@@ -204,7 +204,8 @@ function closeInstructions() {
   document.getElementById("instructions").style.display = "none";
   document.getElementById("instructions2").style.display = "none";
   document.getElementById("instructions3").style.display = "none";
-  isRunning = 1;
+  if(isRunning == 0)
+    isRunning = 1;
 }
 
 //Maximum in the array
