@@ -6,7 +6,19 @@ const start_btn = document.getElementById("start-btn");
 const game_container = document.getElementById("game-container");
 const timeEl = document.getElementById("time");
 const scoreEl = document.getElementById("score");
-const audio = new Audio("sounds/sound1.mp3");
+
+// loading audio files
+const bgm1 = new Audio("sounds/bgm1.mp3");
+bgm1.volume = 0.6;
+const bgm2 = new Audio("sounds/bgm2.mp3");
+bgm2.volume = 0.6;
+const game_over_audio = new Audio("sounds/gameOver.mp3"); 
+const choose_edible = new Audio("sounds/start.mp3");
+const click_edible_audio = new Audio("sounds/edible.mp3");
+const click_bomb_audio = new Audio("sounds/explosion.wav");
+// loading audio files
+
+// game variables
 var seconds = 0;
 let score = 0;
 var scoresArray = [];
@@ -15,6 +27,36 @@ let selected_edible = {};
 var gameInterval;
 var timer;
 var isRunning = -1; //this defines the state of game running or not
+// game variables
+
+// game bgm management
+setInterval(() => {
+  if(isRunning == -1) { // if the game is not running
+    bgm2.pause();
+    bgm2.currentTime = 0;
+    game_over_audio.pause();
+    game_over_audio.currentTime = 0;
+    if(bgm1.currentTime >= bgm1.duration - 0.1 || bgm1.currentTime == 0) {
+      bgm1.pause();
+      bgm1.currentTime = 0;
+    }
+    bgm1.play();
+  } else if(isRunning == 1) { // if the game is running
+    bgm1.pause();
+    bgm1.currentTime = 0;
+    game_over_audio.pause();
+    game_over_audio.currentTime = 0;
+    if(bgm2.currentTime >= bgm2.duration - 0.1 || bgm2.currentTime == 0) {
+      bgm2.pause();
+      bgm2.currentTime = 0;
+    }
+    bgm2.play();
+  } else {
+    bgm1.pause();
+    bgm2.pause();
+  }
+}, 500);
+// game bgm management
 
 // -------------- bomb management section ----------------
 var totalBombs = 0; // total number of bombs on screen at a time
@@ -36,8 +78,9 @@ function createBomb() {
 }
 // explode an existing bomb
 function explodeBomb() {
-    const audio = new Audio("sounds/explosion.wav");
-    audio.play();
+    if(isRunning != 1) return;
+    if(lives <= 0) return;
+    if(this.classList.contains('dead')) return;
     this.innerHTML = `<img src="images/explosion.png" alt="💥" style="transform: rotate(${Math.random() * 360}deg)" />`;
     this.classList.remove('bomb-live');
     this.classList.add('dead');
@@ -46,6 +89,11 @@ function explodeBomb() {
       totalBombs--;
     }, 2000);
     lives--;
+    if(click_bomb_audio.currentTime > 0) {
+      click_bomb_audio.pause();
+      click_bomb_audio.currentTime = 0;
+    }
+    click_bomb_audio.play();
 }
 // check if a bomb's life is over
 function checkBombLife() {
@@ -89,7 +137,7 @@ choose_btns.forEach((btn) => {
     game_container.style.height = "100vh";
     startGame();
     displayChange();
-    audio.play();
+    choose_edible.play();
   });
 });
 
@@ -177,6 +225,16 @@ function gameOver() {
   scores.innerHTML = `Your Scores : ${scoresArray}`;
   isRunning = 0;
 
+  bgm1.pause();
+  bgm1.currentTime = 0;
+  bgm2.pause();
+  bgm2.currentTime = 0;
+  if(game_over_audio.currentTime > 0) {
+    game_over_audio.pause();
+    game_over_audio.currentTime = 0;
+  }
+  game_over_audio.play();
+
   // -------------- bomb management section ----------------
   lives = MAX_LIVES;
   totalBombs = 0;
@@ -252,12 +310,15 @@ function getRandomLocation() {
 
 function catchEdible() {
   if (isRunning == 1) {
-    const audio = new Audio("sounds/sound2.mp3");
     increaseScore();
     this.classList.add("caught");
     setTimeout(() => this.remove(), 2000);
     addEdibles();
-    audio.play();
+    if(click_edible_audio.currentTime > 0) {
+      click_edible_audio.pause();
+      click_edible_audio.currentTime = 0;
+    }
+    click_edible_audio.play();
   }
 }
 
@@ -314,7 +375,7 @@ document.body.addEventListener("keyup", (e) => {
 });
 
 function restartGame() {
-  isRunning = 0; //this will stop new edibles from generating
+  isRunning = -1; //this will stop new edibles from generating
   //reset time and score
   seconds = 0;
   clearInterval(gameInterval);
