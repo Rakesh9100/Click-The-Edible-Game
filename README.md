@@ -75,7 +75,7 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://user-images.githubusercontent.com/73993775/225777171-2bbafadb-1c23-4487-b0ef-68c56cbffd74.png)<br><br>
 <h3>Instructions Box :-</h3>
 
-![image](https://user-images.githubusercontent.com/73993775/225777264-05f15388-1f4d-4f89-8fee-7d1405018c15.png)<br><br>
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278870509-69f50a95-251d-45f0-b869-f4dc3b321aa2.png)<br><br>
 <h3>Selection of Edible Page :-</h3>
 
 ![image](https://user-images.githubusercontent.com/73993775/225777515-6147b79e-656e-4572-9639-b6928a176a0f.png)
