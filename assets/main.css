@@ -888,12 +888,12 @@ h1 {
 }
 
 .dark-theme *::-webkit-scrollbar-track {
-    background: linear-gradient(#212121, #3a3a3a, #212121);
+    background: linear-gradient(#3d3d3d, #383737, #464646);
 }
 
 .dark-theme *::-webkit-scrollbar-thumb {
-    background: linear-gradient(#1f1f1f, #3a3a3a, #161616);
-    border: 2.5px solid rgb(19, 19, 19);
+    background: linear-gradient(#1f1f1f, #1f1f1f, #161616);
+    border: 2.5px solid rgb(21, 21, 21);
 }
 
 .dark-theme #instruction-btn {
