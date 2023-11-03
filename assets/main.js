@@ -282,6 +282,46 @@ function decreaseTime() {
     // -------------- bomb management section ----------------
     checkBombLife();
     // -------------- bomb management section ----------------
+    checkRottenEdibleLife();
+  }
+}
+
+// -------------- edible management section ----------------
+function createRottenEdible() {
+  if (isRunning == 1) {
+    const edible = document.createElement("div");
+    edible.classList.add("edible");
+    edible.classList.add("rotten");
+    const { x, y } = getRandomLocation();
+    edible.style.top = `${y}px`;
+    edible.style.left = `${x}px`;
+    edible.innerHTML = `<img src="${selected_edible.src}" alt="${selected_edible.alt}" style="transform: rotate(${Math.random() * 360}deg)" />`;
+    edible.innerHTML += `<p style="display: none">${1 + (Math.random() * 5)}</p>`;
+    edible.addEventListener("click", catchRottenEdible);
+    game_container.appendChild(edible);
+  }
+}
+
+function catchRottenEdible() {
+  if (isRunning == 1) {
+    decreaseScore();
+    this.classList.add("caught");
+    setTimeout(() => this.remove(), 2000);
+    addEdibles();
+  }
+}
+
+function checkRottenEdibleLife() {
+  const rottenEdibles = document.getElementsByClassName("rotten");
+  for (let i = 0; i < rottenEdibles.length; i++) {
+    const rottenEdible = rottenEdibles[i];
+    const life = rottenEdible.querySelector("p");
+    if (life.innerText <= 0) {
+      rottenEdible.classList.add("caught");
+      setTimeout(() => rottenEdible.remove(), 2000);
+    } else {
+      rottenEdible.querySelector("p").innerText--;
+    }
   }
 }
 
@@ -325,11 +365,22 @@ function catchEdible() {
 
 function addEdibles() {
   setTimeout(createEdible, 1000);
-  setTimeout(createEdible, 1500);
+  // add rotten edibles also
+  if (Math.random() < 0.3)
+    setTimeout(createRottenEdible, 1500);
+  else
+    setTimeout(createEdible, 1500);
 }
+
+// -------------- edible management section ----------------
 
 function increaseScore() {
   score++;
+  scoreEl.innerHTML = `Score: ${score}`;
+}
+
+function decreaseScore() {
+  score--;
   scoreEl.innerHTML = `Score: ${score}`;
 }
 
