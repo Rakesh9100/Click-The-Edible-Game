@@ -497,6 +497,10 @@ span {
     height: 100px;
 }
 
+.rotten img {
+    filter: grayscale(100%);
+}
+
 p {
     color: #f3ffbd;
 }
