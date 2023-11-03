@@ -324,7 +324,7 @@ function checkRottenEdibleLife() {
   for (let i = 0; i < rottenEdibles.length; i++) {
     const rottenEdible = rottenEdibles[i];
     const life = rottenEdible.querySelector("p");
-    rottenEdible.querySelector("img").style.filter = `invert(${50 - (life.innerText-1) * 7.5}%)`;
+    rottenEdible.querySelector("img").style.filter = `invert(${20 + (6 - life.innerText) * 7.5}%)`;
     if (life.innerText <= 0) {
       rottenEdible.classList.add("caught");
       setTimeout(() => rottenEdible.remove(), 2000);
