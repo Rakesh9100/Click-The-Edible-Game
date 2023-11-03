@@ -498,7 +498,7 @@ span {
 }
 
 .rotten img {
-    filter: grayscale(100%);
+    filter: invert(20%);
 }
 
 p {
