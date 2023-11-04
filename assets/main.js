@@ -16,6 +16,7 @@ const game_over_audio = new Audio("sounds/gameOver.mp3");
 const choose_edible = new Audio("sounds/start.mp3");
 const click_edible_audio = new Audio("sounds/edible.mp3");
 const click_bomb_audio = new Audio("sounds/explosion.wav");
+const click_rotten_audio = new Audio("sounds/splat.mp3");
 // loading audio files
 
 // game variables
@@ -305,8 +306,15 @@ function createRottenEdible() {
 function catchRottenEdible() {
   if (isRunning == 1) {
     decreaseScore();
+    this.classList.remove("rotten");
+    this.innerHTML = `<img src="images/splat.png" alt="🦠" />`;
     this.classList.add("caught");
     setTimeout(() => this.remove(), 2000);
+    if(click_rotten_audio.currentTime > 0) {
+      click_rotten_audio.pause();
+      click_rotten_audio.currentTime = 0;
+    }
+    click_rotten_audio.play();
     addEdibles();
   }
 }
@@ -316,6 +324,7 @@ function checkRottenEdibleLife() {
   for (let i = 0; i < rottenEdibles.length; i++) {
     const rottenEdible = rottenEdibles[i];
     const life = rottenEdible.querySelector("p");
+    rottenEdible.querySelector("img").style.filter = `invert(${20 + (6 - life.innerText) * 7.5}%)`;
     if (life.innerText <= 0) {
       rottenEdible.classList.add("caught");
       setTimeout(() => rottenEdible.remove(), 2000);
