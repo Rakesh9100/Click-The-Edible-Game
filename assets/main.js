@@ -297,7 +297,7 @@ function createRottenEdible() {
     edible.style.top = `${y}px`;
     edible.style.left = `${x}px`;
     edible.innerHTML = `<img src="${selected_edible.src}" alt="${selected_edible.alt}" style="transform: rotate(${Math.random() * 360}deg)" />`;
-    edible.innerHTML += `<p style="display: none">${10 + (Math.random() * 5)}</p>`;
+    edible.innerHTML += `<p style="display: none">${1 + (Math.random() * 5)}</p>`;
     edible.addEventListener("click", catchRottenEdible);
     game_container.appendChild(edible);
   }
