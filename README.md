@@ -40,10 +40,12 @@
 <h2>Introduction📌</h2>
 
 A well-designed interesting game made using HTML, CSS, and JS where you can play with your favorite edible and click on it to get the highest score.
+
 - There are five categories - Fruits, Vegetables, Sweets, Snacks, and Bakery Products. Click on your favorite edible to start the game.
 - You can choose how much time you want to spend on one edible.
 - Timer, Score and Lives ❤️ count are shown on the screen.
 - Clicking on one edible will increase your score by 1.
+- Clicking on a rotten 🤢 edible will decrease the score by 1.
 - Clicking on a bomb 💣 will decrease your lives count by 1.
 - When the time is over or all of your `3` lives are exhausted, it's game over, and the final score will be shown.
 - All the scores are stored until you remain on the game i.e, before you refresh/reload/close the page.
@@ -75,7 +77,7 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://user-images.githubusercontent.com/73993775/225777171-2bbafadb-1c23-4487-b0ef-68c56cbffd74.png)<br><br>
 <h3>Instructions Box :-</h3>
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278870509-69f50a95-251d-45f0-b869-f4dc3b321aa2.png)<br><br>
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/280607465-4e8b1e05-874b-4e67-b1ee-dc9ceca10407.png)<br><br>
 <h3>Selection of Edible Page :-</h3>
 
 ![image](https://user-images.githubusercontent.com/73993775/225777515-6147b79e-656e-4572-9639-b6928a176a0f.png)
@@ -90,6 +92,9 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 <h3>Dark Mode :-</h3>
 
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806339-7734cd96-fa95-461a-a8c4-e71449b96ae4.png)<br><br>
+<h3>Rotten Edibles :-</h3>
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/280606512-2f16895f-5896-4ca7-99a6-740f77fbbd31.png)<br><br>
 <h3>Play/Pause/Restart Box :-</h3>
 
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806349-666c2212-b220-43ca-b346-56a3f822cf6e.png)<br><br>
