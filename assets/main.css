@@ -131,7 +131,6 @@ h3 {
   border: none;
   margin-top: 10px;
   color: white;
-  text-transform: uppercase;
   padding: 0.5em 1.5em;
   text-align: center;
   text-decoration: none;
@@ -446,6 +445,114 @@ span {
     height: 100px;
     object-fit: contain;
 }
+
+/* Upload section */
+
+.upload-edible-section {
+    margin-bottom: 100px !important;
+}
+
+.upload-edible-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-edible-btn h5 {
+    margin-top: 0rem !important;
+}
+
+.upload-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20vw !important;
+    height: auto !important;
+}
+
+.upload-btn:hover {
+    background-color: var(--block);
+    transform: scale(1);
+}
+
+.upload-btn img {
+    margin-top: 1rem;
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain;
+}
+
+#choose-edible {
+    background-color: var(--c);
+    font-size: small;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+#choose-edible:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+#choose-uploaded-edible {
+    background-color: #4CAF50;
+    font-size: small;
+    color: white;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: none;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+#choose-uploaded-edible:hover {
+    background-color: #3e8e41;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .upload-btn {
+        width: 30vw !important;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .upload-btn {
+        width: 40vw !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .upload-btn {
+        width: 50vw !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .upload-btn {
+        width: 60vw !important;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .upload-btn {
+        width: 70vw !important;
+    }
+}
+
+/* Upload section */
 
 .game-container {
     display: flex;
