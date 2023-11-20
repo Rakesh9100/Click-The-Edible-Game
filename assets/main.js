@@ -128,7 +128,40 @@ start_btn.addEventListener("click", function () {
   head.style.display = "flex";
 });
 
+// --------------- uploading image ----------------
+const input = document.getElementById('file-upload');
+const previewPhoto = () => {
+    const file = input.files;
+    if (file) {
+        const fileReader = new FileReader();
+        const preview = document.getElementById('file-preview');
+        fileReader.onload = event => {
+            preview.setAttribute('src', event.target.result);
+            const play_on_upload_btn = document.querySelector('.upload-btn').querySelector('button');
+            play_on_upload_btn.style.display = 'block';
+        }
+        fileReader.readAsDataURL(file[0]);
+    }
+}
+input.addEventListener('change', previewPhoto);
+// --------------- uploading image ----------------
+
 choose_btns.forEach((btn) => {
+  if(btn.classList.contains("upload-btn")) {
+    btn.querySelector("button").addEventListener("click", () => {
+      const img = btn.querySelector("img");
+      const src = img.getAttribute('src');
+      const alt = img.getAttribute('alt');
+
+      selected_edible = { src, alt };
+      screens[1].classList.add("up1");
+      game_container.style.height = "100vh";
+      startGame();
+      displayChange();
+      choose_edible.play();
+    });
+    return;
+  }
   btn.addEventListener("click", () => {
     const img = btn.querySelector("img");
     const src = img.getAttribute("src");
