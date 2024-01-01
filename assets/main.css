@@ -637,8 +637,8 @@ h1 {
 
 #light-icon:hover
 {
-    background-color: white;
-    color: blue;
+    background-color: blue;
+    color: white;
     transition: all 0.2s ease;
 }
 #pause-button:hover
