@@ -580,7 +580,8 @@ span {
 }
 
 .score {
-    right: 50px;
+    right: 30px;
+    top: 45px;
 }
 
 .edible, .bomb{
