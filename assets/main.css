@@ -635,13 +635,29 @@ h1 {
     border-radius: 5px;
 }
 
-#back-icon:hover,
-#light-icon:hover,
-#pause-button:hover {
-    background-color: var(--primary);
+
+#light-icon:hover
+{
+    background-color: blue;
+    color: white;
     transition: all 0.2s ease;
 }
-
+#pause-button:hover
+{
+    color: blue; /* Add your desired text color on hover */
+    animation: pulse 0.5s infinite; /* Add the animation */
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 #pause-button {
     display: none;
     width: 40px;
