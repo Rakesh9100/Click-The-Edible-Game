@@ -440,6 +440,16 @@ span {
     color: var(--textcolblock);
 }
 
+/* Making Images Undraggable */
+img {
+    -webkit-user-drag: none; /* Standard syntax */
+    user-select: none; /* Standard syntax */
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-drag: none; /* WebKit */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
 .choose-btn img {
     width: 100px;
     height: 100px;
