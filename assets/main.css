@@ -71,6 +71,52 @@
     }
 }
 
+/* Custom Cursor */
+html {
+    cursor: none;
+    scroll-behavior: smooth;
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 2;
+    pointer-events: none;
+}
+.cursor div {
+    position: absolute;
+    display: grid;
+    place-items: center;
+}
+.cursor div div {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    animation: pulse 2.5s linear infinite;
+    box-shadow: 0 0 10px white;
+    transition: transform 0.4s, background 0.4s;
+}
+.cursor div:nth-child(1),
+.cursor div:nth-child(2) {
+    width: 100%;
+    height: 100%;
+}
+.cursor div:nth-child(1) {
+    transition: transform 0.2s ease-out;
+}
+.cursor div:nth-child(2) {
+    transition: transform 0.1s ease-out;
+}
+.cursor div:nth-child(2) div {
+    background: #fff;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+}
+
 body {
     background: var(--primary);
     background: linear-gradient(149deg, var(--primary) 0%, var(--second) 100%);
@@ -123,7 +169,7 @@ h3 {
     transition: 0.5s;
     margin: 2em;
     margin-top: -25px;
-    cursor: pointer;
+    cursor:none;
 }
 
 .btn2 {
@@ -136,7 +182,7 @@ h3 {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  cursor: pointer;
+  cursor:none;
   border-radius: 0.5em;
   transform: 0.5s;
 }
@@ -298,7 +344,7 @@ span {
     justify-content: space-between;
     align-items:center;
     padding: 0rem .5rem;
-    z-index: 2;
+    z-index: 0;
 }
 
 .footer .copy {
@@ -632,7 +678,6 @@ h1 {
 #light-icon {
     font-size: x-large;
     position: relative;
-    cursor: pointer;
     padding: 0.5em;
     border-radius: 5px;
 }

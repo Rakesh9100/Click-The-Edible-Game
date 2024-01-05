@@ -7,6 +7,29 @@ const game_container = document.getElementById("game-container");
 const timeEl = document.getElementById("time");
 const scoreEl = document.getElementById("score");
 
+// cursor movement
+window.addEventListener('mousemove', function (e) {
+  var rings = document.querySelectorAll(".ring");
+  var cursordivdiv = document.querySelectorAll(".cursor div div");
+  cursordivdiv.forEach(function (element) {
+      if (
+          e.target.tagName === 'A' ||
+          e.target.tagName === 'BUTTON' ||
+          (e.target.parentNode && e.target.parentNode.tagName === 'BUTTON') ||
+          e.target.tagName === 'I'
+      ) {
+          element.style.background = 'white';
+      } else {
+          element.style.background = 'transparent';
+      }
+  });
+  rings.forEach(function (ring) {
+      ring.style.transform = `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`;
+  });
+});
+
+
+
 // loading audio files
 const bgm1 = new Audio("sounds/bgm1.mp3");
 bgm1.volume = 0.6;
