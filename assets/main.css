@@ -1107,21 +1107,61 @@ h1 {
   color: #f3eeee;
 }
 
+/* Default styles for the back-to-top button */
 #back-to-top-btn {
-    font-size: x-large;
-    display: none;
-    cursor: pointer;
-    padding: 0.5em;
-    border-radius: 100%;
-    background-color: black;
-    color: white; 
-    position: fixed;
-    bottom: 60px; 
-    right: 25px; 
-    z-index: 99;
-    transition:background-color 0.3s, color 0.3s;
+  font-size: x-large;
+  display: none;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 100%;
+  background-color: black;
+  color: white; 
+  position: fixed;
+  bottom: 60px; 
+  right: 25px; 
+  z-index: 99;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#back-to-top-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Media query for tablets (landscape) and larger devices */
+@media only screen and (min-width: 768px) {
+  #back-to-top-btn {
+      font-size: large;
+      bottom: 60px;
+      right: 25px;
   }
-  #back-to-top-btn:hover {
-    background-color: white; /* Change background color on hover */
-    color: black; /* Change text color on hover */
+}
+
+/* Media query for desktops and larger devices */
+@media only screen and (min-width: 992px) {
+  #back-to-top-btn {
+      font-size: x-large;
+      bottom: 60px;
+      right: 25px;
   }
+}
+
+/* Media query for large desktops and larger devices */
+@media only screen and (min-width: 1200px) {
+  #back-to-top-btn {
+      font-size: xx-large;
+      bottom: 60px;
+      right: 25px;
+  }
+}
+
+/* Media query for small devices (portrait) */
+@media only screen and (max-width: 767px) {
+  #back-to-top-btn {
+      display: none; /* Hide the button on small screens */
+  }
+}
+
+
+
+
