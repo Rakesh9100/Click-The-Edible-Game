@@ -1069,3 +1069,28 @@ h1 {
 .dark-theme #light-icon, .dark-theme #back-icon {
     color:  #f3eeee;
 }
+/* Default styles for the back-to-top button */
+#back-to-top-btn {
+    font-size: x-large;
+    display: none;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 100%;
+    background-color: black;
+    color: white; 
+    position: fixed;
+    bottom: 60px; 
+    right: 25px; 
+    z-index: 99;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#back-to-top-btn:hover {
+    background-color: white;
+    color: black;
+}
+@media (max-width: 768px) {  /* Adjust breakpoint as needed */
+    #back-to-top-btn {
+      bottom: 100px;  /* Adjust as needed to clear the footer */
+    }
+  }

@@ -528,3 +528,28 @@ function set_time_range_val() {
     document.getElementById("time-range-val").innerHTML = min + " min " + sec + " secs";
   }
 }
+// Function to scroll to the top of the .container2 element smoothly
+function scrollToTop() {
+  var container2 = document.querySelector(".container2");
+  container2.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+// Show or hide the back-to-top button based on .container2 scroll position
+document.querySelector(".container2").onscroll = function () {
+  var btn = document.getElementById("back-to-top-btn");
+  if (this.scrollTop > 20) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 200) { /* Adjust threshold as needed */
+    document.querySelector('#back-to-top-btn').style.display = 'block';
+  } else {
+    document.querySelector('#back-to-top-btn').style.display = 'none';
+  }
+});
