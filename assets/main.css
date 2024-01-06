@@ -1071,10 +1071,23 @@ h1 {
 }
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    position: relative;
+    padding: 10px;
 }
 
-.volume-icon {
+.volume-icon, #light-icon, #back-icon {
+    margin-left: 10px;
     cursor: pointer;
 }
+
+.volume-icon, #light-icon {
+    order: 2;
+}
+
+#back-icon {
+    order: 3;
+}
+
+/* Additional styling for icons if needed */
