@@ -550,8 +550,8 @@ function removeEdibles() {
     createdEdibles[0].parentNode.removeChild(createdEdibles[0]);
   }
 }
-var icon = document.getElementById("light-icon");
-icon.onclick = function () {
+var themeicon = document.getElementById("light-icon");
+themeicon.onclick = function () {
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
     document.getElementById("light-icon").classList.remove("fa-moon");
@@ -559,6 +559,31 @@ icon.onclick = function () {
   } else {
     document.getElementById("light-icon").classList.remove("fa-sun");
     document.getElementById("light-icon").classList.add("fa-moon");
+  }
+};
+
+var volumeicon = document.getElementById("volume-off-icon");
+volumeicon.onclick = function() {
+  if (document.getElementById("volume-off-icon").classList.contains("fa-volume-up")) {
+    bgm1.volume = 0;
+    bgm2.volume = 0;
+    game_over_audio.volume = 0;
+    choose_edible.volume = 0;
+    click_edible_audio.volume = 0;
+    click_bomb_audio.volume = 0;
+    click_rotten_audio.volume = 0;
+    document.getElementById("volume-off-icon").classList.remove("fa-volume-up");
+    document.getElementById("volume-off-icon").classList.add("fa-volume-off");
+  } else {
+    bgm1.volume = 0.6;
+    bgm2.volume = 0.6;
+    game_over_audio.volume = 0.6;
+    choose_edible.volume = 0.6;
+    click_edible_audio.volume = 0.6;
+    click_bomb_audio.volume = 0.6;
+    click_rotten_audio.volume = 0.6;
+    document.getElementById("volume-off-icon").classList.add("fa-volume-up");
+    document.getElementById("volume-off-icon").classList.remove("fa-volume-off");
   }
 };
 

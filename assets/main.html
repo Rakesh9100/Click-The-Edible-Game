@@ -9,13 +9,13 @@
     <link rel="icon" type="image/x-png" href="images/favicon.png" />
     <script src="https://kit.fontawesome.com/5587893eae.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Let's Play the Game !!!</title>
 </head>
 
 
 <body oncontextmenu="return false;">
-    
+
     <div id="preloader" class="loader">
         <img src="./images/preloader.gif" alt="" />
     </div>
@@ -25,105 +25,111 @@
             <div><!--Border--></div>
         </div>
         <div class="ring">
-            <div><!--Pointer--></div>		
+            <div><!--Pointer--></div>
         </div>
     </div>
-        
+
     <div class="container">
         <button class="btn" id="instruction-btn" onclick="showInstructions()">
             Instructions<span></span><span></span><span></span><span></span>
         </button>
-        <i
-        class="fa-solid fa-moon"
-        id="light-icon"
-        aria-hidden="true"
-        onclick="change()"></i>
-        <i
-        id="back-icon"
-        onclick="reset()"
-        class="fa fa-chevron-left"
-        aria-hidden="true"></i>
+        <i class="fa-solid fa-volume-up" id="volume-off-icon" aria-hidden="true" onclick="change()"></i>
+        <i class="fa-solid fa-moon" id="light-icon" aria-hidden="true" onclick="change()"></i>
+        <i id="back-icon" onclick="reset()" class="fa fa-chevron-left" aria-hidden="true"></i>
     </div>
 
     <div class="screen main">
-        <img src="images/pause-button.svg" alt="Pause Button" id="pause-button" onclick="pauseGame()" aria-hidden="true"/>
+        <img src="images/pause-button.svg" alt="Pause Button" id="pause-button" onclick="pauseGame()"
+            aria-hidden="true" />
         <h2>Play with your Favourite Edible🎮</h2>
         <button class="btn" id="start-btn" onclick="starting()">
             Play Game!!<span></span><span></span><span></span><span></span>
         </button>
-        
+
         <div id="instructions">
-            <b style="font-weight:500; font-size: 1.9vmax; padding-bottom: 1rem;">&#129389 Alrighty, welcome to Click the Edible Game!! &#127817</b><br>
-            <b  style=" font-size: 1.3vmax; padding-bottom: 0.8rem;">Get ready to unleash your inner produce-picking pro and show those edibles who's boss!</b><br>
-            <b style=" font-size: 1.3vmax; " >Here's how to play:</b><br>
-            
+            <b style="font-weight:500; font-size: 1.9vmax; padding-bottom: 1rem;">&#129389 Alrighty, welcome to Click
+                the Edible Game!! &#127817</b><br>
+            <b style=" font-size: 1.3vmax; padding-bottom: 0.8rem;">Get ready to unleash your inner produce-picking pro
+                and show those edibles who's boss!</b><br>
+            <b style=" font-size: 1.3vmax; ">Here's how to play:</b><br>
+
             <ol type="1">
                 <li>
                     Choose your sidekick -- Will it be Team Fruit, Vegetable, Sweet, Snack or Backery?
                 </li>
                 <li>
-                    Once you've made your choice, the timer will start ticking down from your chosen gameplay time and chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.
+                    Once you've made your choice, the timer will start ticking down from your chosen gameplay time and
+                    chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.
                 </li>
                 <li>
-                    Your job is to click on the edibles before the timer runs out. For every correct click, you'll score a juicy point!
+                    Your job is to click on the edibles before the timer runs out. For every correct click, you'll score
+                    a juicy point!
                 </li>
                 <li>
-                    But sure to pick your edible wisely, as some are rotten 🤢 and clicking on them shall cost you your delicious points.
+                    But sure to pick your edible wisely, as some are rotten 🤢 and clicking on them shall cost you your
+                    delicious points.
                 </li>
                 <li>
                     Also be aware of the bombs 💣, you have 3 lives ❤️❤️❤️. Click on a bomb 💣, and you lose a life ❤️.
                 </li>
                 <li>
-                    Keep your eyes peeled and your fingers nimble because once the clock strikes zero or all the lives ❤️ are lost, the game is over and the edibles will dance away.
+                    Keep your eyes peeled and your fingers nimble because once the clock strikes zero or all the lives
+                    ❤️ are lost, the game is over and the edibles will dance away.
                 </li>
             </ol><br>
-            
-            <div id="info-span" style=" font-size: 1.3vmax; " >Ready to squash the competition?</div><br>
-            <div style="display:flex; align-items: center; justify-content: center; padding-top: 1rem;" >
+
+            <div id="info-span" style=" font-size: 1.3vmax; ">Ready to squash the competition?</div><br>
+            <div style="display:flex; align-items: center; justify-content: center; padding-top: 1rem;">
                 <button class="btn" id="instruction-btn" style="font-size: 12px;" onclick="closeInstructions()">
                     Let's get started!!<span></span><span></span><span></span><span></span>
                 </button>
             </div>
         </div>
-        
-        
+
+
     </div>
 
     <div class="screen head">
         <div id="instructions2" style="margin: 0px">
-            <b style="font-weight:500; font-size: 1.9vmax; padding-bottom: 0.8rem;">&#129389 Alrighty, welcome to Click the Edible Game!! &#127817</b><br>
-            <b style=" font-size: 1.3vmax; padding-bottom: 0.8rem;">Get ready to unleash your inner produce-picking pro and show those edibles who's boss!</b><br>
+            <b style="font-weight:500; font-size: 1.9vmax; padding-bottom: 0.8rem;">&#129389 Alrighty, welcome to Click
+                the Edible Game!! &#127817</b><br>
+            <b style=" font-size: 1.3vmax; padding-bottom: 0.8rem;">Get ready to unleash your inner produce-picking pro
+                and show those edibles who's boss!</b><br>
             <b style=" font-size: 1.3vmax; ">Here's how to play:</b><br>
-            
+
             <ol type="1">
                 <li>
                     Choose your sidekick -- Will it be Team Fruit, Vegetable, Sweet, Snack or Backery?
                 </li>
                 <li>
-                    Once you've made your choice, the timer will start ticking down from your chosen gameplay time and chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.
+                    Once you've made your choice, the timer will start ticking down from your chosen gameplay time and
+                    chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.
                 </li>
                 <li>
-                    Your job is to click on the edibles before the timer runs out. For every correct click, you'll score a juicy point!
+                    Your job is to click on the edibles before the timer runs out. For every correct click, you'll score
+                    a juicy point!
                 </li>
                 <li>
-                    But sure to pick your edible wisely, as some are rotten 🤢 and clicking on them shall cost you your delicious points.
+                    But sure to pick your edible wisely, as some are rotten 🤢 and clicking on them shall cost you your
+                    delicious points.
                 </li>
                 <li>
                     Also be aware of the bombs 💣, you have 3 lives ❤️❤️❤️. Click on a bomb 💣, and you lose a life ❤️.
                 </li>
                 <li>
-                    Keep your eyes peeled and your fingers nimble because once the clock strikes zero or all lives ❤️ are lost, the game is over and the edibles will dance away.
+                    Keep your eyes peeled and your fingers nimble because once the clock strikes zero or all lives ❤️
+                    are lost, the game is over and the edibles will dance away.
                 </li>
             </ol><br>
-            
+
             <div id="info-span" style=" font-size: 1.3vmax; ">Ready to squash the competition?</div><br>
-            <div style="display:flex; align-items: center; justify-content: center; padding-top: 1rem;" >
+            <div style="display:flex; align-items: center; justify-content: center; padding-top: 1rem;">
                 <button class="btn" id="instruction-btn" style="font-size: 12px;" onclick="closeInstructions()">
                     Let's get started!!<span></span><span></span><span></span><span></span>
                 </button>
             </div>
         </div>
-        
+
         <!----- Edibles Section ----->
 
         <div class="container2">
@@ -234,9 +240,9 @@
                     <h1>OR</h1>
                 </div>
             </div>
-            
+
             <!----- Sweets Section ----->
-            
+
             <div class="sweets">
                 <div class="screen-page">
                     <h1>Choose your favorite Sweet</h1>
@@ -289,7 +295,7 @@
             </div>
 
             <!----- Snacks Section ----->
-            
+
             <div class="snacks">
                 <div class="screen-page">
                     <h1>Choose your favorite Snack</h1>
@@ -340,9 +346,9 @@
                     <h1>OR</h1>
                 </div>
             </div>
-            
+
             <!----- Bakery Products Section ----->
-            
+
             <div class="bakery">
                 <div class="screen-page">
                     <div></div>
@@ -396,7 +402,7 @@
             </div>
 
             <!----- Upload Edible ----->
-            
+
             <div class="upload-edible-section">
                 <div class="screen-page">
                     <h1>Didn't find your favourite Edible ?</h1>
@@ -404,7 +410,7 @@
                     <div class="upload-edible-btn">
                         <div class="choose-btn upload-btn">
                             <img src="images/upload.png" alt="Uploaded Edible" id="file-preview">
-                            <input type="file" accept=".jpg, .jpeg, .png" id="file-upload" hidden> 
+                            <input type="file" accept=".jpg, .jpeg, .png" id="file-upload" hidden>
                             <label for="file-upload" id="choose-edible">Choose Your Own Edible</label>
                             <button id="choose-uploaded-edible" style="display: none;">Continue ▶️</button>
                         </div>
@@ -414,58 +420,64 @@
             </div>
         </div>
     </div>
-    
+
     <div id="pause-menu">
         <p>PAUSED</p>
         <div class="options">
-            <img src="images/play-button.svg" alt="Resume Playing" class="play-button" onclick="resumeGame()"/>
-            <img src="images/restart-button.svg" alt="Restart Game" class="restart-button" onclick="restartGame()"/>
-            <img src="images/home-button.svg" alt="Home" class="home-button" onclick="reset()"/>
+            <img src="images/play-button.svg" alt="Resume Playing" class="play-button" onclick="resumeGame()" />
+            <img src="images/restart-button.svg" alt="Restart Game" class="restart-button" onclick="restartGame()" />
+            <img src="images/home-button.svg" alt="Home" class="home-button" onclick="reset()" />
         </div>
     </div>
-    
+
     <div id="gameOver-menu">
         <p>GAMEOVER</p>
         <div class="gameover-options">
-            <img src="images/restart-button.svg" alt="Restart Game" class="restart-button" onclick="restartGame()"/>
+            <img src="images/restart-button.svg" alt="Restart Game" class="restart-button" onclick="restartGame()" />
             <div id="finalScore"></div>
-            <img src="images/home-button.svg" alt="Home" class="home-button" onclick="reset()"/>
+            <img src="images/home-button.svg" alt="Home" class="home-button" onclick="reset()" />
         </div>
         <p id="highscore"></p>
         <p id="scores"></p>
     </div>
-    
+
     <div class="screen game-container" id="game-container">
         <h3 id="time" class="time"></h3>
         <h3 id="score" class="score">Score: 0</h3>
         <div id="instructions3" style="margin: 0px">
-            <b style="font-weight:500; font-size: 1.9vmax; padding-bottom: 1rem;">&#129389 Alrighty, welcome to Click the Edible Game!! &#127817</b><br>
-            <b style=" font-size: 1.3vmax; padding-bottom: 0.8rem;">Get ready to unleash your inner produce-picking pro and show those edibles who's boss!</b><br>
+            <b style="font-weight:500; font-size: 1.9vmax; padding-bottom: 1rem;">&#129389 Alrighty, welcome to Click
+                the Edible Game!! &#127817</b><br>
+            <b style=" font-size: 1.3vmax; padding-bottom: 0.8rem;">Get ready to unleash your inner produce-picking pro
+                and show those edibles who's boss!</b><br>
             <b style=" font-size: 1.3vmax; ">Here's how to play:</b><br>
-            
+
             <ol type="1">
                 <li>
                     Choose your sidekick -- Will it be Team Fruit, Vegetable, Sweet, Snack or Backery?
                 </li>
                 <li>
-                    Once you've made your choice, the timer will start ticking down from your chosen gameplay time and chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.
+                    Once you've made your choice, the timer will start ticking down from your chosen gameplay time and
+                    chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.
                 </li>
                 <li>
-                    Your job is to click on the edibles before the timer runs out. For every correct click, you'll score a juicy point!
+                    Your job is to click on the edibles before the timer runs out. For every correct click, you'll score
+                    a juicy point!
                 </li>
                 <li>
-                    But sure to pick your edible wisely, as some are rotten 🤢 and clicking on them shall cost you your delicious points.
+                    But sure to pick your edible wisely, as some are rotten 🤢 and clicking on them shall cost you your
+                    delicious points.
                 </li>
                 <li>
                     Also be aware of the bombs 💣, you have 3 lives ❤️❤️❤️. Click on a bomb 💣, and you lose a life ❤️.
                 </li>
                 <li>
-                    Keep your eyes peeled and your fingers nimble because once the clock strikes zero or all the lives ❤️ are lost, the game is over and the edibles will dance away.
+                    Keep your eyes peeled and your fingers nimble because once the clock strikes zero or all the lives
+                    ❤️ are lost, the game is over and the edibles will dance away.
                 </li>
             </ol><br>
-            
+
             <div id="info-span" style=" font-size: 1.3vmax; ">Ready to squash the competition?</div><br>
-            <div style="display:flex; align-items: center; justify-content: center; padding-top: 1rem;" >
+            <div style="display:flex; align-items: center; justify-content: center; padding-top: 1rem;">
                 <button class="btn" id="instruction-btn" style="font-size: 12px;" onclick="closeInstructions()">
                     Let's get started!!<span></span><span></span><span></span><span></span>
                 </button>
@@ -477,11 +489,12 @@
         <img src="images/bomb.png" alt="💣" style="display: none;" />
         <!-- Rotten pre-loader -->
         <img src="images/splat.png" alt="🦠" style="display: none;" />
-        
+
         <div id="gameplayTime">
             <b>Howdy, partner! How many hours of rootin' tootin' gameplay have you clocked up on this game?</b>
             <div id="time-range-val" class="changable-text">2 mins 45 sec</div>
-            <input type="range" max="300" min="30" id="time-range" style="width: 30vw; cursor: pointer;" onchange="set_time_range_val()" onmousemove="set_time_range_val()" ontouchmove="set_time_range_val()">               
+            <input type="range" max="300" min="30" id="time-range" style="width: 30vw; cursor: pointer;"
+                onchange="set_time_range_val()" onmousemove="set_time_range_val()" ontouchmove="set_time_range_val()">
             <div style="position: relative;">
                 <button id="start-btn-time" class="btn2" onclick="closeGameplayDialog()">Start 🎮</button>
             </div>
@@ -491,19 +504,23 @@
 
     <footer class="footer" id="footer">
         <div class="copy">
-            Copyright &#169; <script>document.write(new Date().getFullYear());</script> by <a href="https://rakeshroshan.netlify.app/" target="_blank">Rakesh Roshan </a> : All Rights Reserved
+            Copyright &#169;
+            <script>document.write(new Date().getFullYear());</script> by <a href="https://rakeshroshan.netlify.app/"
+                target="_blank">Rakesh Roshan </a> : All Rights Reserved
         </div>
         <div class="icons">
             <a class="github" href="https://github.com/Rakesh9100" target="_blank"><i class="fa fa-github"></i>
             </a>
-            <a class="linkedin" href="https://www.linkedin.com/in/rakesh-roshan-9100" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a class="instagram" href="https://www.instagram.com/rakesh250602" target="_blank"><i class="fa fa-instagram"></i>
+            <a class="linkedin" href="https://www.linkedin.com/in/rakesh-roshan-9100" target="_blank"><i
+                    class="fa fa-linkedin"></i></a>
+            <a class="instagram" href="https://www.instagram.com/rakesh250602" target="_blank"><i
+                    class="fa fa-instagram"></i>
             </a>
         </div>
     </footer>
 
     <!----- Preloader Script ----->
-    
+
     <script>
         var loader = document.querySelector(".loader");
         window.addEventListener("load", vanish);
@@ -511,8 +528,9 @@
             loader.classList.add("disappear");
         }
     </script>
-    
+
     <script src="main.js"></script>
 
 </body>
+
 </html>
