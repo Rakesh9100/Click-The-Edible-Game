@@ -629,7 +629,7 @@ h1 {
     color: #eaf9d9;
 }
 
-#light-icon {
+#light-icon, #volume-off-icon {
     font-size: x-large;
     position: relative;
     cursor: pointer;
@@ -646,7 +646,7 @@ h1 {
 }
 
 
-#light-icon:hover
+#light-icon:hover, #volume-off-icon:hover
 {
     background-color: blue;
     color: white;
@@ -1066,6 +1066,15 @@ h1 {
     color: #f3eeee ;
 }
 
-.dark-theme #light-icon, .dark-theme #back-icon {
+.dark-theme #light-icon, .dark-theme #back-icon, .dark-theme #volume-off-icon {
     color:  #f3eeee;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.volume-icon {
+    cursor: pointer;
 }
