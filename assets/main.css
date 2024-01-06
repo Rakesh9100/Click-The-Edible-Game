@@ -47,6 +47,7 @@
     --textcolblock: #547ba8;
 }
 
+
 .loader {
     position: fixed;
     z-index: 999999999 !important;
@@ -460,6 +461,7 @@ span {
 
 .choose-btn {
     background-color: transparent;
+    overflow-y: hidden;
     border: 0.23rem solid var(--textcol);
     border-radius: 9px;
     color: var(--c);
@@ -472,6 +474,7 @@ span {
 }
 
 .choose-btn:hover {
+    overflow-y: hidden;
     background-color: var(--hover);
     transform: scale(1.1);
     transition: all 0.3s ease;
