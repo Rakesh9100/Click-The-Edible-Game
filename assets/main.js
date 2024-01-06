@@ -7,6 +7,64 @@ const game_container = document.getElementById("game-container");
 const timeEl = document.getElementById("time");
 const scoreEl = document.getElementById("score");
 
+// cursor movement
+window.addEventListener('mousemove', function (e) {
+  var rings = document.querySelectorAll(".ring");
+  var cursordivdiv = document.querySelectorAll(".cursor div div");
+  var instructionsDiv = document.getElementById("instructions");
+  var instructionsDiv1 = document.getElementById("instructions2");
+  var instructionsDiv2 = document.getElementById("instructions3");
+  var gameplayTimeDiv = document.getElementById("gameplayTime");
+  var pauseBoxDiv = document.getElementById("pause-menu");
+  var gameOverDiv = document.getElementById("gameOver-menu");
+
+  cursordivdiv.forEach(function (element) {
+    if (
+      e.target.tagName === 'A' ||
+      e.target.tagName === 'BUTTON' ||
+      (e.target.parentNode && e.target.parentNode.tagName === 'BUTTON') ||
+      e.target.tagName === 'I' ||
+      e.target.tagName === 'IMG'
+
+    ) {
+      element.style.background = 'white';
+      element.style.boxShadow = '0 0 10px white';
+    } else {
+      element.style.background = 'transparent';
+      element.style.boxShadow = '0 0 10px white';
+    }
+  });
+
+  rings.forEach(function (ring) {
+    ring.style.transform = `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`;
+  });
+
+  if (
+    isCursorOnElement(e, instructionsDiv) ||
+    isCursorOnElement(e, instructionsDiv1) ||
+    isCursorOnElement(e, instructionsDiv2) ||
+    isCursorOnElement(e, gameplayTimeDiv) ||
+    isCursorOnElement(e, pauseBoxDiv)  ||
+    isCursorOnElement(e, gameOverDiv)
+  ) {
+    cursordivdiv.forEach(function (element) {
+      element.style.boxShadow = '0 0 10px blue';
+    });
+  }
+});
+
+function isCursorOnElement(event, element) {
+  var rect = element.getBoundingClientRect();
+  return (
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom
+  );
+}
+
+
+
 // loading audio files
 const bgm1 = new Audio("sounds/bgm1.mp3");
 bgm1.volume = 0.6;
