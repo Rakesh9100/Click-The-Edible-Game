@@ -33,6 +33,9 @@
         <button class="btn" id="instruction-btn" onclick="showInstructions()">
             Instructions<span></span><span></span><span></span><span></span>
         </button>
+        <div class="volume-icon" onclick="toggleVolume()">
+            <i id="volume-off-icon" class="fas fa-volume-up"></i>
+          </div>
         <i
         class="fa-solid fa-moon"
         id="light-icon"
@@ -44,7 +47,7 @@
         class="fa fa-chevron-left"
         aria-hidden="true"></i>
     </div>
-
+      
     <div class="screen main">
         <img src="images/pause-button.svg" alt="Pause Button" id="pause-button" onclick="pauseGame()" aria-hidden="true"/>
         <h2>Play with your Favourite Edible🎮</h2>
