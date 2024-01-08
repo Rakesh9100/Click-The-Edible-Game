@@ -7,6 +7,64 @@ const game_container = document.getElementById("game-container");
 const timeEl = document.getElementById("time");
 const scoreEl = document.getElementById("score");
 
+// cursor movement
+window.addEventListener('mousemove', function (e) {
+  var rings = document.querySelectorAll(".ring");
+  var cursordivdiv = document.querySelectorAll(".cursor div div");
+  var instructionsDiv = document.getElementById("instructions");
+  var instructionsDiv1 = document.getElementById("instructions2");
+  var instructionsDiv2 = document.getElementById("instructions3");
+  var gameplayTimeDiv = document.getElementById("gameplayTime");
+  var pauseBoxDiv = document.getElementById("pause-menu");
+  var gameOverDiv = document.getElementById("gameOver-menu");
+
+  cursordivdiv.forEach(function (element) {
+    if (
+      e.target.tagName === 'A' ||
+      e.target.tagName === 'BUTTON' ||
+      (e.target.parentNode && e.target.parentNode.tagName === 'BUTTON') ||
+      e.target.tagName === 'I' ||
+      e.target.tagName === 'IMG'
+
+    ) {
+      element.style.background = 'white';
+      element.style.boxShadow = '0 0 10px white';
+    } else {
+      element.style.background = 'transparent';
+      element.style.boxShadow = '0 0 10px white';
+    }
+  });
+
+  rings.forEach(function (ring) {
+    ring.style.transform = `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`;
+  });
+
+  if (
+    isCursorOnElement(e, instructionsDiv) ||
+    isCursorOnElement(e, instructionsDiv1) ||
+    isCursorOnElement(e, instructionsDiv2) ||
+    isCursorOnElement(e, gameplayTimeDiv) ||
+    isCursorOnElement(e, pauseBoxDiv)  ||
+    isCursorOnElement(e, gameOverDiv)
+  ) {
+    cursordivdiv.forEach(function (element) {
+      element.style.boxShadow = '0 0 10px blue';
+    });
+  }
+});
+
+function isCursorOnElement(event, element) {
+  var rect = element.getBoundingClientRect();
+  return (
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom
+  );
+}
+
+
+
 // loading audio files
 const bgm1 = new Audio("sounds/bgm1.mp3");
 bgm1.volume = 0.6;
@@ -30,72 +88,92 @@ var timer;
 var isRunning = -1; //this defines the state of game running or not
 // game variables
 
-// game bgm management
+// Add an event listener to the window to handle autoplay restrictions
+window.addEventListener('click', function() {
+  if (bgm1.paused && bgm2.paused) {
+    // Start playing the background music only if it's not already playing
+    bgm1.play();
+  }
+});
+
+// Also, modify the setInterval function for game bgm management
 setInterval(() => {
-  if(isRunning == -1) { // if the game is not running
+  if (isRunning == -1) { // if the game is not running
     bgm2.pause();
     bgm2.currentTime = 0;
     game_over_audio.pause();
     game_over_audio.currentTime = 0;
-    if(bgm1.currentTime >= bgm1.duration - 0.1 || bgm1.currentTime == 0) {
+    if (bgm1.currentTime >= bgm1.duration - 0.1 || bgm1.currentTime == 0) {
       bgm1.pause();
       bgm1.currentTime = 0;
+      bgm1.play(); // Start playing bgm1 if it's not playing
     }
-    bgm1.play();
-  } else if(isRunning == 1) { // if the game is running
+  } else if (isRunning == 1) { // if the game is running
     bgm1.pause();
     bgm1.currentTime = 0;
     game_over_audio.pause();
     game_over_audio.currentTime = 0;
-    if(bgm2.currentTime >= bgm2.duration - 0.1 || bgm2.currentTime == 0) {
+    if (bgm2.currentTime >= bgm2.duration - 0.1 || bgm2.currentTime == 0) {
       bgm2.pause();
       bgm2.currentTime = 0;
+      bgm2.play(); // Start playing bgm2 if it's not playing
     }
-    bgm2.play();
   } else {
     bgm1.pause();
     bgm2.pause();
   }
 }, 500);
+
 // game bgm management
 
 // -------------- bomb management section ----------------
 var totalBombs = 0; // total number of bombs on screen at a time
-var MAX_BOMBS = 5; // maximum number of bombs that can be on screen
+var MAX_BOMBS = 7; // maximum number of bombs that can be on screen
 var MAX_BOMB_LIFE = 5; // maximum life of a bomb
 var MAX_LIVES = 3; // maximum number of lives
 var lives = MAX_LIVES; // current number of lives
+
 // create a new bomb
 function createBomb() {
     const bomb = document.createElement('div');
     bomb.classList.add('bomb');
     bomb.classList.add('bomb-live');
-    const {x, y} = getRandomLocation()
+    const { x, y } = getRandomLocation();
     bomb.style.top = `${y}px`;
     bomb.style.left = `${x}px`;
-    bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${1 + (Math.random() * MAX_BOMB_LIFE)}</p>`;
+    bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${1 + Math.floor(Math.random() * MAX_BOMB_LIFE)}</p>`;
     bomb.addEventListener('click', explodeBomb);
     game_container.appendChild(bomb);
 }
+
+// create multiple bombs
+function createBombs() {
+    for (let i = 0; i < MAX_BOMBS; i++) {
+        createBomb();
+        totalBombs++;
+    }
+}
+
 // explode an existing bomb
 function explodeBomb() {
-    if(isRunning != 1) return;
-    if(lives <= 0) return;
-    if(this.classList.contains('dead')) return;
+    if (isRunning !== 1) return;
+    if (lives <= 0) return;
+    if (this.classList.contains('dead')) return;
     this.innerHTML = `<img src="images/explosion.png" alt="💥" style="transform: rotate(${Math.random() * 360}deg)" />`;
     this.classList.remove('bomb-live');
     this.classList.add('dead');
     setTimeout(() => {
-      this.remove(); 
-      totalBombs--;
+        this.remove();
+        totalBombs--;
     }, 2000);
     lives--;
-    if(click_bomb_audio.currentTime > 0) {
-      click_bomb_audio.pause();
-      click_bomb_audio.currentTime = 0;
+    if (click_bomb_audio.currentTime > 0) {
+        click_bomb_audio.pause();
+        click_bomb_audio.currentTime = 0;
     }
     click_bomb_audio.play();
 }
+
 // check if a bomb's life is over
 function checkBombLife() {
     const bombs = document.getElementsByClassName('bomb-live');
@@ -106,11 +184,11 @@ function checkBombLife() {
             bomb.classList.add('dead');
             bomb.classList.remove('bomb-live');
             setTimeout(() => {
-              bomb.remove();
-              totalBombs--;
+                bomb.remove();
+                totalBombs--;
             }, 2000);
         } else {
-            bomb.querySelector('p').innerText--;
+            life.innerText--;
         }
     }
 }
@@ -492,8 +570,8 @@ function removeEdibles() {
     createdEdibles[0].parentNode.removeChild(createdEdibles[0]);
   }
 }
-var icon = document.getElementById("light-icon");
-icon.onclick = function () {
+var themeicon = document.getElementById("light-icon");
+themeicon.onclick = function () {
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
     document.getElementById("light-icon").classList.remove("fa-moon");
@@ -503,7 +581,30 @@ icon.onclick = function () {
     document.getElementById("light-icon").classList.add("fa-moon");
   }
 };
-
+var volumeicon = document.getElementById("volume-off-icon");
+volumeicon.onclick = function() {
+  if (document.getElementById("volume-off-icon").classList.contains("fa-volume-up")) {
+    bgm1.volume = 0;
+    bgm2.volume = 0;
+    game_over_audio.volume = 0;
+    choose_edible.volume = 0;
+    click_edible_audio.volume = 0;
+    click_bomb_audio.volume = 0;
+    click_rotten_audio.volume = 0;
+    document.getElementById("volume-off-icon").classList.remove("fa-volume-up");
+    document.getElementById("volume-off-icon").classList.add("fa-volume-off");
+  } else {
+    bgm1.volume = 0.6;
+    bgm2.volume = 0.6;
+    game_over_audio.volume = 0.6;
+    choose_edible.volume = 0.6;
+    click_edible_audio.volume = 0.6;
+    click_bomb_audio.volume = 0.6;
+    click_rotten_audio.volume = 0.6;
+    document.getElementById("volume-off-icon").classList.add("fa-volume-up");
+    document.getElementById("volume-off-icon").classList.remove("fa-volume-off");
+  }
+};
 function displayChange() {
   foot.classList.toggle("toggle-footer");
 }

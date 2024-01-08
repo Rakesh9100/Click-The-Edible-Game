@@ -8,9 +8,11 @@
     <!-- FontAwesome -->
     <link rel="icon" type="image/x-png" href="images/favicon.png" />
     <script src="https://kit.fontawesome.com/5587893eae.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <title>Let's Play the Game !!!</title>
 </head>
+
 
 <body oncontextmenu="return false;">
     
@@ -18,10 +20,22 @@
         <img src="./images/preloader.gif" alt="" />
     </div>
 
+    <div id="cursor" class="cursor">
+        <div class="ring">
+            <div><!--Border--></div>
+        </div>
+        <div class="ring">
+            <div><!--Pointer--></div>		
+        </div>
+    </div>
+        
     <div class="container">
         <button class="btn" id="instruction-btn" onclick="showInstructions()">
             Instructions<span></span><span></span><span></span><span></span>
         </button>
+        <div class="volume-icon" onclick="toggleVolume()">
+            <i id="volume-off-icon" class="fas fa-volume-up"></i>
+          </div>
         <i
         class="fa-solid fa-moon"
         id="light-icon"
@@ -33,6 +47,7 @@
         class="fa fa-chevron-left"
         aria-hidden="true"></i>
     </div>
+
 <!-- Back to Top Button -->
 <div id="back-to-top-btn" onclick="scrollToTop()">
       <!-- Circular progress bar container -->
@@ -43,6 +58,9 @@
           </div>
       </div>
 </div>
+
+      
+
     <div class="screen main">
         <img src="images/pause-button.svg" alt="Pause Button" id="pause-button" onclick="pauseGame()" aria-hidden="true"/>
         <h2>Play with your Favourite Edible🎮</h2>
@@ -84,20 +102,7 @@
             </div>
         </div>
         
-        <!----- Footer Section ----->
-
-        <footer class="footer" id="footer">
-            <div class="copy">
-                Copyright &#169; <script>document.write(new Date().getFullYear());</script> by <a href="https://rakeshroshan.netlify.app/" target="_blank">Rakesh Roshan </a> : All Rights Reserved
-            </div>
-            <div class="icons">
-                <a class="github" href="https://github.com/Rakesh9100" target="_blank"><i class="fa fa-github"></i>
-                </a>
-                <a class="linkedin" href="https://www.linkedin.com/in/rakesh-roshan-9100" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a class="instagram" href="https://www.instagram.com/rakesh250602" target="_blank"><i class="fa fa-instagram"></i>
-                </a>
-            </div>
-        </footer>
+        
     </div>
 
     <div class="screen head">
@@ -498,6 +503,20 @@
             </div>
         </div>
     </div>
+    <!----- Footer Section ----->
+
+    <footer class="footer" id="footer">
+        <div class="copy">
+            Copyright &#169; <script>document.write(new Date().getFullYear());</script> by <a href="https://rakeshroshan.netlify.app/" target="_blank">Rakesh Roshan </a> : All Rights Reserved
+        </div>
+        <div class="icons">
+            <a class="github" href="https://github.com/Rakesh9100" target="_blank"><i class="fa fa-github"></i>
+            </a>
+            <a class="linkedin" href="https://www.linkedin.com/in/rakesh-roshan-9100" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a class="instagram" href="https://www.instagram.com/rakesh250602" target="_blank"><i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
 
     <!----- Preloader Script ----->
     
