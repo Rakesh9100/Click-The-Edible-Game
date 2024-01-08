@@ -536,16 +536,19 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+// Hide the back-to-top button initially
+document.getElementById("back-to-top-btn").style.display = "none";
 
 // Show or hide the back-to-top button based on .container2 scroll position
 document.querySelector(".container2").onscroll = function () {
   var btn = document.getElementById("back-to-top-btn");
-  if (this.scrollTop > 20) {
+  if (this.scrollTop > 30) {
     btn.style.display = "block";
   } else {
     btn.style.display = "none";
   }
 };
+
 window.addEventListener('scroll', function() {
   if (window.scrollY > 200) { /* Adjust threshold as needed */
     document.querySelector('#back-to-top-btn').style.display = 'block';
@@ -553,3 +556,21 @@ window.addEventListener('scroll', function() {
     document.querySelector('#back-to-top-btn').style.display = 'none';
   }
 });
+
+// Circular progress bar initialization
+const progressBarContainer = document.getElementById("progress-bar-container");
+const progressBar = document.getElementById("progress-bar");
+
+document.querySelector(".container2").addEventListener("scroll", updateProgressBar);
+
+// Update progress bar based on scroll position
+function updateProgressBar() {
+  const scrollHeight = document.querySelector(".container2").scrollHeight;
+  const scrollTop = document.querySelector(".container2").scrollTop;
+  const windowHeight = window.innerHeight;
+
+  const scrollPercentage = (scrollTop / (scrollHeight - windowHeight)) * 100;
+  const progressBar = document.getElementById("progress-bar");
+  progressBar.style.setProperty('--progress-value', scrollPercentage);
+
+}
