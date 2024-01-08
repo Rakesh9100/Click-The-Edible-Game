@@ -518,7 +518,6 @@ function pauseGame() {
     clearInterval(gameInterval);
     isRunning = 0;
     //show pause-menu when game paused
-    
     document.getElementById("pause-menu").style.display = "flex";
     document.getElementById("pause-button").style.display = "none";
     document.getElementById("home-icon").style.display = "none";
