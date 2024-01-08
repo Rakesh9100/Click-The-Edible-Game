@@ -629,7 +629,6 @@ function set_time_range_val() {
     document.getElementById("time-range-val").innerHTML = min + " min " + sec + " secs";
   }
 }
-// Function to scroll to the top of the .container2 element smoothly
 function scrollToTop() {
   var container2 = document.querySelector(".container2");
   container2.scrollTo({
@@ -637,30 +636,27 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
-// Hide the back-to-top button initially
-document.getElementById("back-to-top-btn").style.display = "none";
 
-// Show or hide the back-to-top button based on .container2 scroll position
+// Hide the progress bar container initially
+document.getElementById("progress-bar-container").style.display = "none";
+
+// Show or hide the container based on .container2 scroll position, only if necessary
 document.querySelector(".container2").onscroll = function () {
-  var btn = document.getElementById("back-to-top-btn");
-  if (this.scrollTop > 30) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
+  var container = document.getElementById("progress-bar-container");
+  if (this.scrollHeight > this.clientHeight) { // Check if scrolling is necessary
+    if (this.scrollTop > 50) {
+      container.style.display = "block";
+    } else {
+      container.style.display = "none";
+    }
   }
 };
 
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 200) { /* Adjust threshold as needed */
-    document.querySelector('#back-to-top-btn').style.display = 'block';
-  } else {
-    document.querySelector('#back-to-top-btn').style.display = 'none';
-  }
-});
+// Remove the global scroll event listener, as it's handled within .container2
+// window.addEventListener('scroll', function () { ... });
 
-// Circular progress bar initialization
+// Circular progress bar initialization and update
 const progressBarContainer = document.getElementById("progress-bar-container");
-const progressBar = document.getElementById("progress-bar");
 
 document.querySelector(".container2").addEventListener("scroll", updateProgressBar);
 
@@ -673,5 +669,11 @@ function updateProgressBar() {
   const scrollPercentage = (scrollTop / (scrollHeight - windowHeight)) * 100;
   const progressBar = document.getElementById("progress-bar");
   progressBar.style.setProperty('--progress-value', scrollPercentage);
-
 }
+
+// Hide the progress bar container when the page is not visible
+document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState === 'hidden') {
+    document.getElementById("progress-bar-container").style.display = "none";
+  }
+});
