@@ -425,7 +425,7 @@ span {
 }
 
 .screen.up {
-    margin-top: -100vh;
+    margin-top: -95.7vh;
 }
 
 .screen.up1 {
@@ -695,7 +695,7 @@ h1 {
 }
 
 
-#light-icon:hover, #volume-off-icon:hover
+#light-icon:hover, #volume-off-icon:hover, #back-icon:hover
 {
     background-color: blue;
     color: white;
