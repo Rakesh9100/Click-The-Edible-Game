@@ -629,3 +629,51 @@ function set_time_range_val() {
     document.getElementById("time-range-val").innerHTML = min + " min " + sec + " secs";
   }
 }
+function scrollToTop() {
+  var container2 = document.querySelector(".container2");
+  container2.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+// Hide the progress bar container initially
+document.getElementById("progress-bar-container").style.display = "none";
+
+// Show or hide the container based on .container2 scroll position, only if necessary
+document.querySelector(".container2").onscroll = function () {
+  var container = document.getElementById("progress-bar-container");
+  if (this.scrollHeight > this.clientHeight) { // Check if scrolling is necessary
+    if (this.scrollTop > 50) {
+      container.style.display = "block";
+    } else {
+      container.style.display = "none";
+    }
+  }
+};
+
+// Remove the global scroll event listener, as it's handled within .container2
+// window.addEventListener('scroll', function () { ... });
+
+// Circular progress bar initialization and update
+const progressBarContainer = document.getElementById("progress-bar-container");
+
+document.querySelector(".container2").addEventListener("scroll", updateProgressBar);
+
+// Update progress bar based on scroll position
+function updateProgressBar() {
+  const scrollHeight = document.querySelector(".container2").scrollHeight;
+  const scrollTop = document.querySelector(".container2").scrollTop;
+  const windowHeight = window.innerHeight;
+
+  const scrollPercentage = (scrollTop / (scrollHeight - windowHeight)) * 100;
+  const progressBar = document.getElementById("progress-bar");
+  progressBar.style.setProperty('--progress-value', scrollPercentage);
+}
+
+// Hide the progress bar container when the page is not visible
+document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState === 'hidden') {
+    document.getElementById("progress-bar-container").style.display = "none";
+  }
+});
