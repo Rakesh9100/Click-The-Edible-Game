@@ -489,7 +489,7 @@ function addEdibles() {
   if (Math.random() < 0.3)
     setTimeout(createRottenEdible, 1500);
   else
-    setTimeout(createEdible, 1500);
+    setTimeout(createEdible,2500);
 }
 
 // -------------- edible management section ----------------
