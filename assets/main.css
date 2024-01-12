@@ -729,7 +729,7 @@ h1 {
 
 #pause-menu {
     border: 0.3em solid purple;
-    background-color: d9daf9;
+    background-color: #eaf9d9;
     border-radius: 0.5em;
     position: absolute;
     z-index: 9;
@@ -750,8 +750,8 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 4vmin;
     margin: 0 1.25rem;
-    color:purple;
-    border: 0.1em dashed #d9daf9;
+    color: goldenrod;
+    border: 0.1em dashed #daa520;
     border-radius: 2%;
 }
 
