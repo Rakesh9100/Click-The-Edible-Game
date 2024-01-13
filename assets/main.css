@@ -1218,26 +1218,12 @@ h1 {
   }
 
   #instructions, #instructions2, #instructions3{
-    border-width: 8px;
+    border-width: 5px;
     border-style: solid;
     animation: colorfulBorder 4s infinite linear;
     text-align: center;
-    height: 28em;
+    height: 36.3em;
   }
-  .xy{
-    border-width: 5px;
-    border-style: solid;
-    animation: colorfulBorder 2s infinite linear;
-    margin-left: 100px;
-    margin-right: 100px;
-    background-color: #fffc34;
-    border-radius: 14px;
-    color: black;
-    #instructions {
-    background: linear-gradient(to bottom, #001325, #014588, #0073a1, #00b4d8);
-    color: white;
-    text-align: center;
-}
 
 @keyframes colorfulBorder {
     0% {
@@ -1262,14 +1248,4 @@ h1 {
     border-style: solid;
     animation: colorfulBorder 4s infinite linear;
     text-align: center;
-  }
-  .xy{
-    border-width: 5px;
-    border-style: solid;
-    animation: colorfulBorder 2s infinite linear;
-    background-color: #fffc34;
-    border-radius: 14px;
-    color: black;
-    text-align: center;
-  }
   }
