@@ -215,7 +215,7 @@ h3 {
     height: 2.5rem;
     margin: 0px;
     margin-top: 0.3rem;
-    margin-right: 0.2rem;
+    margin-right: 0.5rem;
     font-size: 15px;
     align-items: center;
 }
@@ -1194,7 +1194,7 @@ h1 {
 }
 
 /* Additional styling for icons if needed */
-#instructions {
+#instructions, #instructions2, #instructions3 {
     background: linear-gradient(to bottom, #001325, #014588, #0073a1, #07778d);
     color: white;
 }
@@ -1217,12 +1217,12 @@ h1 {
     }
   }
 
-  #instructions{
+  #instructions, #instructions2, #instructions3{
     border-width: 8px;
     border-style: solid;
     animation: colorfulBorder 4s infinite linear;
     text-align: center;
-    height: 20rem;
+    height: 25.4rem;
   }
   .xy{
     border-width: 5px;
@@ -1257,7 +1257,7 @@ h1 {
     }
   }
 
-  #instructions{
+  #instructions, #instructions2, #instructions3 {
     border-width: 15px;
     border-style: solid;
     animation: colorfulBorder 4s infinite linear;
