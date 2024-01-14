@@ -243,6 +243,29 @@ h3 {
     transform: scale(1);
 }
 
+#instructions2, #instructions3 {
+    border: 0.3em solid goldenrod;
+    background-color: #eaf9d9;
+    border-radius: 0.5em;
+    position: absolute;
+    z-index: 9;
+    padding: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: none;
+    width: 60vw;
+    margin-bottom: 7rem;
+    height: 20vh;
+    color: #ff1251;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    animation-name: scaleMenu;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    transform: scale(1);
+}
+
 #gameplayTime {
     border: 0.3em solid goldenrod;
     background-color: #eaf9d9;
@@ -1194,4 +1217,82 @@ h1 {
 }
 
 /* Additional styling for icons if needed */
+#instructions, #instructions2, #instructions3 {
+    background: linear-gradient(to bottom, #001325, #014588, #0073a1, #07778d);
+    color: white;
+}
 
+@keyframes colorfulBorder {
+    0% {
+      border-color: red;
+    }
+    25% {
+      border-color: orange;
+    }
+    50% {
+      border-color: yellow;
+    }
+    75% {
+      border-color: violet;
+    }
+    100% {
+      border-color: rgb(28, 31, 228);
+    }
+  }
+
+  #instructions, #instructions2, #instructions3{
+    border-width: 8px;
+    border-style: solid;
+    animation: colorfulBorder 4s infinite linear;
+    text-align: center;
+    height: 36em;
+  }
+  .xy{
+    border-width: 5px;
+    border-style: solid;
+    animation: colorfulBorder 2s infinite linear;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: #fffc34;
+    border-radius: 14px;
+    color: black;
+    #instructions {
+    background: linear-gradient(to bottom, #001325, #014588, #0073a1, #00b4d8);
+    color: white;
+    text-align: center;
+}
+
+@keyframes colorfulBorder {
+    0% {
+      border-color: red;
+    }
+    25% {
+      border-color: orange;
+    }
+    50% {
+      border-color: yellow;
+    }
+    75% {
+      border-color: violet;
+    }
+    100% {
+      border-color: blue;
+    }
+  }
+
+  #instructions, #instructions2, #instructions3 {
+    border-width: 15px;
+    border-style: solid;
+    animation: colorfulBorder 4s infinite linear;
+    text-align: center;
+  }
+  .xy{
+    border-width: 5px;
+    border-style: solid;
+    animation: colorfulBorder 2s infinite linear;
+    background-color: #fffc34;
+    border-radius: 14px;
+    color: black;
+    text-align: center;
+  }
+  }
