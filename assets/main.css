@@ -727,9 +727,10 @@ h1 {
 
 #pause-menu {
     border: 0.3em solid purple;
-    background-color: #eaf9d9;
+    background: rgb(249,249,202);
+    background: radial-gradient(circle, rgba(249,249,202,1) 26%, rgba(255,255,0,1) 100%);
     border-radius: 0.5em;
-    animation: colorfulBorder 4s infinite linear;
+    animation: colorfulBorder1 4s infinite linear;
     position: absolute;
     z-index: 9;
     margin-top: 35vh;
@@ -739,12 +740,14 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     transition: all 0.5s ease-in-out;
+    transform: scale(1);
 }
 
 
-@keyframes colorfulBorder {
+/* @keyframes colorfulBorder1 {
     0% {
       border-color: red;
+      transform: scale(1.2);
     }
     25% {
       border-color: orange;
@@ -757,8 +760,9 @@ h1 {
     }
     100% {
       border-color: rgb(28,31,228);
+      transform: scale(2);
     }
-}
+} */
 
 #pause-menu .options {
     display: flex;
@@ -782,13 +786,12 @@ h1 {
 }
 
 #pause-menu {
-    animation-name: scaleMenu;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     transform: scale(1);
 }
 
-@keyframes scaleMenu {
+/* @keyframes scaleMenu {
     10% {
         transform: scale(1.2);
     }
@@ -796,7 +799,7 @@ h1 {
     20% {
         transform: scale(1);
     }
-}
+} */
 
 .play-button:hover,
 .play-button:focus,
@@ -811,7 +814,8 @@ h1 {
 
 #gameOver-menu {
     border: 0.3em solid goldenrod;
-    background-color: #eaf9d9;
+    background: rgb(249,249,202);
+    background: radial-gradient(circle, rgba(249,249,202,1) 26%, rgba(255,255,0,1) 100%);
     border-radius: 0.5em;
     position: absolute;
     z-index: 9;
@@ -822,6 +826,7 @@ h1 {
     height: 30vh;
     flex-direction: column;
     justify-content: space-evenly;
+    animation: colorfulBorder1 4s infinite alternate ease-in-out;
 }
 
 #gameOver-menu .gameover-options {
@@ -830,7 +835,7 @@ h1 {
 }
 
 #finalScore{
-    color: rgb(218,165,32);
+    color: rgb(64, 27, 230);
     display: flex;
     align-items: center;
     font-weight: bolder;
@@ -841,26 +846,16 @@ h1 {
 #gameOver-menu p {
     font-size: 4vmin;
     margin: 0 1.25rem;
-    color: goldenrod;
+    color: rgb(6, 6, 35);
     border: 0.1em dashed #daa520;
     border-radius: 2%;
 }
 
 #gameOver-menu {
-    animation-name: scaleMenu;
+    /* animation-name: scaleMenu; */
     animation-duration: 3s;
     animation-iteration-count: infinite;
     transform: scale(1);
-}
-
-@keyframes scaleMenu {
-    10% {
-        transform: scale(1.2);
-    }
-
-    20% {
-        transform: scale(1);
-    }
 }
 
 @media screen and (1336px <= width < 1440px) {
@@ -1293,11 +1288,12 @@ h1 {
   }
   }
 
-  #gameplayTime {
-    background-color: #fffc34;
+  #gameplayTime {    
+    background: rgb(249,249,202);
+    background: radial-gradient(circle, rgba(249,249,202,1) 26%, rgba(255,255,0,1) 100%);
     border-width: 10px;
     border-style: solid;
-    animation: colorfulBorder 4s infinite linear;
+    animation: colorfulBorder1 4s infinite linear;
     color: black;
     position: absolute;
     z-index: 8;
@@ -1315,11 +1311,13 @@ h1 {
     transition: all 0.5s ease-in-out;
     /* animation-name: scaleMenu;*/
     transform: scale(1); 
+    border-radius: 20px;
 }
 
-@keyframes colorfulBorder {
+@keyframes colorfulBorder1 {
     0% {
       border-color: red;
+      transform: scale(1.2);
     }
     25% {
       border-color: orange;
@@ -1332,5 +1330,6 @@ h1 {
     }
     100% {
       border-color: rgb(28, 31, 228);
+      transform: scale(1.3);
     }
 }
