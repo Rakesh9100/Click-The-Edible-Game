@@ -728,7 +728,7 @@ h1 {
 #pause-menu {
     border: 0.3em solid purple;
     background: rgb(249,249,202);
-    background: radial-gradient(circle, rgba(249,249,202,1) 26%, rgba(255,255,0,1) 100%);
+    background: radial-gradient(circle, rgb(207, 234, 237) 26%, rgb(22, 156, 152) 100%);
     border-radius: 0.5em;
     animation: colorfulBorder1 4s infinite linear;
     position: absolute;
@@ -815,7 +815,7 @@ h1 {
 #gameOver-menu {
     border: 0.3em solid goldenrod;
     background: rgb(249,249,202);
-    background: radial-gradient(circle, rgba(249,249,202,1) 26%, rgba(255,255,0,1) 100%);
+    background: radial-gradient(circle, rgb(207, 234, 237) 26%, rgb(22, 156, 152) 100%);
     border-radius: 0.5em;
     position: absolute;
     z-index: 9;
@@ -1290,7 +1290,7 @@ h1 {
 
   #gameplayTime {    
     background: rgb(249,249,202);
-    background: radial-gradient(circle, rgba(249,249,202,1) 26%, rgba(255,255,0,1) 100%);
+    background: radial-gradient(circle, rgb(207, 234, 237) 26%, rgb(22, 156, 152) 100%);
     border-width: 10px;
     border-style: solid;
     animation: colorfulBorder1 4s infinite linear;
