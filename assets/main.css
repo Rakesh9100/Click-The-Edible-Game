@@ -835,7 +835,7 @@ h1 {
 }
 
 #finalScore{
-    color: rgb(64, 27, 230);
+    color: rgb(218,165,32);
     display: flex;
     align-items: center;
     font-weight: bolder;
@@ -846,7 +846,7 @@ h1 {
 #gameOver-menu p {
     font-size: 4vmin;
     margin: 0 1.25rem;
-    color: rgb(6, 6, 35);
+    color: goldenrod;
     border: 0.1em dashed #daa520;
     border-radius: 2%;
 }
@@ -857,6 +857,16 @@ h1 {
     animation-iteration-count: infinite;
     transform: scale(1);
 }
+
+/* @keyframes scaleMenu {
+    10% {
+        transform: scale(1.2);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+} */
 
 @media screen and (1336px <= width < 1440px) {
     .head {
