@@ -808,7 +808,7 @@ h1 {
 }
 
 #gameOver-menu {
-    border: 0.3em solid goldenrod;
+    border: 0.3em solid rgb(79, 32, 218);
     background: rgb(249,249,202);
     background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
     border-radius: 0.5em;
@@ -830,7 +830,7 @@ h1 {
 }
 
 #finalScore{
-    color: rgb(218,165,32);
+    color: rgb(49, 25, 154);
     display: flex;
     align-items: center;
     font-weight: bolder;
@@ -841,7 +841,7 @@ h1 {
 #gameOver-menu p {
     font-size: 4vmin;
     margin: 0 1.25rem;
-    color: goldenrod;
+    color: rgb(0, 0, 0);
     border: 0.1em dashed #daa520;
     border-radius: 2%;
 }
