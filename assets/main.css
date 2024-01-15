@@ -738,27 +738,6 @@ h1 {
     transform: scale(1);
 }
 
-
-/* @keyframes colorfulBorder1 {
-    0% {
-      border-color: red;
-      transform: scale(1.2);
-    }
-    25% {
-      border-color: orange;
-    }
-    50% {
-      border-color: yellow;
-    }
-    75% {
-      border-color: violet;
-    }
-    100% {
-      border-color: rgb(28,31,228);
-      transform: scale(2);
-    }
-} */
-
 #pause-menu .options {
     display: flex;
     justify-content: space-evenly;
@@ -785,16 +764,6 @@ h1 {
     animation-iteration-count: infinite;
     transform: scale(1);
 }
-
-/* @keyframes scaleMenu {
-    10% {
-        transform: scale(1.2);
-    }
-
-    20% {
-        transform: scale(1);
-    }
-} */
 
 .play-button:hover,
 .play-button:focus,
@@ -852,16 +821,6 @@ h1 {
     animation-iteration-count: infinite;
     transform: scale(1);
 }
-
-/* @keyframes scaleMenu {
-    10% {
-        transform: scale(1.2);
-    }
-
-    20% {
-        transform: scale(1);
-    }
-} */
 
 @media screen and (1336px <= width < 1440px) {
     .head {
