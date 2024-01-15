@@ -77,7 +77,7 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://user-images.githubusercontent.com/73993775/225777171-2bbafadb-1c23-4487-b0ef-68c56cbffd74.png)<br><br>
 <h3>Instructions Box :-</h3>
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/280607465-4e8b1e05-874b-4e67-b1ee-dc9ceca10407.png)<br><br>
+![image](assets/images/instructionbox.png)<br><br>
 <h3>Selection of Edible Page :-</h3>
 
 ![image](https://user-images.githubusercontent.com/73993775/225777515-6147b79e-656e-4572-9639-b6928a176a0f.png)
@@ -85,7 +85,7 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://user-images.githubusercontent.com/73993775/225777594-20eb67b5-f6f8-4075-a1c2-14644d32291b.png)<br><br>
 <h3>Choose GamePlay Time Box :-</h3>
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/277171024-edb2a772-d317-4ebd-970a-b4a02d85617d.png)<br><br>
+![image](assets/images/Timerbox.png)<br><br>
 <h3>Playing Screen :-</h3>
 
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806320-8432d087-e7f1-41ff-bd1e-c47b0f69b697.png)<br><br>
@@ -97,10 +97,10 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/280606512-2f16895f-5896-4ca7-99a6-740f77fbbd31.png)<br><br>
 <h3>Play/Pause/Restart Box :-</h3>
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806349-666c2212-b220-43ca-b346-56a3f822cf6e.png)<br><br>
+![image](assets/images/pausebox.png)<br><br>
 <h3>High Score/Your Scores Box :-</h3>
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/86418216/278806362-e60c94e5-0105-4784-8efb-24929c1d833f.png)<br>
+![image](assets/images/gameoverbox.png)<br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
