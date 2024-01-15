@@ -59,7 +59,7 @@
 
       
 
-    <div class="screen main">
+    <div class="screen main" class="pqr">
         <img src="images/pause-button.svg" alt="Pause Button" id="pause-button" onclick="pauseGame()" aria-hidden="true"/>
         <h2>Play with your Favourite Edible🎮</h2>
         <button class="btn" id="start-btn" onclick="starting()">
@@ -492,7 +492,7 @@
         <!-- Rotten pre-loader -->
         <img src="images/splat.png" alt="🦠" style="display: none;" />
         
-        <div id="gameplayTime">
+        <div id="gameplayTime" class="pqr">
             <b>Howdy, partner! How many hours of rootin' tootin' gameplay have you clocked up on this game?</b>
             <div id="time-range-val" class="changable-text">2 mins 45 sec</div>
             <input type="range" max="300" min="30" id="time-range" style="width: 30vw;" onchange="set_time_range_val()" onmousemove="set_time_range_val()" ontouchmove="set_time_range_val()">               
