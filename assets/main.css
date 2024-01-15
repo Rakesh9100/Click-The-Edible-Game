@@ -266,31 +266,6 @@ h3 {
     transform: scale(1);
 }
 
-#gameplayTime {
-    border: 0.3em solid goldenrod;
-    background-color: #eaf9d9;
-    border-radius: 0.5em;
-    position: absolute;
-    z-index: 8;
-    padding: 1rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    margin-bottom: 10rem;
-    height: 40vh;
-    color: #ff1251;
-    flex-direction: column;
-    justify-content: space-evenly;
-    transition: all 0.5s ease-in-out;
-    animation-name: scaleMenu;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    transform: scale(1);
-}
-
 #instructions ol li, #instructions2 ol li, #instructions3 ol li {
     text-align:left;
     font-weight: 300;
@@ -488,7 +463,6 @@ span {
     border: 0.23rem solid var(--textcol);
     border-radius: 9px;
     color: var(--c);
-    cursor: pointer;
     font-family: inherit;
     width: 9.375rem;
     height: 9.375rem;
@@ -576,7 +550,6 @@ img {
     padding: 0.5rem;
     font-family: sans-serif;
     border-radius: 0.3rem;
-    cursor: pointer;
     margin-top: 1rem;
     margin-bottom: 0.25rem;
 }
@@ -596,7 +569,6 @@ img {
     border: none;
     font-family: sans-serif;
     border-radius: 0.3rem;
-    cursor: pointer;
 }
 
 #choose-uploaded-edible:hover {
@@ -668,7 +640,6 @@ img {
 }
 
 .edible, .bomb{
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -712,7 +683,6 @@ h1 {
 #back-icon {
     font-size: x-large;
     display: none;
-    cursor: pointer;
     padding: 0.5em;
     border-radius: 5px;
 }
@@ -752,8 +722,10 @@ h1 {
 
 #pause-menu {
     border: 0.3em solid purple;
-    background-color: #eaf9d9;
+    background: rgb(249,249,202);
+    background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
     border-radius: 0.5em;
+    animation: colorfulBorder1 4s infinite linear;
     position: absolute;
     z-index: 9;
     margin-top: 35vh;
@@ -762,6 +734,8 @@ h1 {
     height: 30vh;
     flex-direction: column;
     justify-content: space-evenly;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
 }
 
 #pause-menu .options {
@@ -773,7 +747,7 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 4vmin;
     margin: 0 1.25rem;
-    color: goldenrod;
+    color: rgb(0, 0, 0);
     border: 0.1em dashed #daa520;
     border-radius: 2%;
 }
@@ -786,20 +760,9 @@ h1 {
 }
 
 #pause-menu {
-    animation-name: scaleMenu;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     transform: scale(1);
-}
-
-@keyframes scaleMenu {
-    10% {
-        transform: scale(1.2);
-    }
-
-    20% {
-        transform: scale(1);
-    }
 }
 
 .play-button:hover,
@@ -814,8 +777,9 @@ h1 {
 }
 
 #gameOver-menu {
-    border: 0.3em solid goldenrod;
-    background-color: #eaf9d9;
+    border: 0.3em solid rgb(79, 32, 218);
+    background: rgb(249,249,202);
+    background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
     border-radius: 0.5em;
     position: absolute;
     z-index: 9;
@@ -826,6 +790,7 @@ h1 {
     height: 30vh;
     flex-direction: column;
     justify-content: space-evenly;
+    animation: colorfulBorder1 4s infinite alternate ease-in-out;
 }
 
 #gameOver-menu .gameover-options {
@@ -834,7 +799,7 @@ h1 {
 }
 
 #finalScore{
-    color: rgb(218,165,32);
+    color: rgb(49, 25, 154);
     display: flex;
     align-items: center;
     font-weight: bolder;
@@ -845,26 +810,16 @@ h1 {
 #gameOver-menu p {
     font-size: 4vmin;
     margin: 0 1.25rem;
-    color: goldenrod;
+    color: rgb(0, 0, 0);
     border: 0.1em dashed #daa520;
     border-radius: 2%;
 }
 
 #gameOver-menu {
-    animation-name: scaleMenu;
+    /* animation-name: scaleMenu; */
     animation-duration: 3s;
     animation-iteration-count: infinite;
     transform: scale(1);
-}
-
-@keyframes scaleMenu {
-    10% {
-        transform: scale(1.2);
-    }
-
-    20% {
-        transform: scale(1);
-    }
 }
 
 @media screen and (1336px <= width < 1440px) {
@@ -1152,7 +1107,6 @@ h1 {
     bottom: 60px;
     right: 25px;
     z-index: 99;
-    cursor: pointer;
     display: none;
 }
 
@@ -1205,7 +1159,6 @@ h1 {
 
 .volume-icon, #light-icon, #back-icon {
     margin-left: 10px;
-    cursor: pointer;
 }
 
 .volume-icon, #light-icon {
@@ -1296,3 +1249,54 @@ h1 {
     text-align: center;
   }
   }
+
+  #gameplayTime {    
+    background: rgb(249,249,202);
+    background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
+    border-width: 10px;
+    border-style: solid;
+    animation: colorfulBorder1 4s infinite linear;
+    color: black;
+    position: absolute;
+    z-index: 8;
+    padding: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    margin-bottom: 10rem;
+    height: 40vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: all 0.5s ease-in-out;
+    /* animation-name: scaleMenu;*/
+    transform: scale(1); 
+    border-radius: 20px;
+}
+
+@keyframes colorfulBorder1 {
+    0% {
+      border-color: red;
+      transform: scale(1.2);
+    }
+    25% {
+      border-color: orange;
+    }
+    50% {
+      border-color: yellow;
+    }
+    75% {
+      border-color: violet;
+    }
+    100% {
+      border-color: rgb(28, 31, 228);
+      transform: scale(1.3);
+    }
+}
+
+*{
+  cursor: none;
+}
+
