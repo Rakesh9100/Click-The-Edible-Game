@@ -463,7 +463,6 @@ span {
     border: 0.23rem solid var(--textcol);
     border-radius: 9px;
     color: var(--c);
-    cursor: pointer;
     font-family: inherit;
     width: 9.375rem;
     height: 9.375rem;
@@ -551,7 +550,6 @@ img {
     padding: 0.5rem;
     font-family: sans-serif;
     border-radius: 0.3rem;
-    cursor: pointer;
     margin-top: 1rem;
     margin-bottom: 0.25rem;
 }
@@ -571,7 +569,6 @@ img {
     border: none;
     font-family: sans-serif;
     border-radius: 0.3rem;
-    cursor: pointer;
 }
 
 #choose-uploaded-edible:hover {
@@ -643,7 +640,6 @@ img {
 }
 
 .edible, .bomb{
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -687,7 +683,6 @@ h1 {
 #back-icon {
     font-size: x-large;
     display: none;
-    cursor: pointer;
     padding: 0.5em;
     border-radius: 5px;
 }
@@ -1153,7 +1148,6 @@ h1 {
     bottom: 60px;
     right: 25px;
     z-index: 99;
-    cursor: pointer;
     display: none;
 }
 
@@ -1206,7 +1200,6 @@ h1 {
 
 .volume-icon, #light-icon, #back-icon {
     margin-left: 10px;
-    cursor: pointer;
 }
 
 .volume-icon, #light-icon {
@@ -1343,3 +1336,8 @@ h1 {
       transform: scale(1.3);
     }
 }
+
+*{
+  cursor: none;
+}
+
