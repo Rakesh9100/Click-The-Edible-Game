@@ -1300,3 +1300,37 @@ h1 {
   cursor: none;
 }
 
+/* Add this CSS to your main.css file or in a style tag in the head section of your HTML */
+
+/* Default styling for all screens */
+#instructions {
+    /* Your existing styles go here */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    #instructions {
+        /* Adjust styles for smaller screens */
+        font-size: 14px; /* Example: reduce font size for smaller screens */
+        /* Add any other adjustments as needed */
+    }
+}
+/* Add this CSS to your main.css file or in a style tag in the head section of your HTML */
+
+/* Default styling for all screens */
+#instruction-btn {
+    /* Your existing button styles go here */
+    font-size: 18px; /* Adjust the font size as needed */
+    padding: 30px 60px; /* Adjust the padding as needed */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    #instruction-btn {
+        /* Adjust button styles for smaller screens */
+        font-size: 16px; /* Example: reduce font size for smaller screens */
+        padding: 8px 16px; /* Example: reduce padding for smaller screens */
+        /* Add any other adjustments as needed */
+    }
+}

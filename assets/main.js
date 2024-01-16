@@ -677,3 +677,6 @@ document.addEventListener('visibilitychange', function () {
     document.getElementById("progress-bar-container").style.display = "none";
   }
 });
+
+
+
