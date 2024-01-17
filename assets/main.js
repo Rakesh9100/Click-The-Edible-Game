@@ -88,16 +88,19 @@ var timer;
 var isRunning = -1; //this defines the state of game running or not
 // game variables
 
-// Add an event listener to the window to handle autoplay restrictions
-window.addEventListener('click', function() {
-  if (bgm1.paused && bgm2.paused) {
-    // Start playing the background music only if it's not already playing
-    bgm1.play();
-  }
+$(document).ready(function () {
+  $('#exampleModalCenter').modal('show');
+  $(document).on('click touchstart', function (e) {
+    if ($(e.target).closest('.modal').length === 0) {
+      // Close the modal if the click is outside the modal
+      $('#exampleModalCenter').modal('hide');
+      // Play background music when modal is clicked
+      playBackgroundMusic();
+    }
+  });
 });
 
-// Also, modify the setInterval function for game bgm management
-setInterval(() => {
+function playBackgroundMusic() {
   if (isRunning == -1) { // if the game is not running
     bgm2.pause();
     bgm2.currentTime = 0;
@@ -122,7 +125,18 @@ setInterval(() => {
     bgm1.pause();
     bgm2.pause();
   }
-}, 500);
+  // bgm1 has ended and restart it
+  bgm1.addEventListener('ended', function () {
+    bgm1.currentTime = 0;
+    bgm1.play();
+  });
+  // bgm2 has ended and restart it
+  bgm2.addEventListener('ended', function () {
+    bgm2.currentTime = 0;
+    bgm2.play();
+  });
+}
+
 
 // game bgm management
 
