@@ -232,7 +232,7 @@ h3 {
     display: none;
     width: 60vw;
     margin-bottom: 7rem;
-    height: 88vh;
+    height: 90vh;
     color: #ff1251;
     flex-direction: column;
     justify-content: center;
@@ -269,7 +269,10 @@ h3 {
     animation-iteration-count: 1;
     transform: scale(1);
 }
-
+#instructions ol, #instructions2 ol, #instructions3 ol{
+        margin-top: 0 ;
+        margin-bottom: 0;
+    }
 #instructions ol li, #instructions2 ol li, #instructions3 ol li {
     text-align:left;
     font-weight: 300;
@@ -1253,6 +1256,7 @@ h1 {
     text-align: center;
   }
   }
+  /* responsive instruction box  */
   @media screen and (max-width:1024px){
     #instructions, #instructions2, #instructions3 {
         width: 70vw;
@@ -1286,8 +1290,7 @@ h1 {
         margin-top: 13rem;
     }
     #instructions ol, #instructions2 ol, #instructions3 ol{
-        margin-top: 0 ;
-        padding: 6px;
+        padding: 0 6px;
     }
 }
 @media screen and (max-width: 400px){
