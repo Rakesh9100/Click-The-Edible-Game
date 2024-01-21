@@ -247,28 +247,6 @@ h3 {
 .instruction-heading{
     margin-top: 2.5rem;
 }
-#instructions2, #instructions3 {
-    border: 0.3em solid goldenrod;
-    background-color: #eaf9d9;
-    border-radius: 0.5em;
-    position: absolute;
-    z-index: 9;
-    padding: 1rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    display: none;
-    width: 60vw;
-    margin-bottom: 7rem;
-    height: 20vh;
-    color: #ff1251;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 0.5s ease-in-out;
-    animation-name: scaleMenu;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    transform: scale(1);
-}
 #instructions ol, #instructions2 ol, #instructions3 ol{
         margin-top: 0 ;
         margin-bottom: 0;
@@ -621,7 +599,7 @@ img {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 
 .time,
@@ -1275,6 +1253,9 @@ h1 {
     .xy{
         margin-left: 30px;
         margin-right: 30px;
+    }
+    .game-container {
+        margin-top: 3.4rem;
     }
 }
 @media screen and (max-width: 676px){
