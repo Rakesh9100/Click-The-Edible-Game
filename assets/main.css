@@ -503,78 +503,248 @@ img {
     object-fit: contain;
 }
 
-/* Upload section */
+/* ----------------- Upload section ------------------- */
 
-.upload-edible-section {
-    margin-bottom: 100px !important;
-}
-
-.upload-edible-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.upload-edible-btn h5 {
-    margin-top: 0rem !important;
-}
-
-.upload-btn {
+.container-upload {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 20vw !important;
-    height: auto !important;
+    margin-bottom: 100px !important;
 }
 
-.upload-btn:hover {
-    background-color: var(--block);
-    transform: scale(1);
+.uploadzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.1px;
+    padding-bottom: 0.1em;
 }
 
-.upload-btn img {
-    margin-top: 1rem;
-    width: 120px !important;
-    height: 120px !important;
-    object-fit: contain;
+.wrapper {
+    width: 498px;
+    background-color: #fff;
+    border-radius: 16px;
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 3px solid var(--primary);
+    padding: 30px;
 }
 
-#choose-edible {
-    background-color: var(--c);
-    font-size: small;
-    color: white;
-    padding: 0.5rem;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
-    margin-top: 1rem;
-    margin-bottom: 0.25rem;
+.wrapper .dragDrop {
+    height: 210px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 0.23rem dashed #000;
 }
 
-#choose-edible:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease;
+form :where(i, p) {
+    color: #000;
 }
 
-#choose-uploaded-edible {
-    background-color: #4CAF50;
-    font-size: small;
-    color: white;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+form i {
+    font-size: 50px;
+    color: var(--block);
+}
+
+form p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #000;
+}
+
+/* Animation - Optional */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.styled-url-input,
+.submit-button {
+    animation: fadeIn 1s ease;
+}
+
+section .row-upload {
+    margin-bottom: 10px;
+    background: #e9f0ff;
+    list-style: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .row-upload i {
+    color: #000;
+    font-size: 30px;
+}
+
+section .details-upload span {
+    font-size: 14px;
+}
+
+.content-upload .progress-bar .progress {
+    height: 100%;
+    width: 0%;
+    background: #000;
+    border-radius: inherit;
+}
+
+.name{
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.uploaded-area {
+    max-height: 232px;
+    overflow-y: scroll;
+}
+
+.uploaded-area.onprogress {
+    max-height: 150px;
+}
+
+.uploaded-area::-webkit-scrollbar {
+    width: 0px;
+}
+
+.uploaded-area .row-upload .content-upload {
+    display: flex;
+    align-items: center;
+}
+
+.uploaded-area .row-upload .details-upload {
+    display: flex;
+    margin-left: 15px;
+    flex-direction: column;
+}
+
+.uploaded-area .row-upload .details-upload .size {
+    color: #404040;
+    font-size: 12px;
+}
+
+.uploaded-area i.fa-check {
+    font-size: 16px;
+}
+
+.uploaded-area .file-preview{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+#upload-btn{
+    display: none;
     border: none;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
+    margin-top: 1rem;
+    color: white;
+    padding: .5em 1.5em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    cursor:none;
+    background-color: var(--block);
+    border-radius: 0.5em;
+    scale: 1;
+    transition: scale .3s ease-in-out;
 }
 
-#choose-uploaded-edible:hover {
-    background-color: #3e8e41;
-    transform: scale(1.1);
-    transition: all 0.3s ease;
+#upload-btn:hover{
+    scale: 1.05;
+}
+
+#upload-btn:active{
+    scale: 0.95;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(97, 97, 97, 0.11);
+    color: #000;
+    text-align: center;
+    padding: 16px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+
+/* Animations for Toast Message */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {

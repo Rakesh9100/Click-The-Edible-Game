@@ -206,52 +206,145 @@ start_btn.addEventListener("click", function () {
   head.style.display = "flex";
 });
 
-// --------------- uploading image ----------------
-const input = document.getElementById('file-upload');
-const previewPhoto = () => {
-    const file = input.files;
-    if (file) {
-        const fileReader = new FileReader();
-        const preview = document.getElementById('file-preview');
-        fileReader.onload = event => {
-            preview.setAttribute('src', event.target.result);
-            const play_on_upload_btn = document.querySelector('.upload-btn').querySelector('button');
-            play_on_upload_btn.style.display = 'block';
-        }
-        fileReader.readAsDataURL(file[0]);
-    }
+// --------------- Uploading Image Start ----------------
+
+const form = document.querySelector("form");
+const dropArea = document.querySelector(".drag-area");
+const fileInput = document.querySelector(".file-input");
+const progressArea = document.querySelector(".progress-area");
+const uploadedArea = document.querySelector(".uploaded-area");
+
+const allowed_EXT = /\.(jpg|jpeg|png)$/i;
+
+const files_name_upload = [];
+
+const dragForm = document.querySelector("#drag-form");
+const dragText = document.querySelector("#drag_text");
+const dragCloud = document.querySelector("#drag-cloud");
+const dragInput = document.querySelector("#file-input");
+const dragZone = document.querySelector("#drag-area");
+const dragWarper = document.querySelector("#drag-warper");
+
+// Displays the Warning message
+function showToast(s, c) {
+  var x = document.querySelector("#snackbar");
+  var text = document.createTextNode(s);
+  x.style.backgroundColor = c;
+  x.textContent = "";
+  x.appendChild(text);
+  x.className = "show";
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 3000);
 }
-input.addEventListener('change', previewPhoto);
-// --------------- uploading image ----------------
 
-choose_btns.forEach((btn) => {
-  if(btn.classList.contains("upload-btn")) {
-    btn.querySelector("button").addEventListener("click", () => {
-      const img = btn.querySelector("img");
-      const src = img.getAttribute('src');
-      const alt = img.getAttribute('alt');
-
-      selected_edible = { src, alt };
-      screens[1].classList.add("up1");
-      game_container.style.height = "100vh";
-      startGame();
-      displayChange();
-      choose_edible.play();
-    });
-    return;
-  }
-  btn.addEventListener("click", () => {
-    const img = btn.querySelector("img");
-    const src = img.getAttribute("src");
-    const alt = img.getAttribute("alt");
-    selected_edible = { src, alt };
-    screens[1].classList.add("up1");
-    game_container.style.height = "100vh";
-    startGame();
-    displayChange();
-    choose_edible.play();
-  });
+// Form click event
+form.addEventListener("click", () => {
+  fileInput.click();
 });
+
+fileInput.onchange = ({ target }) => {
+  let file = target.files;
+  if (file.length === 1) {
+    if (!allowed_EXT.exec(file[0].name)) {
+      showToast("Only Image files are allowed", "#fff");
+    } else {
+      if (!files_name_upload.includes(file[0].name)) {
+        files_name_upload.push(file[0].name);
+        uploadFile(file[0].name);
+      }
+    }
+  } else {
+    showToast("Multiple file uploading is forbidden", "#fff");
+  }
+};
+
+dropArea.addEventListener("dragover", (event) => {
+  event.preventDefault();
+  dragText.textContent = "Release to Upload File";
+  dragCloud.style.color = "#000";
+  dragForm.style.borderColor = "#000";
+  dragText.style.fontSize = "18px";
+  dragText.style.color = "#000";
+});
+
+dropArea.addEventListener("dragleave", () => {
+  dragText.textContent = "Click Or Drag and Drop File to Upload";
+  dragCloud.style.color = "#000";
+  dragForm.style.borderColor = "#000";
+  dragText.style.fontSize = "18px";
+  dragText.style.color = "#000";
+});
+
+//If user drop File on DropArea
+dropArea.addEventListener("drop", (event) => {
+  event.preventDefault();
+  var all_drop_files = event.dataTransfer.files;
+
+  if (all_drop_files.length === 1) {
+    if (!allowed_EXT.exec(all_drop_files[0].name)) {
+      showToast("Only Image files are allowed", "#fff");
+    } else {
+      if (!files_name_upload.includes(all_drop_files[0].name)) {
+        files_name_upload.push(all_drop_files[0].name);
+        uploadFile(all_drop_files[0]);
+        fileInput.files = all_drop_files;
+        fileInput.dispatchEvent(new Event("change"));
+      }
+    }
+  } else {
+    showToast("Multiple file uploading is forbidden", "#fff");
+  }
+  dragText.textContent = "Click Or Drag and Drop File to Upload";
+  dragCloud.style.color = "#000";
+  dragForm.style.borderColor = "#000";
+  dragText.style.fontSize = "18px";
+  dragText.style.color = "#000";
+});
+
+function uploadFile(file) {
+  let uploadArea = document.querySelector(".uploaded-area");
+  uploadArea.style.display = "block";
+  uploadArea.innerHTML = `
+  <li class="row-upload">
+    <div class="content-upload upload">
+        <img src="images/upload.png" class="file-preview" alt="preview">
+      <div class="details-upload">
+        <p class="name">${typeof file === "string"?file:file.name} • Uploaded</p>
+      </div>
+    </div>
+    <i class="fas fa-check"></i>
+  </li>`;
+}
+
+const previewPhoto = () => {
+  const file = fileInput.files;
+  if (file) {
+    const fileReader = new FileReader();
+    const preview = document.querySelector(".file-preview");
+    fileReader.onload = (event) => {
+      preview.setAttribute("src", event.target.result);
+      const play_on_upload_btn = document.querySelector("#upload-btn");
+      play_on_upload_btn.style.display = "block";
+    };
+    fileReader.readAsDataURL(file[0]);
+  }
+};
+fileInput.addEventListener("change", previewPhoto);
+
+document.querySelector("#upload-btn").addEventListener("click", () => {
+  const img = document.querySelector(".file-preview");
+  const src = img.getAttribute("src");
+  const alt = img.getAttribute("alt");
+  selected_edible = { src, alt };
+  screens[1].classList.add("up1");
+  game_container.style.height = "100vh";
+  startGame();
+  displayChange();
+  choose_edible.play();
+});
+
+// --------------- Uploading Image End ----------------
 
 function chooseGameplayTime() {
   document.getElementById("time").style.display = "none";
