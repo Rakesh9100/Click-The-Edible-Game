@@ -300,6 +300,7 @@ dropArea.addEventListener("drop", (event) => {
 });
 
 function uploadFile(file) {
+  const fileName = typeof file === "string"?file:file.name;
   let uploadArea = document.querySelector(".uploaded-area");
   uploadArea.style.display = "block";
   uploadArea.innerHTML = `
@@ -307,7 +308,7 @@ function uploadFile(file) {
     <div class="content-upload upload">
         <img src="images/upload.png" class="file-preview" alt="preview">
       <div class="details-upload">
-        <p class="name">${typeof file === "string"?file:file.name} • Uploaded</p>
+        <p class="name">${fileName.slice(0,fileName.length>=21?21:fileName.length)+(fileName.length>=21?'...':'')} • Uploaded</p>
       </div>
     </div>
     <i class="fas fa-check"></i>
