@@ -616,7 +616,7 @@ section .details-upload span {
 }
 
 .uploaded-area::-webkit-scrollbar {
-    width: 0px;
+    display:none;
 }
 
 .uploaded-area .row-upload .content-upload {
@@ -747,33 +747,34 @@ section .details-upload span {
     }
 }
 
-@media (max-width: 768px) {
-    .upload-btn {
-        width: 30vw !important;
-    }
-}
+/* Responsive Upload Edible Section */
 
-@media screen and (max-width: 415px) {
-    .upload-btn {
-        width: 40vw !important;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .upload-btn {
-        width: 50vw !important;
-    }
-}
-
-@media screen and (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 450px) {
     .upload-btn {
         width: 60vw !important;
     }
-}
-
-@media screen and (max-width: 280px) {
-    .upload-btn {
-        width: 70vw !important;
+    .wrapper{
+        width: 90%;
+        min-width: 90%;
+    }
+    .container-upload h5{
+        margin-bottom: 3rem;
+    }
+    .container-upload h1{
+        font-size: 1.5rem;
+    }
+    .container-upload h3{
+        font-size: .7rem;
+    }
+    .name{
+        font-size: 14px;
+    }
+    .uploaded-area .row-upload .details-upload{
+        margin: 0;
+        padding: 0 10px;
+    }
+    .row-upload i{
+        display:none;
     }
 }
 

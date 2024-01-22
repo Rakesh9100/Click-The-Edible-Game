@@ -262,7 +262,6 @@ fileInput.onchange = ({ target }) => {
 dropArea.addEventListener("dragover", (event) => {
   event.preventDefault();
   dragText.textContent = "Release to Upload File";
-  dragCloud.style.color = "#000";
   dragForm.style.borderColor = "#000";
   dragText.style.fontSize = "18px";
   dragText.style.color = "#000";
@@ -270,7 +269,6 @@ dropArea.addEventListener("dragover", (event) => {
 
 dropArea.addEventListener("dragleave", () => {
   dragText.textContent = "Click Or Drag and Drop File to Upload";
-  dragCloud.style.color = "#000";
   dragForm.style.borderColor = "#000";
   dragText.style.fontSize = "18px";
   dragText.style.color = "#000";
@@ -296,7 +294,6 @@ dropArea.addEventListener("drop", (event) => {
     showToast("Multiple file uploading is forbidden", "#fff");
   }
   dragText.textContent = "Click Or Drag and Drop File to Upload";
-  dragCloud.style.color = "#000";
   dragForm.style.borderColor = "#000";
   dragText.style.fontSize = "18px";
   dragText.style.color = "#000";
