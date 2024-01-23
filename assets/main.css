@@ -232,7 +232,8 @@ h3 {
     display: none;
     width: 60vw;
     margin-bottom: 7rem;
-    height: 90vh;
+    margin-top: 1.6rem;
+    height: 83vh;
     color: #ff1251;
     flex-direction: column;
     justify-content: center;
