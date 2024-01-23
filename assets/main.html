@@ -410,21 +410,24 @@
             </div>
 
             <!----- Upload Edible ----->
-            
-            <div class="upload-edible-section">
-                <div class="screen-page">
-                    <h1>Didn't find your favourite Edible ?</h1>
-                    <h3>Upload your Edible to continue....</h3>
-                    <div class="upload-edible-btn">
-                        <div class="choose-btn upload-btn">
-                            <img src="images/upload.png" alt="Uploaded Edible" id="file-preview">
-                            <input type="file" accept=".jpg, .jpeg, .png" id="file-upload" hidden> 
-                            <label for="file-upload" id="choose-edible">Choose Your Own Edible</label>
-                            <button id="choose-uploaded-edible" style="display: none;">Continue ▶️</button>
+            <div class="container-upload">
+                <h1>Didn't find your favourite Edible ?</h1>
+                <h3>Upload your Edible to continue....</h3>
+                <div class="uploadzone">
+                    <div class="wrapper" id="drag-warper">
+                        <div class="drag-area" id="drag-area">
+                            <form class="dragDrop" action="#" id="drag-form">
+                                <input class="file-input" type="file" id="file-input" name="file" hidden />
+                                <i class="fas fa-cloud-upload-alt" id="drag-cloud"></i>
+                                <p id="drag_text">Click Or Drag and Drop File to Upload</p>
+                            </form>
                         </div>
+                        <section class="uploaded-area"></section>
                     </div>
-                    <h5>(Make sure that your image has a transparent background)</h5>
                 </div>
+                <div id="snackbar"></div>
+                <button id="upload-btn">Play!</button>
+                <h5>(Make sure that your image has a transparent background)</h5>
             </div>
         </div>
     </div>
