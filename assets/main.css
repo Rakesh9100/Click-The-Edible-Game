@@ -226,7 +226,7 @@ h3 {
     border-radius: 0.5em;
     position: absolute;
     z-index: 9;
-    padding: 1rem;
+    padding: 0 1rem;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     display: none;
