@@ -105,7 +105,7 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
+<h2>Local installation video </h2> -> [video](https://drive.google.com/file/d/1ykb77mZw5B7sBNgmM2TOMXSqQql3cKnm/view?usp=sharing)
 <h2>Getting Started💥</h2>
 
 - Fork this Repository.
