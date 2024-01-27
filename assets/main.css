@@ -48,6 +48,8 @@
 }
 
 
+
+
 .loader {
     position: fixed;
     z-index: 999999999 !important;
@@ -128,16 +130,19 @@ body {
     overflow: hidden;
     margin: 0;
     text-align: center;
-    background-repeat: no-repeat;
+   background-repeat: no-repeat;
     background-size: cover;
 }
 
-.container {
-    padding-right: 0.5rem;
+.container{
     display: flex;
-    justify-content: flex-end;
+  gap: 55rem;
+  width: 100%;
 }
+.innerDiv{
+display: inline-flex;
 
+}
 .container i {
     color: #0a183d;
     z-index: 1;
