@@ -330,6 +330,8 @@ const previewPhoto = () => {
 };
 fileInput.addEventListener("change", previewPhoto);
 
+// Upload Play----
+
 document.querySelector("#upload-btn").addEventListener("click", () => {
   const img = document.querySelector(".file-preview");
   const src = img.getAttribute("src");
@@ -340,6 +342,20 @@ document.querySelector("#upload-btn").addEventListener("click", () => {
   startGame();
   displayChange();
   choose_edible.play();
+});
+
+document.querySelectorAll(".choose-btn").forEach(button => {
+  button.addEventListener("click", () => {
+      const img = button.querySelector("img");
+      const src = img.getAttribute("src");
+      const alt = img.getAttribute("alt");
+      selected_edible = { src, alt };
+      screens[1].classList.add("up1");
+      game_container.style.height = "100vh";
+      startGame();
+      displayChange();
+      choose_edible.play();
+  });
 });
 
 // --------------- Uploading Image End ----------------
