@@ -106,7 +106,10 @@ A well-designed interesting game made using HTML, CSS, and JS where you can play
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <h2>Local installation video </h2> -> 
-https://github.com/rahat2134/Click-The-Edible-Game/assets/136263179/5f426bc2-1877-4eb7-8e90-173e061d8d32
+
+
+https://github.com/rahat2134/Click-The-Edible-Game/assets/136263179/cafdf750-401e-4456-8f76-f9c2fd076cb3
+
 
 
 
