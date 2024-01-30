@@ -219,7 +219,9 @@ h3 {
     font-size: 15px;
     align-items: center;
 }
-
+ #instruction-btn:hover{
+    transform :scale(1.3);
+}
 #instructions, #instructions2, #instructions3 {
     border: 0.3em solid goldenrod;
     background-color: #eaf9d9;
