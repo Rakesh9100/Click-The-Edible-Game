@@ -1196,7 +1196,7 @@ h1 {
         padding: 0px;
     }
     #gameplayTime {
-        height: 54vh;
+        height: 80vh;
     }
     #gameplayTime div button {
         width: 7rem;
@@ -1471,7 +1471,7 @@ h1 {
     justify-content: center;
     width: 50vw;
     margin-bottom: 10rem;
-    height: 40vh;
+    margin-top: 15vh;
     flex-direction: column;
     justify-content: space-evenly;
     transition: all 0.5s ease-in-out;

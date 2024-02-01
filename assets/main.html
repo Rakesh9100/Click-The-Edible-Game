@@ -14,8 +14,9 @@
 </head>
 
 
-<body oncontextmenu="return false;">
-    
+<!-- <body oncontextmenu="return false;"> -->
+    <body>
+        
     <div id="preloader" class="loader">
         <img src="./images/preloader.gif" alt="" />
     </div>
@@ -499,6 +500,12 @@
             <b>Howdy, partner! How many hours of rootin' tootin' gameplay have you clocked up on this game?</b>
             <div id="time-range-val" class="changable-text">2 mins 45 sec</div>
             <input type="range" max="300" min="30" id="time-range" style="width: 30vw;" onchange="set_time_range_val()" onmousemove="set_time_range_val()" ontouchmove="set_time_range_val()">               
+            <br><br>
+            <h2>Select Your Preferred Difficulty</h2>
+            <div style="display: flex; margin-bottom: 10px;"><input type="radio" name="mode" id="easy" value="1"><label for="easy"> Easy</label></div>
+            <div style="display: flex; margin-bottom: 10px;"><input type="radio" name="mode" id="medium" value="2"><label for="medium"> Medium</label></div>
+            <div style="display: flex; margin-bottom: 10px;"><input type="radio" name="mode" id="hard" value="3"><label for="hard"> Hard</label></div>
+            <br><br>
             <div style="position: relative;">
                 <button id="start-btn-time" class="btn2" onclick="closeGameplayDialog()">Start 🎮</button>
             </div>

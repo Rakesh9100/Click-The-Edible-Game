@@ -1,0 +1,65 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+$primary-color: #00005c; // Change color here. C'mon, try it! 
+$text-color: mix(#000, $primary-color, 64%);
+
+.form-mode {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.label-mode {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+    /* Accessible outline */
+    /* Remove comment to use */
+    /*
+    &:focus-within {
+        outline: .125em solid $primary-color;
+    }
+  */
+}
+
+.input-mode {
+    &:checked+span {
+        background-color: mix(#fff, $primary-color, 84%);
+
+        &:before {
+            box-shadow: inset 0 0 0 0.4375em $primary-color;
+        }
+    }
+}
+
+.span-mode {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em; // or something higher...
+    transition: 0.25s ease;
+
+    &:hover {
+        background-color: mix(#fff, $primary-color, 84%);
+    }
+
+    &:before {
+        display: flex;
+        flex-shrink: 0;
+        content: "";
+        background-color: #fff;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        margin-right: 0.375em;
+        transition: 0.25s ease;
+        box-shadow: inset 0 0 0 0.125em $primary-color;
+    }
+}
