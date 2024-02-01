@@ -44,7 +44,7 @@ window.addEventListener('mousemove', function (e) {
     isCursorOnElement(e, instructionsDiv1) ||
     isCursorOnElement(e, instructionsDiv2) ||
     isCursorOnElement(e, gameplayTimeDiv) ||
-    isCursorOnElement(e, pauseBoxDiv)  ||
+    isCursorOnElement(e, pauseBoxDiv) ||
     isCursorOnElement(e, gameOverDiv)
   ) {
     cursordivdiv.forEach(function (element) {
@@ -70,7 +70,7 @@ const bgm1 = new Audio("sounds/bgm1.mp3");
 bgm1.volume = 0.6;
 const bgm2 = new Audio("sounds/bgm2.mp3");
 bgm2.volume = 0.6;
-const game_over_audio = new Audio("sounds/gameOver.mp3"); 
+const game_over_audio = new Audio("sounds/gameOver.mp3");
 const choose_edible = new Audio("sounds/start.mp3");
 const click_edible_audio = new Audio("sounds/edible.mp3");
 const click_bomb_audio = new Audio("sounds/explosion.wav");
@@ -89,7 +89,7 @@ var isRunning = -1; //this defines the state of game running or not
 // game variables
 
 // Add an event listener to the window to handle autoplay restrictions
-window.addEventListener('click', function() {
+window.addEventListener('click', function () {
   if (bgm1.paused && bgm2.paused) {
     // Start playing the background music only if it's not already playing
     bgm1.play();
@@ -138,69 +138,69 @@ var timegap_rotten;
 var prob_rotten;
 // create a new bomb
 function createBomb() {
-    const bomb = document.createElement('div');
-    bomb.classList.add('bomb');
-    bomb.classList.add('bomb-live');
-    const { x, y } = getRandomLocation();
-    bomb.style.top = `${y}px`;
-    bomb.style.left = `${x}px`;
-    bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${1 + Math.floor(Math.random() * MAX_BOMB_LIFE)}</p>`;
-    bomb.addEventListener('click', explodeBomb);
-    game_container.appendChild(bomb);
+  const bomb = document.createElement('div');
+  bomb.classList.add('bomb');
+  bomb.classList.add('bomb-live');
+  const { x, y } = getRandomLocation();
+  bomb.style.top = `${y}px`;
+  bomb.style.left = `${x}px`;
+  bomb.innerHTML = `<img src="images/bomb.png" alt="💣" style="transform: rotate(${Math.random() * 360}deg)" /><p style="display: none">${1 + Math.floor(Math.random() * MAX_BOMB_LIFE)}</p>`;
+  bomb.addEventListener('click', explodeBomb);
+  game_container.appendChild(bomb);
 }
 
 // create multiple bombs
 function createBombs() {
-    for (let i = 0; i < MAX_BOMBS; i++) {
-        createBomb();
-        totalBombs++;
-    }
+  for (let i = 0; i < MAX_BOMBS; i++) {
+    createBomb();
+    totalBombs++;
+  }
 }
 
 // explode an existing bomb
 function explodeBomb() {
-    if (isRunning !== 1) return;
-    if (lives <= 0) return;
-    if (this.classList.contains('dead')) return;
-    this.innerHTML = `<img src="images/explosion.png" alt="💥" style="transform: rotate(${Math.random() * 360}deg)" />`;
-    this.classList.remove('bomb-live');
-    this.classList.add('dead');
-    setTimeout(() => {
-        this.remove();
-        totalBombs--;
-    }, 2000);
-    lives--;
-    if (click_bomb_audio.currentTime > 0) {
-        click_bomb_audio.pause();
-        click_bomb_audio.currentTime = 0;
-    }
-    click_bomb_audio.play();
+  if (isRunning !== 1) return;
+  if (lives <= 0) return;
+  if (this.classList.contains('dead')) return;
+  this.innerHTML = `<img src="images/explosion.png" alt="💥" style="transform: rotate(${Math.random() * 360}deg)" />`;
+  this.classList.remove('bomb-live');
+  this.classList.add('dead');
+  setTimeout(() => {
+    this.remove();
+    totalBombs--;
+  }, 2000);
+  lives--;
+  if (click_bomb_audio.currentTime > 0) {
+    click_bomb_audio.pause();
+    click_bomb_audio.currentTime = 0;
+  }
+  click_bomb_audio.play();
 }
 
 // check if a bomb's life is over
 function checkBombLife() {
-    const bombs = document.getElementsByClassName('bomb-live');
-    for (let i = 0; i < bombs.length; i++) {
-        const bomb = bombs[i];
-        const life = bomb.querySelector('p');
-        if (life.innerText <= 0) {
-            bomb.classList.add('dead');
-            bomb.classList.remove('bomb-live');
-            setTimeout(() => {
-                bomb.remove();
-                totalBombs--;
-            }, 2000);
-        } else {
-            life.innerText--;
-        }
+  const bombs = document.getElementsByClassName('bomb-live');
+  for (let i = 0; i < bombs.length; i++) {
+    const bomb = bombs[i];
+    const life = bomb.querySelector('p');
+    if (life.innerText <= 0) {
+      bomb.classList.add('dead');
+      bomb.classList.remove('bomb-live');
+      setTimeout(() => {
+        bomb.remove();
+        totalBombs--;
+      }, 2000);
+    } else {
+      life.innerText--;
     }
+  }
 }
 
 function removeBombs() {
-    const createdBombs = document.getElementsByClassName('bomb');
-    while (createdBombs.length > 0) {
-        createdBombs[0].parentNode.removeChild(createdBombs[0]);
-    }
+  const createdBombs = document.getElementsByClassName('bomb');
+  while (createdBombs.length > 0) {
+    createdBombs[0].parentNode.removeChild(createdBombs[0]);
+  }
 }
 // -------------- bomb management section ----------------
 
@@ -303,7 +303,7 @@ dropArea.addEventListener("drop", (event) => {
 });
 
 function uploadFile(file) {
-  const fileName = typeof file === "string"?file:file.name;
+  const fileName = typeof file === "string" ? file : file.name;
   let uploadArea = document.querySelector(".uploaded-area");
   uploadArea.style.display = "block";
   uploadArea.innerHTML = `
@@ -311,7 +311,7 @@ function uploadFile(file) {
     <div class="content-upload upload">
         <img src="images/upload.png" class="file-preview" alt="preview">
       <div class="details-upload">
-        <p class="name">${fileName.slice(0,fileName.length>=21?21:fileName.length)+(fileName.length>=21?'...':'')} • Uploaded</p>
+        <p class="name">${fileName.slice(0, fileName.length >= 21 ? 21 : fileName.length) + (fileName.length >= 21 ? '...' : '')} • Uploaded</p>
       </div>
     </div>
     <i class="fas fa-check"></i>
@@ -349,15 +349,15 @@ document.querySelector("#upload-btn").addEventListener("click", () => {
 
 document.querySelectorAll(".choose-btn").forEach(button => {
   button.addEventListener("click", () => {
-      const img = button.querySelector("img");
-      const src = img.getAttribute("src");
-      const alt = img.getAttribute("alt");
-      selected_edible = { src, alt };
-      screens[1].classList.add("up1");
-      game_container.style.height = "100vh";
-      startGame();
-      displayChange();
-      choose_edible.play();
+    const img = button.querySelector("img");
+    const src = img.getAttribute("src");
+    const alt = img.getAttribute("alt");
+    selected_edible = { src, alt };
+    screens[1].classList.add("up1");
+    game_container.style.height = "100vh";
+    startGame();
+    displayChange();
+    choose_edible.play();
   });
 });
 
@@ -366,27 +366,31 @@ document.querySelectorAll(".choose-btn").forEach(button => {
 function chooseGameplayTime() {
   document.getElementById("time").style.display = "none";
   document.getElementById("gameplayTime").style.display = "flex";
-    document.getElementById("time-range").addEventListener("change", function (e) {
+  document.getElementById("time-range").addEventListener("change", function (e) {
     seconds = parseInt(document.getElementById("time-range").value) - 1;
     return seconds;
   });
 }
 
 function closeGameplayDialog() {
+
+  //Taking the value from difficulity options
   var ele = document.getElementsByName('mode');
- var val;
+  var val;
   for (i = 0; i < ele.length; i++) {
-      if (ele[i].checked)
-          val=ele[i].value;
+    if (ele[i].checked)
+      val = ele[i].value;
   }
-MAX_BOMBS=7*val; // maximum number of bombs that can be on screen
-MAX_BOMB_LIFE=5*val; // maximum life of a bomb
-MAX_LIVES=(3-val)+1; // maximum number of lives
-prob=0.3*val; //probublity of creating a bomb
-lives=MAX_LIVES;
-timegap_edible=(1000/val);
-timegap_rotten=(1500/val);
-prob_rotten=0.3*val;
+
+  //changed the values accordingly
+  MAX_BOMBS = 7 * val; // maximum number of bombs that can be on screen
+  MAX_BOMB_LIFE = 5 * val; // maximum life of a bomb
+  MAX_LIVES = (3 - val) + 1; // maximum number of lives
+  prob = 0.3 * val; //probublity of creating a bomb
+  lives = MAX_LIVES; //max number of lives
+  timegap_edible = (1000 / val); //time between two edible
+  timegap_rotten = (1500 / val); //time gap betwen two rotten
+  prob_rotten = 0.3 * val; //probablity of rotten creating
 
   isRunning = 1;
   seconds = parseInt(document.getElementById("time-range").value) - 1;
@@ -441,7 +445,7 @@ function closeInstructions() {
   document.getElementById("instructions").style.display = "none";
   document.getElementById("instructions2").style.display = "none";
   document.getElementById("instructions3").style.display = "none";
-  if(isRunning == 0)
+  if (isRunning == 0)
     isRunning = 1;
 }
 
@@ -467,7 +471,7 @@ function gameOver() {
   bgm1.currentTime = 0;
   bgm2.pause();
   bgm2.currentTime = 0;
-  if(game_over_audio.currentTime > 0) {
+  if (game_over_audio.currentTime > 0) {
     game_over_audio.pause();
     game_over_audio.currentTime = 0;
   }
@@ -492,8 +496,8 @@ function decreaseTime() {
 
   // ---------- displaying total lives -------------
   let _lives = "";
-  for(let i = 1; i <= MAX_LIVES; i++) {
-    if(i <= lives)
+  for (let i = 1; i <= MAX_LIVES; i++) {
+    if (i <= lives)
       _lives += '❤️'
     else
       _lives += '🖤'
@@ -504,8 +508,8 @@ function decreaseTime() {
   // -------------- bomb management section ----------------
   if (totalBombs < MAX_BOMBS) { // check if there are already more than enough bombs present on screen
     if (Math.random() < prob) { // randomly decide whether to create a bomb or not
-        createBomb(); 
-        totalBombs++;
+      createBomb();
+      totalBombs++;
     }
   }
   // -------------- bomb management section ----------------
@@ -513,7 +517,7 @@ function decreaseTime() {
   // -------------- game over section ----------------
   if ((s == 0 && m == 0) || lives == 0) {
     gameOver();
-  // -------------- game over section ----------------
+    // -------------- game over section ----------------
   } else {
     seconds--;
     // -------------- bomb management section ----------------
@@ -546,7 +550,7 @@ function catchRottenEdible() {
     this.innerHTML = `<img src="images/splat.png" alt="🦠" />`;
     this.classList.add("caught");
     setTimeout(() => this.remove(), 2000);
-    if(click_rotten_audio.currentTime > 0) {
+    if (click_rotten_audio.currentTime > 0) {
       click_rotten_audio.pause();
       click_rotten_audio.currentTime = 0;
     }
@@ -577,9 +581,8 @@ function createEdible() {
     const { x, y } = getRandomLocation();
     edible.style.top = `${y}px`;
     edible.style.left = `${x}px`;
-    edible.innerHTML = `<img src="${selected_edible.src}" alt="${
-      selected_edible.alt
-    }" style="transform: rotate(${Math.random() * 360}deg)" />`;
+    edible.innerHTML = `<img src="${selected_edible.src}" alt="${selected_edible.alt
+      }" style="transform: rotate(${Math.random() * 360}deg)" />`;
 
     edible.addEventListener("click", catchEdible);
     game_container.appendChild(edible);
@@ -600,7 +603,7 @@ function catchEdible() {
     this.classList.add("caught");
     setTimeout(() => this.remove(), 2000);
     addEdibles();
-    if(click_edible_audio.currentTime > 0) {
+    if (click_edible_audio.currentTime > 0) {
       click_edible_audio.pause();
       click_edible_audio.currentTime = 0;
     }
@@ -707,7 +710,7 @@ themeicon.onclick = function () {
   }
 };
 var volumeicon = document.getElementById("volume-off-icon");
-volumeicon.onclick = function() {
+volumeicon.onclick = function () {
   if (document.getElementById("volume-off-icon").classList.contains("fa-volume-up")) {
     bgm1.volume = 0;
     bgm2.volume = 0;
@@ -739,13 +742,13 @@ function set_time_range_val() {
   var time = document.getElementById("time-range").value;
   time = parseInt(time);
   if (time % 60 == 0) {
-    if(time == 60)
+    if (time == 60)
       document.getElementById("time-range-val").innerHTML = "1 min";
     else
       document.getElementById("time-range-val").innerHTML = time / 60 + " mins";
   }
   else {
-    if(time < 60) {
+    if (time < 60) {
       document.getElementById("time-range-val").innerHTML = time + " secs";
       return;
     }
