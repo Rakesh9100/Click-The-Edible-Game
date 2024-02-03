@@ -232,7 +232,7 @@ h3 {
     display: none;
     width: 60vw;
     margin-bottom: 7rem;
-    margin-top: 1.6rem;
+    margin-top: 2.6rem;
     height: 83vh;
     color: #ff1251;
     flex-direction: column;
@@ -246,7 +246,7 @@ h3 {
     overflow-x: none;
 }
 .instruction-heading{
-    margin-top: 2.5rem;
+    margin-top: 7.5rem;
 }
 #instructions ol, #instructions2 ol, #instructions3 ol{
         margin-top: 0 ;
@@ -1504,3 +1504,48 @@ h1 {
   cursor: none;
 }
 
+/* cards */
+#leftbox {
+    float: left;
+    background: Red;
+    width: 25%;
+    height: 280px;
+}
+
+#middlebox {
+    float: left;
+    background: Green;
+    width: 50%;
+    height: 280px;
+}
+
+#rightbox {
+    float: right;
+    background: blue;
+    width: 25%;
+    height: 280px;
+}
+
+/* instructions  */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 3px 3px;
+    text-align: center;
+    background-color: #b7e332;
+    border-radius: 6px;
+    height: 70%;
+    font-size: 15px;
+    margin:0px 5px 5px 5px;
+}
+
+.card p{
+    color: #000;
+    
+}
+
+.column {
+    float: left;
+    width: 30%;
+    padding: 0 10px;
+} 
+.row {margin: 0 -5px;}

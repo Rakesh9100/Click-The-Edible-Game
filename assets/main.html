@@ -67,37 +67,77 @@
         </button>
         
         <div id="instructions" class="abc">
-            <b style="font-weight:500; text-align:center; font-size: 1.9vmax; padding-bottom: 1rem; padding-top: 0.5rem;" class="xy instruction-heading">&#129389 Alrighty, welcome to Click the Edible Game!! &#127817</b><br>
+            
+           <b style="font-weight:500; text-align:center; font-size: 1.9vmax; padding-bottom: 1rem; padding-top: 0.5rem;" class="xy instruction-heading">&#129389 Alrighty, welcome to Click the Edible Game!! &#127817</b><br>
             <b  style=" font-size: 1.4vmax;">Get ready to unleash your inner produce-picking pro and show those edibles who's boss!</b><br>
             <b style=" font-size: 1.4vmax; " >Here's how to play:</b><br>
             
-            <ol type="1">
-                <li>
-                    Choose your sidekick -- Will it be Team Fruit, Vegetable, Sweet, Snack or Backery?
-                </li>
-                <li>
-                    Once you've made your choice, the timer will start ticking down from your chosen gameplay time and chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.
-                </li>
-                <li>
-                    Your mission is to click on the edibles before the timer runs out. Each correct click earns you a juicy point!
-                </li>
-                <li>
-                    But sure to pick your edible wisely, as some are rotten 🤢 and clicking on them shall cost you your delicious points.
-                </li>
-                <li>
-                    Also be aware of the bombs 💣, you have 3 lives ❤️❤️❤️. Click on a bomb 💣, and you lose a life ❤️.
-                </li>
-                <li>
-                    Keep your eyes peeled and your fingers nimble because once the clock strikes zero or all the lives ❤️ are lost, the game is over and the edibles will dance away.
-                </li>
-            </ol><br>
+            <div class="instructions"> 
 
+                <div class="row">
+
+                    <div class="column">
+                      <div class="card">
+                        <p class="main-head">Choose your sidekick!
+                            <p> Team Fruit, Vegetable, Sweet,Snack or Backery?</p></p>
+                      </div>
+                    </div> 
+                  
+                    <div class="column">
+                      <div class="card">
+                        <p class="main-head">Made your choice? The Timer starts ticking.
+                            <p>Chosen edible will appear on the screen, bouncing around like it's been drinking too much juice.</p></p>
+                        </p> 
+                      </div>
+                    </div>
+                    
+                    <div class="column">
+                      <div class="card">
+                        <p class="main-head">MISSION: Click on the edibles before the timer runs out.
+                            <p>Each correct click earns you a juicy point!</p></p>                        
+                      </div>
+                    </div>
+
+                   
+                  </div>
+
+       
+                  
+            </div>
+     <!-- row 2 -->
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                      <p class="main-head">Pick your edible wisely.
+                        <p>Some are rotten 🤢 and clicking on them shall cost you your delicious points.</p></p>
+                    </div>
+                  </div>
+                    <div class="column" >
+                        <div class="card">
+                            <p class="main-head">Be aware of the bombs 💣, you have 3 lives ❤️❤️❤️
+                                <p>Click on a bomb 💣, and you lose a life ❤️</p></p>
+                        </div>
+                    </div>
+  
+                    <div class="column">
+                        <div class="card">
+                            <p class="main-head">Keep your eyes peeled and your fingers nimblep <p>The clock strikes zero or all the lives ❤️ are lost, the game is over and the edibles will dance away.</p></p>
+                        </div> 
+                    </div>
+                    </div>  
+
+               
+                
+           
+            <div>
             <div id="info-span" style=" font-size: 1.3vmax; " >Ready to squash the competition?</div><br>
             <div style="display:flex; align-items: center; justify-content: center; padding-top: 1rem;" >
                 <button class="btn" id="instruction-btn" style="font-size: 12px;" onclick="closeInstructions()">
                     Let's get started!!<span></span><span></span><span></span><span></span>
                 </button>
             </div>
+        </div>
+
         </div>
         
         
@@ -528,7 +568,10 @@
             loader.classList.add("disappear");
         }
     </script>
-    
+    <!-- bootstrap cards script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 
 </body>
