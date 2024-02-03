@@ -132,10 +132,22 @@ body {
     background-size: cover;
 }
 
-.container {
-    padding-right: 0.5rem;
+.container{
     display: flex;
-    justify-content: flex-end;
+  gap: 55rem;
+  width: 100%;
+  position: fixed;
+}
+.innerDiv{
+display: inline-flex;
+
+}
+
+.logoo{
+    position: absolute;
+   left: 1rem;
+   top: 3px;
+
 }
 
 .container i {
