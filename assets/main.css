@@ -17,7 +17,7 @@
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(#f830b6,#6617CB, #f830b6);
+    background: linear-gradient(#f830b6, #6617CB, #f830b6);
     border-radius: 100vw;
     border: 2px solid whitesmoke;
 }
@@ -88,11 +88,13 @@ html {
     pointer-events: none;
     z-index: 999;
 }
+
 .cursor div {
     position: absolute;
     display: grid;
     place-items: center;
 }
+
 .cursor div div {
     background: transparent;
     border: 2px solid white;
@@ -101,17 +103,21 @@ html {
     box-shadow: 0 0 10px white;
     transition: transform 0.4s, background 0.4s;
 }
+
 .cursor div:nth-child(1),
 .cursor div:nth-child(2) {
     width: 100%;
     height: 100%;
 }
+
 .cursor div:nth-child(1) {
     transition: transform 0.2s ease-out;
 }
+
 .cursor div:nth-child(2) {
     transition: transform 0.1s ease-out;
 }
+
 .cursor div:nth-child(2) div {
     background: #fff;
     border-radius: 50%;
@@ -133,9 +139,22 @@ body {
 }
 
 .container {
-    padding-right: 0.5rem;
     display: flex;
-    justify-content: flex-end;
+    gap: 55rem;
+    width: 100%;
+    position: fixed;
+}
+
+.innerDiv {
+    display: inline-flex;
+
+}
+
+.logoo {
+    position: absolute;
+    left: 1rem;
+    top: 3px;
+
 }
 
 .container i {
@@ -171,28 +190,29 @@ h3 {
     transition: 0.5s;
     margin: 2em;
     margin-top: -25px;
-    cursor:none;
+    cursor: none;
 }
 
 .btn2 {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  margin-top: 10px;
-  color: white;
-  padding: 0.5em 1.5em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  cursor:none;
-  border-radius: 0.5em;
-  transform: 0.5s;
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    margin-top: 10px;
+    color: white;
+    padding: 0.5em 1.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    cursor: none;
+    border-radius: 0.5em;
+    transform: 0.5s;
 }
 
 .btn2:hover {
-  background-color: #3e8e41;
-  transform: scale(1.1);
-  transition: 0.5s;
+    background-color: #3e8e41;
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .changable-text {
@@ -208,7 +228,11 @@ h3 {
     height: auto !important;
 }
 
-#instruction-btn, #gameTime1, #gameTime2, #gameTime3, #gameTime4 {
+#instruction-btn,
+#gameTime1,
+#gameTime2,
+#gameTime3,
+#gameTime4 {
     justify-content: center;
     display: flex;
     width: 11rem;
@@ -220,7 +244,9 @@ h3 {
     align-items: center;
 }
 
-#instructions, #instructions2, #instructions3 {
+#instructions,
+#instructions2,
+#instructions3 {
     border: 0.3em solid goldenrod;
     background-color: #eaf9d9;
     border-radius: 0.5em;
@@ -245,20 +271,27 @@ h3 {
     overflow-y: auto;
     overflow-x: none;
 }
-.instruction-heading{
+
+.instruction-heading {
     margin-top: 2.5rem;
 }
-#instructions ol, #instructions2 ol, #instructions3 ol{
-        margin-top: 0 ;
-        margin-bottom: 0;
-    }
-#instructions ol li, #instructions2 ol li, #instructions3 ol li {
-    text-align:left;
+
+#instructions ol,
+#instructions2 ol,
+#instructions3 ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#instructions ol li,
+#instructions2 ol li,
+#instructions3 ol li {
+    text-align: left;
     font-weight: 300;
 }
 
 li {
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 span {
@@ -325,22 +358,22 @@ span {
     bottom: 0;
     position: fixed;
     display: flex;
-    flex-direction:row;
-    flex-wrap:wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     padding: 0rem .5rem;
     z-index: 0;
 }
 
 .footer .copy {
-    padding:.5rem 2rem;
+    padding: .5rem 2rem;
 }
 
 .icons {
-    padding:.5rem 2rem;
-    text-align:center;
-    justify-content:center;
+    padding: .5rem 2rem;
+    text-align: center;
+    justify-content: center;
 }
 
 .footer a {
@@ -415,6 +448,7 @@ span {
 .screen.up1 {
     margin-top: -107vh;
 }
+
 .container2 {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -475,12 +509,18 @@ span {
 
 /* Making Images Undraggable */
 img {
-    -webkit-user-drag: none; /* Standard syntax */
-    user-select: none; /* Standard syntax */
-    -moz-user-select: none; /* Firefox */
-    -webkit-user-drag: none; /* WebKit */
-    -webkit-user-select: none; /* Chrome, Safari, and Opera */
-    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-drag: none;
+    /* Standard syntax */
+    user-select: none;
+    /* Standard syntax */
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-drag: none;
+    /* WebKit */
+    -webkit-user-select: none;
+    /* Chrome, Safari, and Opera */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
 }
 
 .choose-btn img {
@@ -586,7 +626,7 @@ section .details-upload span {
     border-radius: inherit;
 }
 
-.name{
+.name {
     font-size: 14px;
     font-weight: 600;
     color: #000;
@@ -602,7 +642,7 @@ section .details-upload span {
 }
 
 .uploaded-area::-webkit-scrollbar {
-    display:none;
+    display: none;
 }
 
 .uploaded-area .row-upload .content-upload {
@@ -625,7 +665,7 @@ section .details-upload span {
     font-size: 16px;
 }
 
-.uploaded-area .file-preview{
+.uploaded-area .file-preview {
     width: 50px;
     height: 50px;
     margin-right: 15px;
@@ -633,7 +673,7 @@ section .details-upload span {
     background-position: center;
 }
 
-#upload-btn{
+#upload-btn {
     display: none;
     border: none;
     margin-top: 1rem;
@@ -642,18 +682,18 @@ section .details-upload span {
     text-align: center;
     text-decoration: none;
     font-size: 18px;
-    cursor:none;
+    cursor: none;
     background-color: var(--block);
     border-radius: 0.5em;
     scale: 1;
     transition: scale .3s ease-in-out;
 }
 
-#upload-btn:hover{
+#upload-btn:hover {
     scale: 1.05;
 }
 
-#upload-btn:active{
+#upload-btn:active {
     scale: 0.95;
 }
 
@@ -739,28 +779,35 @@ section .details-upload span {
     .upload-btn {
         width: 60vw !important;
     }
-    .wrapper{
+
+    .wrapper {
         width: 90%;
         min-width: 90%;
     }
-    .container-upload h5{
+
+    .container-upload h5 {
         margin-bottom: 3rem;
     }
-    .container-upload h1{
+
+    .container-upload h1 {
         font-size: 1.5rem;
     }
-    .container-upload h3{
+
+    .container-upload h3 {
         font-size: .7rem;
     }
-    .name{
+
+    .name {
         font-size: 14px;
     }
-    .uploaded-area .row-upload .details-upload{
+
+    .uploaded-area .row-upload .details-upload {
         margin: 0;
         padding: 0 10px;
     }
-    .row-upload i{
-        display:none;
+
+    .row-upload i {
+        display: none;
     }
 }
 
@@ -796,7 +843,8 @@ section .details-upload span {
     top: 45px;
 }
 
-.edible, .bomb{
+.edible,
+.bomb {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -807,11 +855,13 @@ section .details-upload span {
     transition: transform 0.3s ease-in-out;
 }
 
-.edible.caught, .bomb.dead {
+.edible.caught,
+.bomb.dead {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.edible img, .bomb img {
+.edible img,
+.bomb img {
     width: 100px;
     height: 100px;
 }
@@ -830,7 +880,8 @@ h1 {
     color: #eaf9d9;
 }
 
-#light-icon, #volume-off-icon {
+#light-icon,
+#volume-off-icon {
     font-size: x-large;
     position: relative;
     padding: 0.5em;
@@ -845,28 +896,35 @@ h1 {
 }
 
 
-#light-icon:hover, #volume-off-icon:hover, #back-icon:hover
-{
+#light-icon:hover,
+#volume-off-icon:hover,
+#back-icon:hover {
     background-color: blue;
     color: white;
     transition: all 0.2s ease;
 }
-#pause-button:hover
-{
-    color: blue; /* Add your desired text color on hover */
-    animation: pulse 0.5s infinite; /* Add the animation */
+
+#pause-button:hover {
+    color: blue;
+    /* Add your desired text color on hover */
+    animation: pulse 0.5s infinite;
+    /* Add the animation */
 }
+
 @keyframes pulse {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
 }
+
 #pause-button {
     display: none;
     width: 40px;
@@ -879,7 +937,7 @@ h1 {
 
 #pause-menu {
     border: 0.3em solid purple;
-    background: rgb(249,249,202);
+    background: rgb(249, 249, 202);
     background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
     border-radius: 0.5em;
     animation: colorfulBorder1 4s infinite linear;
@@ -935,7 +993,7 @@ h1 {
 
 #gameOver-menu {
     border: 0.3em solid rgb(79, 32, 218);
-    background: rgb(249,249,202);
+    background: rgb(249, 249, 202);
     background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
     border-radius: 0.5em;
     position: absolute;
@@ -955,7 +1013,7 @@ h1 {
     justify-content: space-evenly;
 }
 
-#finalScore{
+#finalScore {
     color: rgb(49, 25, 154);
     display: flex;
     align-items: center;
@@ -979,34 +1037,47 @@ h1 {
     transform: scale(1);
 }
 
-@media screen and (1336px <= width < 1440px) {
+@media screen and (1336px <=width < 1440px) {
     .head {
         overflow: auto;
     }
-    .fruit, .vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .back-icon {
         margin-right: 10px;
     }
+
     .container {
         padding-right: 30px;
     }
 }
 
-@media screen and (1024px <= width < 1336px) {
+@media screen and (1024px <=width < 1336px) {
     .head {
         overflow: auto;
     }
-    .fruit, .vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .container {
         padding-right: 30px;
     }
@@ -1016,40 +1087,56 @@ h1 {
     .head {
         overflow: auto;
     }
-    .fruit, .vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-top: 4rem;
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .container {
         padding-right: 30px;
     }
 }
 
-@media screen and (573px <= width <= 701px) {
+@media screen and (573px <=width <=701px) {
     .head {
         overflow: auto;
     }
-    .fruit,.vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-top: 4rem;
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .footer {
         font-size: 0.7rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
     .container {
         padding-right: 30px;
     }
-    #instructions, #instructions2, #instructions3{
-        font-size: 1rem!important;
+
+    #instructions,
+    #instructions2,
+    #instructions3 {
+        font-size: 1rem !important;
     }
 }
 
@@ -1057,67 +1144,93 @@ h1 {
     .head {
         overflow: auto;
     }
-    .fruit,.vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-top: 4rem;
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .container {
         padding-right: 30px;
     }
 }
 
-@media screen and (383px <= width <= 527px) {
+@media screen and (383px <=width <=527px) {
     .head {
         overflow: auto;
     }
-    .fruit,.vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-top: 4rem;
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .container {
         padding-right: 30px;
     }
 }
 
-@media screen and (354px <= width < 383px) {
+@media screen and (354px <=width < 383px) {
     .head {
         overflow: auto;
     }
+
     .btn {
         margin-top: 0px;
     }
-    .fruit,.vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-top: 4rem;
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .container {
         padding-right: 30px;
     }
 }
 
-@media screen and (100px <= width < 354px) {
+@media screen and (100px <=width < 354px) {
     .head {
         overflow: auto;
     }
+
     .btn {
         margin-top: 0px;
     }
-    .fruit,.vegetable, .snacks, .sweets {
+
+    .fruit,
+    .vegetable,
+    .snacks,
+    .sweets {
         margin-top: 4rem;
         margin-bottom: 5vh;
     }
+
     .snacks {
         margin-bottom: 5rem;
     }
+
     .footer {
         font-size: 0.7rem;
         flex-direction: column;
@@ -1135,34 +1248,45 @@ h1 {
         font-size: 5vmin;
         padding: 1rem;
     }
+
     .btn {
         font-size: 1rem;
         width: 10em;
     }
+
     .choose-btn {
         width: 8.375rem;
         height: 9.375rem;
     }
+
     .game-container {
         margin-top: 5rem;
     }
-    .time, .score {
+
+    .time,
+    .score {
         top: 30px
     }
+
     #pause-menu {
         margin-top: 35vh;
         margin-left: 30vw;
         width: 45vw;
         height: 20vh;
     }
+
     .footer {
         font-size: 0.7rem;
         flex-direction: column;
         justify-content: center;
     }
-    #instructions, #instructions2, #instructions3 {
+
+    #instructions,
+    #instructions2,
+    #instructions3 {
         font-size: small;
     }
+
     #gameplayTime div {
         flex-direction: column;
         height: 8rem;
@@ -1174,43 +1298,61 @@ h1 {
         font-size: 0.8rem;
         width: 10em;
     }
+
     .footer {
         font-size: 0.7rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
     .game-container {
         margin-top: 7rem;
     }
-    .time, .score {
+
+    .time,
+    .score {
         top: 50px
     }
+
     #pause-menu {
         margin-top: 35vh;
         margin-left: 25vw;
         width: 55vw;
         height: 15vh;
     }
-    #instructions ul, #instructions2 ul, #instructions3 ul {
+
+    #instructions ul,
+    #instructions2 ul,
+    #instructions3 ul {
         padding: 0px;
     }
+
     #gameplayTime {
         height: 80vh;
     }
+
     #gameplayTime div button {
         width: 7rem;
     }
 }
+
 :root {
-    --progress-bar-light: blue; /* Define color for light theme */
-    --progress-bar-dark: hotpink; /* Define color for dark theme */
+    --progress-bar-light: blue;
+    /* Define color for light theme */
+    --progress-bar-dark: hotpink;
+    /* Define color for dark theme */
 }
 
-.dark-theme #instructions, .dark-theme #instructions2, .dark-theme #instructions3, .dark-theme #gameplayTime, .dark-theme #pause-menu, .dark-theme #gameOver-menu {
-    border: 0.3em solid rgb(10, 10, 10) ;
-    background-color: #2c2c2c ;
-    color: #b7b7b7 ;
+.dark-theme #instructions,
+.dark-theme #instructions2,
+.dark-theme #instructions3,
+.dark-theme #gameplayTime,
+.dark-theme #pause-menu,
+.dark-theme #gameOver-menu {
+    border: 0.3em solid rgb(10, 10, 10);
+    background-color: #2c2c2c;
+    color: #b7b7b7;
 }
 
 .dark-theme *::-webkit-scrollbar-track {
@@ -1223,39 +1365,43 @@ h1 {
 }
 
 .dark-theme #instruction-btn {
-    border: none ;
-    background-color: #044bc7 ;
-    color: #ebe8e8 ;
+    border: none;
+    background-color: #044bc7;
+    color: #ebe8e8;
 }
 
-.dark-theme .btn, .dark-theme #instruction-btn:hover {
+.dark-theme .btn,
+.dark-theme #instruction-btn:hover {
     border: none;
-    --c:rgb(10, 10, 10);
-    --hover:rgb(10, 10, 10);
+    --c: rgb(10, 10, 10);
+    --hover: rgb(10, 10, 10);
     background-color: #005eff;
     color: #ebe8e8;
 }
 
 .dark-theme .lists {
-    background-color: #2c2c2c ;
+    background-color: #2c2c2c;
 }
 
 .dark-theme .lists li {
-    background-color: #2c2c2c ;
-    color: #b7b7b7 ;
+    background-color: #2c2c2c;
+    color: #b7b7b7;
 }
 
 .dark-theme .choose-btn {
     background-color: #ffffff3b;
-    color: #b7b7b7 ;
+    color: #b7b7b7;
 }
 
 .dark-theme .choose-btn p {
-    color: #f3eeee ;
+    color: #f3eeee;
 }
 
-.dark-theme #light-icon, .dark-theme #back-icon, .dark-theme #volume-off-icon, .dark-theme #progress-bar-container {
-    color:  #f3eeee;
+.dark-theme #light-icon,
+.dark-theme #back-icon,
+.dark-theme #volume-off-icon,
+.dark-theme #progress-bar-container {
+    color: #f3eeee;
 }
 
 
@@ -1271,7 +1417,7 @@ h1 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: 
+    background:
         radial-gradient(closest-side, white 79%, transparent 80% 100%),
         conic-gradient(#005eff calc(var(--progress-value) * 1%), pink 0);
     position: relative;
@@ -1281,27 +1427,33 @@ h1 {
 }
 
 #progress-bar i {
-    font-size: 100%; /* Adjust the percentage based on your preference */
+    font-size: 100%;
+    /* Adjust the percentage based on your preference */
 }
 
 @media (max-width: 765px) {
     #progress-bar-container {
-        bottom: 100px; /* Adjust as needed to clear the footer */
+        bottom: 100px;
+        /* Adjust as needed to clear the footer */
     }
-    
+
     /* Adjust font size for smaller screens */
     /* #progress-bar {
         font-size: large; 
     } */
 }
+
 @media (min-width: 765px) and (max-width: 820px) {
     #progress-bar-container {
-        bottom: 100px; /* Adjust as needed to clear the footer */
+        bottom: 100px;
+        /* Adjust as needed to clear the footer */
     }
 }
+
 @media (min-width: 820px) and (max-width: 865px) {
     #progress-bar-container {
-        bottom: 100px; /* Adjust as needed to clear the footer */
+        bottom: 100px;
+        /* Adjust as needed to clear the footer */
     }
 }
 
@@ -1314,11 +1466,14 @@ h1 {
     padding: 10px;
 }
 
-.volume-icon, #light-icon, #back-icon {
+.volume-icon,
+#light-icon,
+#back-icon {
     margin-left: 10px;
 }
 
-.volume-icon, #light-icon {
+.volume-icon,
+#light-icon {
     order: 2;
 }
 
@@ -1327,37 +1482,46 @@ h1 {
 }
 
 /* Additional styling for icons if needed */
-#instructions, #instructions2, #instructions3 {
+#instructions,
+#instructions2,
+#instructions3 {
     background: linear-gradient(to bottom, #001325, #014588, #0073a1, #07778d);
     color: white;
 }
 
 @keyframes colorfulBorder {
     0% {
-      border-color: red;
+        border-color: red;
     }
-    25% {
-      border-color: orange;
-    }
-    50% {
-      border-color: yellow;
-    }
-    75% {
-      border-color: violet;
-    }
-    100% {
-      border-color: rgb(28, 31, 228);
-    }
-  }
 
-  #instructions, #instructions2, #instructions3{
+    25% {
+        border-color: orange;
+    }
+
+    50% {
+        border-color: yellow;
+    }
+
+    75% {
+        border-color: violet;
+    }
+
+    100% {
+        border-color: rgb(28, 31, 228);
+    }
+}
+
+#instructions,
+#instructions2,
+#instructions3 {
     border-width: 8px;
     border-style: solid;
     animation: colorfulBorder 4s infinite linear;
     text-align: center;
     /* height: 36em; */
-  }
-  .xy{
+}
+
+.xy {
     border-width: 5px;
     border-style: solid;
     animation: colorfulBorder 2s infinite linear;
@@ -1366,96 +1530,131 @@ h1 {
     background-color: #fffc34;
     border-radius: 14px;
     color: black;
+
     #instructions {
-    background: linear-gradient(to bottom, #001325, #014588, #0073a1, #00b4d8);
-    color: white;
-    text-align: center;
+        background: linear-gradient(to bottom, #001325, #014588, #0073a1, #00b4d8);
+        color: white;
+        text-align: center;
+    }
+
+    @keyframes colorfulBorder {
+        0% {
+            border-color: red;
+        }
+
+        25% {
+            border-color: orange;
+        }
+
+        50% {
+            border-color: yellow;
+        }
+
+        75% {
+            border-color: violet;
+        }
+
+        100% {
+            border-color: blue;
+        }
+    }
+
+    #instructions,
+    #instructions2,
+    #instructions3 {
+        border-width: 15px;
+        border-style: solid;
+        animation: colorfulBorder 4s infinite linear;
+        text-align: center;
+    }
+
+    .xy {
+        border-width: 5px;
+        border-style: solid;
+        animation: colorfulBorder 2s infinite linear;
+        background-color: #fffc34;
+        border-radius: 14px;
+        color: black;
+        text-align: center;
+    }
 }
 
-@keyframes colorfulBorder {
-    0% {
-      border-color: red;
-    }
-    25% {
-      border-color: orange;
-    }
-    50% {
-      border-color: yellow;
-    }
-    75% {
-      border-color: violet;
-    }
-    100% {
-      border-color: blue;
-    }
-  }
+/* responsive instruction box  */
+@media screen and (max-width:1024px) {
 
-  #instructions, #instructions2, #instructions3 {
-    border-width: 15px;
-    border-style: solid;
-    animation: colorfulBorder 4s infinite linear;
-    text-align: center;
-  }
-  .xy{
-    border-width: 5px;
-    border-style: solid;
-    animation: colorfulBorder 2s infinite linear;
-    background-color: #fffc34;
-    border-radius: 14px;
-    color: black;
-    text-align: center;
-  }
-  }
-  /* responsive instruction box  */
-  @media screen and (max-width:1024px){
-    #instructions, #instructions2, #instructions3 {
+    #instructions,
+    #instructions2,
+    #instructions3 {
         width: 70vw;
     }
-    .instruction-heading{
+
+    .instruction-heading {
         margin-top: 10rem;
     }
 }
-  @media screen and (max-width:768px){
-    #instructions, #instructions2, #instructions3 {
+
+@media screen and (max-width:768px) {
+
+    #instructions,
+    #instructions2,
+    #instructions3 {
         width: 85vw;
     }
-    .instruction-heading{
+
+    .instruction-heading {
         margin-top: 10rem;
     }
-    .xy{
+
+    .xy {
         margin-left: 30px;
         margin-right: 30px;
     }
+
     .game-container {
         margin-top: 3.4rem;
     }
 }
-@media screen and (max-width: 676px){
-    .instruction-heading{
+
+@media screen and (max-width: 676px) {
+    .instruction-heading {
         margin-top: 13rem;
     }
 }
-@media screen and (max-width: 478px){
-    #instructions, #instructions2, #instructions3 {
+
+@media screen and (max-width: 478px) {
+
+    #instructions,
+    #instructions2,
+    #instructions3 {
         width: 85vw;
     }
-    .instruction-heading{
+
+    .instruction-heading {
         margin-top: 13rem;
     }
-    #instructions ol, #instructions2 ol, #instructions3 ol{
+
+    #instructions ol,
+    #instructions2 ol,
+    #instructions3 ol {
         padding: 0 6px;
     }
 }
-@media screen and (max-width: 400px){
-    #instructions, #instructions2, #instructions3 {
+
+@media screen and (max-width: 400px) {
+
+    #instructions,
+    #instructions2,
+    #instructions3 {
         width: 90vw;
     }
-    .instruction-heading{
+
+    .instruction-heading {
         margin-top: 18rem;
     }
 }
-  #gameplayTime {    
-    background: rgb(249,249,202);
+
+#gameplayTime {
+    background: rgb(249, 249, 202);
     background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
     border-width: 10px;
     border-style: solid;
@@ -1476,31 +1675,34 @@ h1 {
     justify-content: space-evenly;
     transition: all 0.5s ease-in-out;
     /* animation-name: scaleMenu;*/
-    transform: scale(1); 
+    transform: scale(1);
     border-radius: 20px;
 }
 
 @keyframes colorfulBorder1 {
     0% {
-      border-color: red;
-      transform: scale(1.2);
+        border-color: red;
+        transform: scale(1.2);
     }
+
     25% {
-      border-color: orange;
+        border-color: orange;
     }
+
     50% {
-      border-color: yellow;
+        border-color: yellow;
     }
+
     75% {
-      border-color: violet;
+        border-color: violet;
     }
+
     100% {
-      border-color: rgb(28, 31, 228);
-      transform: scale(1.3);
+        border-color: rgb(28, 31, 228);
+        transform: scale(1.3);
     }
 }
 
-*{
-  cursor: none;
+* {
+    cursor: none;
 }
-

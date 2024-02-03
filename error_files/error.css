@@ -30,7 +30,7 @@
 }
 
 body {
-  /* font-family: var(--body-font); */
+    /* font-family: var(--body-font); */
     font-size: var(--normal-font-size);
     font-weight: 500;
     color: var(--text-color);
@@ -49,7 +49,8 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 
 .main {
-    overflow: hidden; /* For the animations ScrollReveal */
+    overflow: hidden;
+    /* For the animations ScrollReveal */
 }
 
 /*=============== HOME ===============*/
@@ -71,7 +72,8 @@ img {
     flex-direction: column;
     align-items: flex-start;
 }
-.home__subtitle{
+
+.home__subtitle {
     font-family: var(--text-font);
 }
 
@@ -81,7 +83,7 @@ img {
     font-family: var(--body-font);
 }
 
-.home__description{
+.home__description {
     font-family: var(--text-font);
 }
 
@@ -128,18 +130,19 @@ img {
     align-self: flex-end;
 }
 
-.home__footer span a{
+.home__footer span a {
     color: var(--text-color);
 }
 
-.home__footer span a:hover{
-    color:aliceblue;
+.home__footer span a:hover {
+    color: aliceblue;
 }
 
 @keyframes floaty {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(15px);
     }
@@ -149,6 +152,7 @@ img {
     0% {
         transform: scale(1, 1);
     }
+
     100% {
         transform: scale(.85, .85);
     }
@@ -158,6 +162,7 @@ img {
     .home__img img {
         width: 200px !important;
     }
+
     .home__container {
         padding-bottom: 9rem !important;
     }
@@ -167,19 +172,24 @@ img {
     .home__img img {
         width: 180px !important;
     }
+
     .home__title {
         font-size: 2rem;
     }
-    .home__description{
+
+    .home__description {
         font-size: 13px;
     }
-    .home{
+
+    .home {
         padding-top: 1rem;
     }
+
     .home__container {
         flex-direction: column-reverse;
         padding-bottom: 7rem !important;
     }
+
     .home__data {
         padding-top: 3.5rem;
         align-items: center;
