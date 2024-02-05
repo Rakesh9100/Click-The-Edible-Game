@@ -244,58 +244,93 @@ h3 {
     align-items: center;
 }
 
-#instructions,
-#instructions2,
-#instructions3 {
-    border: 0.3em solid goldenrod;
-    background-color: #eaf9d9;
-    border-radius: 0.5em;
+
+.instruction-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #ff0000;
+}
+
+.instruction-heading{
+    box-shadow: inset 0 0 10px 0 #fff;
+    border-radius: .5rem;
+    margin: 0 1.5rem;
+}
+
+#instructions {
+    border-radius: 1rem;
     position: absolute;
     z-index: 9;
-    padding: 0 1rem;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 2rem;
     font-weight: bold;
     display: none;
     width: 60vw;
     margin-bottom: 7rem;
     margin-top: 1.6rem;
-    height: 83vh;
+    height: 85vh;
     color: #ff1251;
     flex-direction: column;
     justify-content: center;
-    transition: all 0.5s ease-in-out;
-    animation-name: scaleMenu;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    transform: scale(1);
     overflow-y: auto;
     overflow-x: none;
 }
 
-.instruction-heading {
-    margin-top: 2.5rem;
+.abc{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
 }
 
-#instructions ol,
-#instructions2 ol,
-#instructions3 ol {
-    margin-top: 0;
-    margin-bottom: 0;
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 5%);
+    }
 }
 
-#instructions ol li,
-#instructions2 ol li,
-#instructions3 ol li {
+@keyframes fadeDown {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
+}
+
+.abc.fade-up {
+    animation-name: fadeUp;
+}
+
+.abc.fade-down {
+    animation-name: fadeDown;
+}
+
+.abc ul li{
     text-align: left;
-    font-weight: 300;
-}
-
-li {
-    margin-top: 10px;
+    margin-top: 1rem;
+    font-size: 14px;
+    list-style:decimal-leading-zero;
 }
 
 span {
-    position: absolute;
+    position: absolute; 
     width: 25%;
     height: 100%;
     background-color: var(--c);
@@ -1482,10 +1517,11 @@ h1 {
 }
 
 /* Additional styling for icons if needed */
-#instructions,
-#instructions2,
-#instructions3 {
-    background: linear-gradient(to bottom, #001325, #014588, #0073a1, #07778d);
+#instructions {
+    background: rgba(0, 0, 0, 0.8);
+    /* background: #fb2e90; */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px 0 #000;
     color: white;
 }
 
@@ -1511,17 +1547,8 @@ h1 {
     }
 }
 
-#instructions,
-#instructions2,
-#instructions3 {
-    border-width: 8px;
-    border-style: solid;
-    animation: colorfulBorder 4s infinite linear;
-    text-align: center;
-    /* height: 36em; */
-}
 
-.xy {
+/* .xy {
     border-width: 5px;
     border-style: solid;
     animation: colorfulBorder 2s infinite linear;
@@ -1577,7 +1604,7 @@ h1 {
         color: black;
         text-align: center;
     }
-}
+} */
 
 /* responsive instruction box  */
 @media screen and (max-width:1024px) {
@@ -1589,7 +1616,7 @@ h1 {
     }
 
     .instruction-heading {
-        margin-top: 10rem;
+        margin-top: 5rem;
     }
 }
 
@@ -1602,13 +1629,13 @@ h1 {
     }
 
     .instruction-heading {
-        margin-top: 10rem;
+        margin-top: 5rem;
     }
 
-    .xy {
+    /* .xy {
         margin-left: 30px;
         margin-right: 30px;
-    }
+    } */
 
     .game-container {
         margin-top: 3.4rem;
@@ -1617,7 +1644,10 @@ h1 {
 
 @media screen and (max-width: 676px) {
     .instruction-heading {
-        margin-top: 13rem;
+        margin-top: 5rem;
+    }
+    .abc ul li{
+        font-size: 12px;
     }
 }
 
@@ -1630,12 +1660,12 @@ h1 {
     }
 
     .instruction-heading {
-        margin-top: 13rem;
+        margin-top: 7rem;
     }
 
-    #instructions ol,
-    #instructions2 ol,
-    #instructions3 ol {
+    #instructions ul,
+    #instructions2 ul,
+    #instructions3 ul {
         padding: 0 6px;
     }
 }
@@ -1649,7 +1679,7 @@ h1 {
     }
 
     .instruction-heading {
-        margin-top: 18rem;
+        margin-top: 5rem;
     }
 }
 

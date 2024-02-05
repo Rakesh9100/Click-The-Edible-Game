@@ -427,18 +427,24 @@ function startGame() {
 }
 
 function showInstructions() {
-    document.getElementById("instructions").style.display = "flex";
-    document.getElementById("instructions2").style.display = "flex";
-    document.getElementById("instructions3").style.display = "flex";
+    var instructionsModal = document.getElementById("instructions");
+    instructionsModal.style.display = "flex";
+    instructionsModal.classList.add("fade-up");
     pauseGame();
 }
 
 function closeInstructions() {
-    document.getElementById("instructions").style.display = "none";
-    document.getElementById("instructions2").style.display = "none";
-    document.getElementById("instructions3").style.display = "none";
-    if (isRunning == 0)
-        isRunning = 1;
+    var instructionsModal = document.getElementById("instructions");
+    instructionsModal.classList.remove("fade-up");
+    instructionsModal.classList.add("fade-down");
+
+    // Delay the display none until the fade-down animation completes
+    setTimeout(function() {
+        instructionsModal.style.display = "none";
+        if (isRunning == 0)
+            isRunning = 1;
+        instructionsModal.classList.remove("fade-down");
+    }, 500); // 500ms is the duration of the fadeDown animation
 }
 
 //Maximum in the array
