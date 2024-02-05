@@ -214,7 +214,7 @@ const fileInput = document.querySelector(".file-input");
 const progressArea = document.querySelector(".progress-area");
 const uploadedArea = document.querySelector(".uploaded-area");
 
-const allowed_EXT = /\.(jpg|jpeg|png)$/i;
+const allowed_EXT = /\.(png)$/i;
 
 const files_name_upload = [];
 
@@ -247,7 +247,7 @@ fileInput.onchange = ({ target }) => {
     let file = target.files;
     if (file.length === 1) {
         if (!allowed_EXT.exec(file[0].name)) {
-            showToast("Only Image files are allowed", "#fff");
+            showToast("Only png files are allowed", "#fff");
         } else {
             if (!files_name_upload.includes(file[0].name)) {
                 files_name_upload.push(file[0].name);
