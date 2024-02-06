@@ -128,10 +128,14 @@ setInterval(() => {
 
 // -------------- bomb management section ----------------
 var totalBombs = 0; // total number of bombs on screen at a time
-var MAX_BOMBS = 7; // maximum number of bombs that can be on screen
-var MAX_BOMB_LIFE = 5; // maximum life of a bomb
-var MAX_LIVES = 3; // maximum number of lives
-var lives = MAX_LIVES; // current number of lives
+var MAX_BOMBS; // maximum number of bombs that can be on screen
+var MAX_BOMB_LIFE; // maximum life of a bomb
+var MAX_LIVES; // maximum number of lives
+var lives; // current number of lives
+var prob; //probublity of creating a bomb
+var timegap_edible;
+var timegap_rotten;
+var prob_rotten;
 
 // create a new bomb
 function createBomb() {
@@ -370,6 +374,26 @@ function chooseGameplayTime() {
 }
 
 function closeGameplayDialog() {
+
+    //Taking the value from difficulity options
+    var ele = document.getElementsByName('mode');
+    var val;
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked)
+            val = ele[i].value;
+    }
+
+    //changed the values accordingly
+    MAX_BOMBS = 7 * val; // maximum number of bombs that can be on screen
+    MAX_BOMB_LIFE = 5 * val; // maximum life of a bomb
+    MAX_LIVES = (3 - val) + 1; // maximum number of lives
+    prob = 0.3 * val; //probublity of creating a bomb
+    lives = MAX_LIVES; //max number of lives
+    timegap_edible = (1000 / val); //time between two edible
+    timegap_rotten = (1500 / val); //time gap betwen two rotten
+    prob_rotten = 0.3 * val; //probablity of rotten creating
+
+
     isRunning = 1;
     seconds = parseInt(document.getElementById("time-range").value) - 1;
     setTimeout(createEdible, 1000);
@@ -504,7 +528,7 @@ function decreaseTime() {
 
     // -------------- bomb management section ----------------
     if (totalBombs < MAX_BOMBS) { // check if there are already more than enough bombs present on screen
-        if (Math.random() < 0.5) { // randomly decide whether to create a bomb or not
+        if (Math.random() < prob) { // randomly decide whether to create a bomb or not
             createBomb();
             totalBombs++;
         }
@@ -609,12 +633,12 @@ function catchEdible() {
 }
 
 function addEdibles() {
-    setTimeout(createEdible, 1000);
+    setTimeout(createEdible, timegap_edible);
     // add rotten edibles also
-    if (Math.random() < 0.3)
-        setTimeout(createRottenEdible, 1500);
+    if (Math.random() < prob_rotten)
+        setTimeout(createRottenEdible, timegap_rotten);
     else
-        setTimeout(createEdible, 1500);
+        setTimeout(createEdible, timegap_rotten);
 }
 
 // -------------- edible management section ----------------

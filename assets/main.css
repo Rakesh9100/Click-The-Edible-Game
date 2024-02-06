@@ -1344,7 +1344,7 @@ h1 {
     }
 
     #gameplayTime {
-        height: 54vh;
+        height: 80vh;
     }
 
     #gameplayTime div button {
@@ -1669,7 +1669,7 @@ h1 {
 }
 
 #gameplayTime {
-    background: rgb(249, 249, 202);
+    background: rgb(249,249,202);
     background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(112, 245, 240) 100%);
     border-width: 10px;
     border-style: solid;
@@ -1685,12 +1685,12 @@ h1 {
     justify-content: center;
     width: 50vw;
     margin-bottom: 10rem;
-    height: 40vh;
+    margin-top: 15vh;
     flex-direction: column;
     justify-content: space-evenly;
     transition: all 0.5s ease-in-out;
     /* animation-name: scaleMenu;*/
-    transform: scale(1);
+    transform: scale(1); 
     border-radius: 20px;
 }
 
