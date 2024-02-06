@@ -254,7 +254,9 @@ h3 {
     color: #ff0000;
 }
 
-#instructions.show{
+#instructions.show,
+#instructions2.show,
+#instructions3.show {
     opacity: 1;
     transform: translateY(0);
 }
@@ -278,9 +280,9 @@ h3 {
     color: #ff1251;
     flex-direction: column;
     justify-content: center;
-    transition: opacity 0.5s, transform 0.5s;
     opacity: 0;
     transform: translateY(-20px);
+    transition: all 0.5s ease-in-out;
     overflow-y: auto;
     overflow-x: none;
 }
