@@ -244,6 +244,23 @@ h3 {
     align-items: center;
 }
 
+.instruction-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #ff0000;
+}
+
+#instructions.show,
+#instructions2.show,
+#instructions3.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 #instructions,
 #instructions2,
 #instructions3 {
@@ -263,11 +280,9 @@ h3 {
     color: #ff1251;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(-20px);
     transition: all 0.5s ease-in-out;
-    animation-name: scaleMenu;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    transform: scale(1);
     overflow-y: auto;
     overflow-x: none;
 }

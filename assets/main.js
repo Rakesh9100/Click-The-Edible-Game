@@ -413,18 +413,37 @@ function startGame() {
 }
 
 function showInstructions() {
-    document.getElementById("instructions").style.display = "flex";
-    document.getElementById("instructions2").style.display = "flex";
-    document.getElementById("instructions3").style.display = "flex";
+    var instructionsModal = document.getElementById("instructions");
+    var instructionsModal2 = document.getElementById("instructions2");
+    var instructionsModal3 = document.getElementById("instructions3");
+    instructionsModal.style.display = "flex";
+    instructionsModal2.style.display = "flex";
+    instructionsModal3.style.display = "flex";
+    // Trigger reflow to ensure the transition is applied
+    void instructionsModal.offsetWidth;
+    instructionsModal.classList.add("show");
+    void instructionsModal2.offsetWidth;
+    instructionsModal2.classList.add("show");
+    void instructionsModal3.offsetWidth;
+    instructionsModal3.classList.add("show");
     pauseGame();
 }
 
 function closeInstructions() {
-    document.getElementById("instructions").style.display = "none";
-    document.getElementById("instructions2").style.display = "none";
-    document.getElementById("instructions3").style.display = "none";
-    if (isRunning == 0)
-        isRunning = 1;
+    var instructionsModal = document.getElementById("instructions");
+    instructionsModal.classList.remove("show");
+    var instructionsModal2 = document.getElementById("instructions2");
+    instructionsModal2.classList.remove("show");
+    var instructionsModal3 = document.getElementById("instructions3");
+    instructionsModal3.classList.remove("show");
+    // Add a delay before hiding the instructions to allow the animation to play
+    setTimeout(function() {
+        instructionsModal.style.display = "none";
+        instructionsModal2.style.display = "none";
+        instructionsModal3.style.display = "none";
+        if (isRunning == 0)
+            isRunning = 1;
+    }, 500); // Match the duration of the animation
 }
 
 //Maximum in the array
