@@ -358,20 +358,6 @@ document.querySelectorAll(".choose-btn").forEach(button => {
     });
 });
 
-document.querySelectorAll(".choose-btn").forEach(button => {
-  button.addEventListener("click", () => {
-      const img = button.querySelector("img");
-      const src = img.getAttribute("src");
-      const alt = img.getAttribute("alt");
-      selected_edible = { src, alt };
-      screens[1].classList.add("up1");
-      game_container.style.height = "100vh";
-      startGame();
-      displayChange();
-      choose_edible.play();
-  });
-});
-
 // --------------- Uploading Image End ----------------
 
 function chooseGameplayTime() {
@@ -429,22 +415,21 @@ function startGame() {
 function showInstructions() {
     var instructionsModal = document.getElementById("instructions");
     instructionsModal.style.display = "flex";
-    instructionsModal.classList.add("fade-up");
+    // Trigger reflow to ensure the transition is applied
+    void instructionsModal.offsetWidth;
+    instructionsModal.classList.add("show");
     pauseGame();
 }
 
 function closeInstructions() {
     var instructionsModal = document.getElementById("instructions");
-    instructionsModal.classList.remove("fade-up");
-    instructionsModal.classList.add("fade-down");
-
-    // Delay the display none until the fade-down animation completes
+    instructionsModal.classList.remove("show");
+    // Add a delay before hiding the instructions to allow the animation to play
     setTimeout(function() {
         instructionsModal.style.display = "none";
         if (isRunning == 0)
             isRunning = 1;
-        instructionsModal.classList.remove("fade-down");
-    }, 500); // 500ms is the duration of the fadeDown animation
+    }, 500); // Match the duration of the animation
 }
 
 //Maximum in the array
