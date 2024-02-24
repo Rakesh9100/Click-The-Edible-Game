@@ -173,6 +173,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 <h2>This repo has been part of the following Open Source Programs🥳</h2>
 
 <table>
+
 <tr>
 <td align="center">
 <a href="https://iwoc.codes/"><img src="https://github.com/Rakesh9100/Click-The-Edible-Game/assets/73993775/19327f1b-3cca-4714-8a8e-34e459cf6c5d" height="140px" width="140px" alt="IWOC2024"></a><br><sub><b>IWOC 2k24</b></sub>
@@ -184,15 +185,19 @@ This project and everyone participating in it is governed by the [Code of Conduc
 <a href="https://www.socialwinterofcode.com/"><img src="https://github.com/Rakesh9100/Click-The-Edible-Game/assets/73993775/013f59d9-5b7e-4d0e-a98e-631c8e6b177b" height="140px" width="180px" alt="SWOC2024"></a><br><sub><b>SWOC 2k24</b></sub>
 </td>
 <td align="center">
-<a href="https://dsc-slop.github.io/"><img src="https://github.com/Rakesh9100/Click-The-Edible-Game/assets/73993775/a5c1905a-554c-45cd-8410-da30dd275ab9" height="140px" width="160px" alt="JWOC2023"></a><br><sub><b>SLOP 2k23</b></sub>
+<a href="https://dsc-slop.github.io/"><img src="https://github.com/Rakesh9100/Click-The-Edible-Game/assets/73993775/a5c1905a-554c-45cd-8410-da30dd275ab9" height="140px" width="160px" alt="SLOP2023"></a><br><sub><b>SLOP 2k23</b></sub>
 </td>
 <td align="center">
 <a href="https://jwoc.tech/"><img src="https://github.com/Rakesh9100/Click-The-Edible-Game/assets/73993775/c96c4901-b193-4038-a7a6-aa802037939f" height="140px" width="170px" alt="JWOC2023"></a><br><sub><b>JWOC 2k23</b></sub>
 </td>
+</tr>
+
+<tr>
 <td align="center">
 <a href="https://hacktoberfest.com/"><img src="https://github.com/Rakesh9100/Click-The-Edible-Game/assets/73993775/1f8224a9-52c4-479e-860d-ec66e61b028b" height="140px" width="140px" alt="Hacktoberfest2022"></a><br><sub><b>Hacktoberfest 2k22</b></sub>
 </td>
 </tr>
+
 </table>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -203,7 +208,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 <table>
 <tr>
 <td align="center">
-<a href="https://github.com/Rakesh9100/"><img src="https://avatars.githubusercontent.com/u/73993775?v=4" height="150px" width="150px" alt="Rakesh Roshan"></a><br><sub><b>Rakesh Roshan</b></sub>
+<a href="https://github.com/Rakesh9100/"><img src="https://avatars.githubusercontent.com/u/73993775?v=4" height="140px" width="140px" alt="Rakesh Roshan"></a><br><sub><b>Rakesh Roshan</b><br><a href="https://www.linkedin.com/in/rakesh-roshan-9100/"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/73993775/278833250-adb040ea-e3ef-446e-bcd4-3e8d7d4c0176.png" width="45px" height="45px"></a></sub>
 </td>
 </tr>
 </table>
