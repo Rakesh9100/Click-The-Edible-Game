@@ -1472,7 +1472,6 @@ h1 {
     }
 }
 
-
 .container {
     display: flex;
     justify-content: flex-end;
@@ -1668,12 +1667,11 @@ h1 {
     }
 }
 
-#time-range-val{
+#time-range-val {
     padding: 1rem;
 }
 
 #gameplayTime {
-
     background: #07182E;
     background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(1, 24, 23) 100%);
     border-width: 1px;
@@ -1696,25 +1694,27 @@ h1 {
     transition: all 0.5s ease-in-out;
     border-radius: 20px;
     overflow: hidden;
-    
 }
 
-
-#gameplayTime b{
+#gameplayTime b {
     z-index: 1;
     margin-bottom: 10px;
-} 
-#gameplayTime div{
+}
+
+#gameplayTime div {
     z-index: 1;
 }
-#gameplayTime h2{
+
+#gameplayTime h2 {
     z-index: 1;
 }
-#gameplayTime input{
+
+#gameplayTime input {
     z-index: 1;
 }
 
 /* Adding color revolving effect */
+
 #gameplayTime::before {
     content: '';
     position: absolute;
@@ -1723,26 +1723,26 @@ h1 {
     height: 300%;
     animation: rotBGimg 3s linear infinite;
     transition: all 0.2s linear;
-  }
-  
-  @keyframes rotBGimg {
+}
+
+@keyframes rotBGimg {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
   
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  #gameplayTime::after {
-    content: '';
+}
+
+#gameplayTime::after {
+    content: ' ';
     position: absolute;
     background: #07182E;
-    /*background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(218, 11, 255) 100%);
-    */inset: 5px; 
+    /* background: radial-gradient(circle, rgb(230, 252, 255) 26%, rgb(218, 11, 255) 100%); */
+    inset: 5px; 
     border-radius: 15px;
-  }  
+}
 
 * {
     cursor: none;
