@@ -269,11 +269,11 @@ h3 {
     border-radius: 0.5em;
     position: absolute;
     z-index: 9;
-    padding: 0 1rem;
+    padding: 0rem 1rem;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     display: none;
-    width: 60vw;
+    width: 70vw;
     margin-bottom: 7rem;
     margin-top: 1.6rem;
     height: 83vh;
